@@ -160,7 +160,7 @@ const JourneyWizard = () => {
   const progress = (step / totalSteps) * 100
 
   return (
-    <main className="min-h-screen bg-slate-50">
+    <main className="min-h-screen overflow-x-hidden bg-slate-50">
       {/* Top header with logo and progress bar */}
       <header className="border-b border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-5xl px-3 py-3 sm:px-4 sm:py-4 md:px-6">

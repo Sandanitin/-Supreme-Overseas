@@ -346,7 +346,7 @@ const Home = () => {
   const navigate = useNavigate()
 
   return (
-    <main className="relative min-h-screen bg-slate-50">
+    <main className="relative min-h-screen overflow-x-hidden bg-slate-50">
       {/* HERO SECTION */}
       <section className="relative overflow-hidden bg-white">
         {/* Top bar */}
@@ -515,25 +515,27 @@ const Home = () => {
           </h2>
 
           {/* Tabs */}
-          <div className="mt-6 -mx-3 overflow-x-auto px-3 sm:mx-0 sm:px-0">
-            <div className="flex min-w-max items-center gap-4 border-b border-slate-200 pb-2 text-sm sm:min-w-0 sm:flex-wrap sm:gap-6 sm:text-base">
-              {universityTabs.map((tab) => {
-                const active = tab.id === activeCountry
-                return (
-                  <button
-                    key={tab.id}
-                    type="button"
-                    onClick={() => setActiveCountry(tab.id)}
-                    className={`inline-flex flex-shrink-0 items-center gap-1.5 border-b-2 pb-2 transition sm:gap-2 ${active
-                      ? 'border-[#C44E28] text-[#C44E28]'
-                      : 'border-transparent text-slate-500 hover:text-slate-800'
-                      }`}
-                  >
-                    <span className="text-base sm:text-lg">{tab.flag}</span>
-                    <span className="whitespace-nowrap font-medium">{tab.name}</span>
-                  </button>
-                )
-              })}
+          <div className="mt-6 -mx-3 sm:mx-0">
+            <div className="overflow-x-auto px-3 sm:px-0">
+              <div className="flex min-w-max items-center gap-4 border-b border-slate-200 pb-2 text-sm sm:min-w-0 sm:flex-wrap sm:gap-6 sm:text-base">
+                {universityTabs.map((tab) => {
+                  const active = tab.id === activeCountry
+                  return (
+                    <button
+                      key={tab.id}
+                      type="button"
+                      onClick={() => setActiveCountry(tab.id)}
+                      className={`inline-flex flex-shrink-0 items-center gap-1.5 border-b-2 pb-2 transition sm:gap-2 ${active
+                        ? 'border-[#C44E28] text-[#C44E28]'
+                        : 'border-transparent text-slate-500 hover:text-slate-800'
+                        }`}
+                    >
+                      <span className="text-base sm:text-lg">{tab.flag}</span>
+                      <span className="whitespace-nowrap font-medium">{tab.name}</span>
+                    </button>
+                  )
+                })}
+              </div>
             </div>
           </div>
 
@@ -686,7 +688,7 @@ const Home = () => {
                 <li><a href="#universities" className="hover:text-white transition">Universities</a></li>
                 <li><a href="#services" className="hover:text-white transition">Services</a></li>
                 <li><a href="#success-stories" className="hover:text-white transition">Success Stories</a></li>
-                <li><a href="#contact" className="hover:text-white transition">Contact Us</a></li>
+                <li><a href="#contact" className="hover:text-white transition">📞 Contact Us</a></li>
               </ul>
             </div>
 
