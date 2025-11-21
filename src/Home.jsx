@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
   GraduationCap,
@@ -16,26 +16,26 @@ import {
 const Home = () => {
   const whyItems = [
     {
+      value: '850+',
       label: 'University Partners',
-      description: 'Global universities you can trust',
       icon: GraduationCap,
       color: 'text-[#2E6C2E]',
     },
     {
+      value: '45,000+',
       label: 'Success Stories',
-      description: 'Students placed across top destinations',
       icon: Star,
       color: 'text-[#D9531E]',
     },
     {
+      value: 'up to 50%*',
       label: 'Scholarship',
-      description: 'Merit-based & need-based scholarships',
       icon: Award,
       color: 'text-[#2E6C2E]',
     },
     {
-      label: 'Course Pricing',
-      description: 'Transparent and competitive pricing',
+      value: '₹8 Lakhs*',
+      label: 'Courses starting at',
       icon: TrendingUp,
       color: 'text-[#D9531E]',
     },
@@ -279,6 +279,8 @@ const Home = () => {
   }
 
   const [activeCountry, setActiveCountry] = useState('uk')
+  const [currentStory, setCurrentStory] = useState(0)
+  const carouselRef = useRef(null)
 
   const successStories = [
     {
@@ -345,19 +347,33 @@ const Home = () => {
 
   const navigate = useNavigate()
 
+  // Auto-slide carousel for success stories
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentStory((prev) => (prev + 1) % successStories.length)
+    }, 4000) // Change slide every 4 seconds
+
+    return () => clearInterval(interval)
+  }, [successStories.length])
+
+  // Handle manual dot click
+  const handleDotClick = (index) => {
+    setCurrentStory(index)
+  }
+
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-slate-50">
       {/* HERO SECTION */}
       <section className="relative overflow-hidden bg-white">
         {/* Top bar */}
         <header className="relative z-20">
-          <div className="mx-auto flex max-w-6xl items-center justify-between px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4">
+          <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-4 sm:py-3 md:px-6 md:py-4">
             {/* Logo */}
             <div className="flex items-center">
               <img
                 src="/Supreme%20Overseas%20-%20Logo%20(1).png"
                 alt="Supreme Overseas Logo"
-                className="h-14 w-auto sm:h-20 md:h-24"
+                className="h-10 w-auto sm:h-20 md:h-24"
                 onError={(e) => {
                   console.error('Error loading logo:', e.target.src);
                   e.target.style.display = 'none';
@@ -368,62 +384,62 @@ const Home = () => {
             {/* Call button */}
             <a
               href="tel:8069361480"
-              className="inline-flex items-center gap-2 rounded-full bg-[#C44E28] px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-[#C44E28]/30 transition hover:-translate-y-0.5 hover:bg-[#D9531E] hover:shadow-xl sm:px-5 sm:py-2.5 sm:text-base"
+              className="inline-flex items-center gap-1.5 rounded-full border border-slate-300 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-sm transition hover:bg-slate-50 sm:gap-2 sm:px-5 sm:py-2.5 sm:text-base sm:rounded-full sm:border-[#C44E28] sm:bg-[#C44E28] sm:text-white sm:shadow-lg sm:shadow-[#C44E28]/30 sm:hover:bg-[#D9531E]"
             >
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                className="h-4 w-4 sm:h-5 sm:w-5" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-3.5 w-3.5 sm:h-5 sm:w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
                 strokeWidth="2"
               >
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
-              <span>Call us</span>
-              <span className="font-bold">8069361480</span>
+              <span className="hidden sm:inline">Call us</span>
+              <span className="font-semibold sm:font-bold">8069361480</span>
             </a>
           </div>
         </header>
 
         {/* Hero content */}
         <div className="relative z-20">
-          {/* Text content - Centered at top with container */}
-          <div className="mx-auto max-w-6xl px-3 py-6 sm:px-4 sm:py-8 md:px-6 md:py-12">
-            <div className="text-center">
-              <h1 className="text-2xl font-bold leading-tight text-[#2E6C2E] sm:text-3xl md:text-4xl lg:text-5xl">
+          {/* Text content - Mobile optimized */}
+          <div className="mx-auto max-w-6xl px-4 pt-4 pb-6 sm:px-4 sm:py-8 md:px-6 md:py-12">
+            <div className="text-left sm:text-center">
+              <h1 className="text-[22px] font-bold leading-snug text-[#2E6C2E] sm:text-3xl md:text-4xl lg:text-5xl">
                 Take the First Step to{' '}
-                <span className="text-[#C44E28]">STUDY ABROAD</span>
+                <span className="block text-[#C44E28] sm:inline">STUDY ABROAD</span>
               </h1>
 
-              {/* Benefits row - Horizontal on larger screens */}
-              <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:mt-6 sm:flex-row sm:gap-6 md:gap-8">
-                <div className="flex items-center gap-2 text-xs text-[#38662B] sm:text-sm md:text-base">
-                  <span className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-[#38662B]/10 text-[10px] font-bold text-[#2E6C2E] sm:h-5 sm:w-5 sm:text-[11px]">
+              {/* Benefits - Mobile: vertical list, Desktop: horizontal */}
+              <div className="mt-4 space-y-2.5 sm:mt-6 sm:flex sm:flex-row sm:items-center sm:justify-center sm:gap-6 sm:space-y-0 md:gap-8">
+                <div className="flex items-center gap-2 text-sm text-[#38662B] sm:text-sm md:text-base">
+                  <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#38662B]/10 text-xs font-bold text-[#2E6C2E] sm:h-5 sm:w-5 sm:text-[11px]">
                     ✓
                   </span>
-                  <span>Courses starting from ₹8 Lakhs*</span>
+                  <span className="text-[13px] sm:text-sm md:text-base">Courses starting from ₹8 Lakhs*</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs text-[#38662B] sm:text-sm md:text-base">
-                  <span className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-[#38662B]/10 text-[10px] font-bold text-[#2E6C2E] sm:h-5 sm:w-5 sm:text-[11px]">
+                <div className="flex items-center gap-2 text-sm text-[#38662B] sm:text-sm md:text-base">
+                  <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#38662B]/10 text-xs font-bold text-[#2E6C2E] sm:h-5 sm:w-5 sm:text-[11px]">
                     ✓
                   </span>
-                  <span>Scholarship worth ₹10,00,000*</span>
+                  <span className="text-[13px] sm:text-sm md:text-base">Scholarship worth ₹10,00,000*</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs text-[#38662B] sm:text-sm md:text-base">
-                  <span className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-[#38662B]/10 text-[10px] font-bold text-[#2E6C2E] sm:h-5 sm:w-5 sm:text-[11px]">
+                <div className="flex items-center gap-2 text-sm text-[#38662B] sm:text-sm md:text-base">
+                  <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#38662B]/10 text-xs font-bold text-[#2E6C2E] sm:h-5 sm:w-5 sm:text-[11px]">
                     ✓
                   </span>
-                  <span>Offer letter in less than 48 hours*</span>
+                  <span className="text-[13px] sm:text-sm md:text-base">Offer letter in less than 48 hours*</span>
                 </div>
               </div>
 
               {/* CTA button */}
-              <div className="mt-6 sm:mt-8">
+              <div className="mt-5 sm:mt-8">
                 <button
                   type="button"
                   onClick={() => navigate('/journey')}
-                  className="rounded-lg bg-[#C44E28] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#C44E28]/30 transition hover:-translate-y-0.5 hover:bg-[#D9531E] hover:shadow-xl sm:px-8 sm:py-4 sm:text-base"
+                  className="w-full rounded-lg bg-[#C44E28] px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#C44E28]/30 transition hover:-translate-y-0.5 hover:bg-[#D9531E] hover:shadow-xl sm:w-auto sm:px-8 sm:py-4"
                 >
                   Start Your Journey
                 </button>
@@ -432,7 +448,7 @@ const Home = () => {
           </div>
 
           {/* Image content - Full viewport width */}
-          <div className="relative h-64 w-full overflow-hidden bg-gray-100 sm:h-80 md:h-96 lg:h-[500px]">
+          <div className="relative h-[420px] w-full overflow-hidden bg-gray-100 sm:h-80 md:h-96 lg:h-[500px]">
             <img
               src="/hero1.jpg"
               alt="Students studying abroad"
@@ -444,29 +460,30 @@ const Home = () => {
               }}
             />
             {/* White shadow overlay at top */}
-            <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white via-white/60 to-transparent sm:h-32 md:h-40"></div>
+            <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-white via-white/60 to-transparent sm:h-32 md:h-40"></div>
           </div>
         </div>
       </section>
 
       {/* WHY CHOOSE SECTION */}
-      <section id="about" className="bg-[#f8f9fa] py-12 sm:py-16">
-        <div className="mx-auto max-w-6xl px-3 sm:px-4 md:px-6">
-          <h2 className="text-center text-xl font-semibold text-slate-900 sm:text-2xl md:text-3xl">
+      <section id="about" className="bg-white py-8 sm:bg-[#f8f9fa] sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-4 md:px-6">
+          <h2 className="text-left text-lg font-bold text-slate-900 sm:text-center sm:text-2xl md:text-3xl">
             Why Choose <span className="text-[#C44E28]">Supreme Overseas?</span>
           </h2>
 
-          <div className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
+          {/* Mobile: 2x2 grid, Desktop: 4 columns */}
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
             {whyItems.map((item) => (
               <div
                 key={item.label}
-                className="flex flex-col items-center justify-center gap-2.5 rounded-2xl bg-white px-4 py-6 text-center shadow-sm ring-1 ring-slate-100/80 transition hover:-translate-y-1 hover:shadow-md sm:gap-3 sm:px-6 sm:py-8"
+                className="flex flex-col items-center justify-center gap-2 rounded-xl bg-white p-4 text-center shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-0.5 hover:shadow-md sm:gap-3 sm:rounded-2xl sm:px-6 sm:py-8"
               >
-                <div className={`flex h-10 w-10 items-center justify-center rounded-2xl ${item.color}/10 sm:h-12 sm:w-12`}>
-                  {React.createElement(item.icon, { className: `h-5 w-5 ${item.color} sm:h-6 sm:w-6`, strokeWidth: 1.5 })}
+                <div className={`flex h-11 w-11 items-center justify-center rounded-xl ${item.color}/10 sm:h-12 sm:w-12 sm:rounded-2xl`}>
+                  {React.createElement(item.icon, { className: `h-6 w-6 ${item.color} sm:h-6 sm:w-6`, strokeWidth: 1.5 })}
                 </div>
-                <p className="text-xs font-semibold text-slate-900 sm:text-sm">{item.label}</p>
-                <p className="text-[11px] text-slate-500 sm:text-xs">{item.description}</p>
+                <p className="text-base font-bold text-slate-900 sm:text-lg sm:font-semibold">{item.value}</p>
+                <p className="text-[11px] text-slate-600 sm:text-xs sm:font-semibold sm:text-slate-900">{item.label}</p>
               </div>
             ))}
           </div>
@@ -474,61 +491,45 @@ const Home = () => {
       </section>
 
       {/* ADVANTAGE SECTION */}
-      <section id="services" className="bg-white py-12 sm:py-16">
-        <div className="mx-auto max-w-6xl px-3 sm:px-4 md:px-6">
-          <h2 className="text-center text-xl font-semibold text-slate-900 sm:text-2xl md:text-3xl">
+      <section id="services" className="bg-[#f8f9fa] py-8 sm:bg-white sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-4 md:px-6">
+          <h2 className="text-left text-lg font-bold text-slate-900 sm:text-center sm:text-2xl md:text-3xl">
             Supreme Overseas <span className="text-[#C44E28]">Advantage</span>
           </h2>
 
-          <div className="mt-8 overflow-hidden rounded-3xl border border-slate-100 bg-sky-50/40 shadow-sm sm:mt-10">
-            {/* Top row */}
-            <div className="grid divide-y divide-slate-100 bg-white/60 sm:grid-cols-3 sm:divide-y-0 sm:divide-x">
-              {advantageTopRow.map((item) => (
-                <div
-                  key={item.label}
-                  className="flex flex-col items-center justify-center gap-2.5 px-4 py-6 text-center sm:gap-3 sm:px-6 sm:py-8 md:px-10"
-                >
-                  <div className={`flex h-9 w-9 items-center justify-center rounded-2xl ${item.color}/10 sm:h-11 sm:w-11`}>
-                    {React.createElement(item.icon, { className: `h-5 w-5 ${item.color} sm:h-6 sm:w-6`, strokeWidth: 1.5 })}
-                  </div>
-                  <p className="text-xs font-medium text-slate-900 sm:text-sm md:text-[0.95rem]">
-                    {item.label}
-                  </p>
+          {/* Mobile: 2 columns, Desktop: border box with dividers */}
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-0 sm:overflow-hidden sm:rounded-3xl sm:border sm:border-slate-100 sm:bg-sky-50/40 sm:shadow-sm">
+            {/* Combined array for mobile, split rows for desktop */}
+            {[...advantageTopRow, ...advantageBottomRow].map((item, idx) => (
+              <div
+                key={item.label}
+                className={`flex flex-col items-center justify-center gap-2 rounded-xl bg-white p-3.5 text-center shadow-sm ring-1 ring-slate-100 sm:rounded-none sm:gap-3 sm:px-6 sm:py-8 sm:shadow-none sm:ring-0 md:px-10 ${idx < 3 ? 'sm:border-b sm:border-slate-100' : ''
+                  } ${idx % 3 !== 2 ? 'sm:border-r sm:border-slate-100' : ''
+                  }`}
+              >
+                <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${item.color}/10 sm:h-11 sm:w-11 sm:rounded-2xl`}>
+                  {React.createElement(item.icon, { className: `h-5 w-5 ${item.color} sm:h-6 sm:w-6`, strokeWidth: 1.5 })}
                 </div>
-              ))}
-            </div>
-
-            {/* Bottom row */}
-            <div className="grid divide-y divide-slate-100 bg-white/60 sm:grid-cols-3 sm:divide-y-0 sm:divide-x">
-              {advantageBottomRow.map((item) => (
-                <div
-                  key={item.label}
-                  className="flex flex-col items-center justify-center gap-2.5 px-4 py-6 text-center sm:gap-3 sm:px-6 sm:py-8 md:px-10"
-                >
-                  <div className={`flex h-9 w-9 items-center justify-center rounded-2xl ${item.color}/10 sm:h-11 sm:w-11`}>
-                    {React.createElement(item.icon, { className: `h-5 w-5 ${item.color} sm:h-6 sm:w-6` })}
-                  </div>
-                  <p className="text-xs font-medium text-slate-900 sm:text-sm md:text-[0.95rem]">
-                    {item.label}
-                  </p>
-                </div>
-              ))}
-            </div>
+                <p className="text-[11px] font-medium leading-tight text-slate-700 sm:text-xs sm:text-slate-900 md:text-[0.95rem]">
+                  {item.label}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* TOP UNIVERSITIES SECTION */}
-      <section id="universities" className="bg-[#f5f9ff] pb-16 pt-12 sm:pb-20 sm:pt-16">
-        <div className="mx-auto max-w-6xl px-3 sm:px-4 md:px-6">
-          <h2 className="text-xl font-semibold text-slate-900 sm:text-2xl md:text-3xl">
+      <section id="universities" className="bg-white py-8 sm:bg-[#f5f9ff] sm:pb-20 sm:pt-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-4 md:px-6">
+          <h2 className="text-left text-lg font-bold text-slate-900 sm:text-xl sm:font-semibold md:text-3xl">
             Top Universities to <span className="text-[#C44E28]">Study Abroad</span>
           </h2>
 
           {/* Tabs */}
-          <div className="mt-6 -mx-3 sm:mx-0">
-            <div className="overflow-x-auto px-3 sm:px-0">
-              <div className="flex min-w-max items-center gap-4 border-b border-slate-200 pb-2 text-sm sm:min-w-0 sm:flex-wrap sm:gap-6 sm:text-base">
+          <div className="mt-5 -mx-4 sm:mx-0 sm:mt-6">
+            <div className="overflow-x-auto px-4 sm:px-0">
+              <div className="flex min-w-max items-center gap-3 sm:gap-4 border-b border-slate-200 pb-2 text-sm sm:min-w-0 sm:flex-wrap sm:gap-6 sm:text-base">
                 {universityTabs.map((tab) => {
                   const active = tab.id === activeCountry
                   return (
@@ -542,7 +543,7 @@ const Home = () => {
                         }`}
                     >
                       <span className="text-base sm:text-lg">{tab.flag}</span>
-                      <span className="whitespace-nowrap font-medium">{tab.name}</span>
+                      <span className="whitespace-nowrap text-[13px] font-medium sm:text-base">{tab.name}</span>
                     </button>
                   )
                 })}
@@ -551,27 +552,27 @@ const Home = () => {
           </div>
 
           {/* University cards */}
-          <div className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4 xl:grid-cols-3">
+          <div className="mt-5 space-y-3 sm:mt-8 sm:grid sm:grid-cols-2 sm:gap-4 sm:space-y-0 xl:grid-cols-3">
             {universitiesByCountry[activeCountry].map((uni) => (
               <div
                 key={uni.name}
-                className="flex items-center gap-3 rounded-2xl bg-white px-3 py-3 shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-0.5 hover:shadow-md sm:gap-4 sm:px-5 sm:py-4"
+                className="flex items-center gap-3 rounded-xl bg-white px-3 py-3.5 shadow-sm ring-1 ring-slate-200 transition hover:shadow-md sm:gap-4 sm:rounded-2xl sm:px-5 sm:py-4 sm:hover:-translate-y-0.5"
               >
                 {/* Logo placeholder */}
-                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-slate-50 text-[10px] font-semibold uppercase tracking-tight text-slate-700 sm:h-14 sm:w-14 sm:text-[11px]">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-slate-50 text-[9px] font-bold uppercase tracking-tight text-slate-700 sm:h-14 sm:w-14 sm:rounded-xl sm:text-[11px]">
                   {uni.short}
                 </div>
 
                 {/* Text */}
                 <div className="min-w-0 flex-1">
-                  <p className="truncate text-xs font-semibold text-slate-900 sm:text-sm md:text-[0.95rem]">
+                  <p className="truncate text-[13px] font-semibold text-slate-900 sm:text-sm md:text-[0.95rem]">
                     {uni.name}
                   </p>
                   <p className="mt-0.5 truncate text-[11px] text-slate-500 sm:mt-1 sm:text-xs">{uni.location}</p>
                 </div>
 
                 {/* Courses badge */}
-                <span className="flex-shrink-0 whitespace-nowrap rounded-full border border-[#2E6C2E]/30 bg-[#2E6C2E]/10 px-2 py-0.5 text-[10px] font-semibold text-[#2E6C2E] sm:px-3 sm:py-1 sm:text-[11px]">
+                <span className="flex-shrink-0 whitespace-nowrap rounded-md bg-yellow-50 px-2 py-1 text-[10px] font-bold text-yellow-700 sm:rounded-full sm:border sm:border-[#2E6C2E]/30 sm:bg-[#2E6C2E]/10 sm:px-3 sm:py-1 sm:text-[11px] sm:font-semibold sm:text-[#2E6C2E]">
                   {uni.courses}
                 </span>
               </div>
@@ -582,8 +583,8 @@ const Home = () => {
 
       {/* SUCCESS STORIES SECTION */}
       <section id="success-stories" className="bg-white py-12 sm:py-16 md:py-20">
-        <div className="mx-auto max-w-6xl px-3 sm:px-4 md:px-6">
-          <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+        <div className="mx-auto max-w-6xl px-4 sm:px-4 md:px-6">
+          <div className="flex flex-col gap-1">
             <div>
               <h2 className="text-xl font-semibold text-slate-900 sm:text-2xl md:text-3xl">
                 45,000+ <span className="text-[#C44E28]">Success Stories</span>
@@ -592,42 +593,109 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4 xl:grid-cols-3">
-            {successStories.map((story) => (
-              <article
-                key={`${story.name}-${story.to}`}
-                className="flex h-full flex-col justify-between rounded-2xl bg-white px-4 py-4 shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-0.5 hover:shadow-md sm:px-5 sm:py-5"
-              >
-                <div>
-                  <div className="flex items-center gap-2.5 sm:gap-3">
-                    <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-slate-100 text-xs font-semibold text-slate-700 sm:h-10 sm:w-10 sm:text-sm">
-                      {story.initials}
+          {/* Mobile: Auto-sliding carousel, Desktop: Grid */}
+          <div className="mt-6 sm:mt-8">
+            {/* Mobile Carousel */}
+            <div className="relative block sm:hidden">
+              <div className="overflow-hidden" ref={carouselRef}>
+                <div
+                  className="flex transition-transform duration-500 ease-out"
+                  style={{ transform: `translateX(-${currentStory * 100}%)` }}
+                >
+                  {successStories.map((story) => (
+                    <article
+                      key={`${story.name}-${story.to}`}
+                      className="w-full flex-shrink-0 px-1"
+                    >
+                      <div className="flex h-full flex-col justify-between rounded-2xl bg-white px-4 py-4 shadow-sm ring-1 ring-slate-100">
+                        <div>
+                          <div className="flex items-center gap-2.5">
+                            <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-slate-100 text-xs font-semibold text-slate-700">
+                              {story.initials}
+                            </div>
+                            <div className="min-w-0 flex-1">
+                              <p className="truncate text-xs font-semibold text-slate-900">{story.name}</p>
+                              <p className="truncate text-[11px] text-slate-500">
+                                {story.from}
+                                <span className="mx-1 text-slate-400">→</span>
+                                {story.to}
+                              </p>
+                            </div>
+                          </div>
+
+                          <p className="mt-2.5 text-[11px] leading-relaxed text-[#2E6C2E]">
+                            {story.quote}
+                          </p>
+                        </div>
+
+                        <div className="mt-3 flex items-center justify-between gap-2">
+                          <span className="flex-shrink-0 rounded-full bg-[#0088FF]/10 px-2.5 py-0.5 text-[10px] font-medium text-[#0088FF]">
+                            {story.field}
+                          </span>
+                          <span className="truncate text-[11px] font-semibold text-slate-700">
+                            {story.university}
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
+
+              {/* Dot indicators */}
+              <div className="mt-4 flex justify-center gap-1.5">
+                {successStories.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleDotClick(index)}
+                    className={`h-1.5 rounded-full transition-all ${index === currentStory
+                      ? 'w-6 bg-[#0088FF]'
+                      : 'w-1.5 bg-slate-300'
+                      }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Desktop Grid */}
+            <div className="hidden grid-cols-2 gap-4 sm:grid xl:grid-cols-3">
+              {successStories.map((story) => (
+                <article
+                  key={`${story.name}-${story.to}`}
+                  className="flex h-full flex-col justify-between rounded-2xl bg-white px-5 py-5 shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  <div>
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-slate-100 text-sm font-semibold text-slate-700">
+                        {story.initials}
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <p className="truncate text-sm font-semibold text-slate-900">{story.name}</p>
+                        <p className="truncate text-xs text-slate-500">
+                          {story.from}
+                          <span className="mx-1 text-slate-400">→</span>
+                          {story.to}
+                        </p>
+                      </div>
                     </div>
-                    <div className="min-w-0 flex-1">
-                      <p className="truncate text-xs font-semibold text-slate-900 sm:text-sm">{story.name}</p>
-                      <p className="truncate text-[11px] text-slate-500 sm:text-xs">
-                        {story.from}
-                        <span className="mx-1 text-slate-400">→</span>
-                        {story.to}
-                      </p>
-                    </div>
+
+                    <p className="mt-3 text-xs leading-relaxed text-[#2E6C2E] md:text-[0.8rem]">
+                      {story.quote}
+                    </p>
                   </div>
 
-                  <p className="mt-2.5 text-[11px] leading-relaxed text-[#2E6C2E] sm:mt-3 sm:text-xs md:text-[0.8rem]">
-                    {story.quote}
-                  </p>
-                </div>
-
-                <div className="mt-3 flex items-center justify-between gap-2 sm:mt-4">
-                  <span className="flex-shrink-0 rounded-full bg-[#38662B]/10 px-2.5 py-0.5 text-[10px] font-medium text-[#2E6C2E] sm:px-3 sm:py-1 sm:text-[11px]">
-                    {story.field}
-                  </span>
-                  <span className="truncate text-[11px] font-semibold text-[#C44E28] sm:text-xs">
-                    {story.university}
-                  </span>
-                </div>
-              </article>
-            ))}
+                  <div className="mt-4 flex items-center justify-between gap-2">
+                    <span className="flex-shrink-0 rounded-full bg-[#38662B]/10 px-3 py-1 text-[11px] font-medium text-[#2E6C2E]">
+                      {story.field}
+                    </span>
+                    <span className="truncate text-xs font-semibold text-[#C44E28]">
+                      {story.university}
+                    </span>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
 
           <div className="mt-8 flex justify-center sm:mt-10">
@@ -699,7 +767,7 @@ const Home = () => {
                 <li><a href="#universities" className="hover:text-white transition">Universities</a></li>
                 <li><a href="#services" className="hover:text-white transition">Services</a></li>
                 <li><a href="#success-stories" className="hover:text-white transition">Success Stories</a></li>
-               
+
               </ul>
             </div>
 
