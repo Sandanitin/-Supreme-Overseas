@@ -163,14 +163,14 @@ const JourneyWizard = () => {
     <main className="min-h-screen bg-slate-50">
       {/* Top header with logo and progress bar */}
       <header className="border-b border-slate-200 bg-slate-50">
-        <div className="mx-auto max-w-5xl px-4 py-4 sm:px-6">
+        <div className="mx-auto max-w-5xl px-3 py-3 sm:px-4 sm:py-4 md:px-6">
           <div className="flex items-center justify-center">
             {/* Logo image */}
             <div className="flex items-center">
               <img
                 src="/Supreme%20Overseas%20-%20Logo%20(1).png"
                 alt="Supreme Overseas Logo"
-                className="h-12 w-auto"
+                className="h-10 w-auto sm:h-12"
                 onError={(e) => {
                   console.error('Error loading logo:', e.target.src)
                   e.target.style.display = 'none'
@@ -179,11 +179,11 @@ const JourneyWizard = () => {
             </div>
           </div>
 
-          <p className="mt-4 text-center text-sm font-medium text-slate-800 sm:text-base">
+          <p className="mt-3 text-center text-xs font-medium text-slate-800 sm:mt-4 sm:text-sm md:text-base">
             Take the First Step to Study Abroad
           </p>
 
-          <div className="mt-4 h-0.5 w-full bg-[#f7f2ed]">
+          <div className="mt-3 h-0.5 w-full bg-[#f7f2ed] sm:mt-4">
             <div
               className="h-full bg-[#C44E28] transition-all"
               style={{ width: `${progress}%` }}
@@ -192,28 +192,28 @@ const JourneyWizard = () => {
         </div>
       </header>
 
-      <section className="mx-auto max-w-3xl px-4 pb-20 pt-10 sm:px-6">
+      <section className="mx-auto max-w-3xl px-3 pb-16 pt-8 sm:px-4 sm:pb-20 sm:pt-10 md:px-6">
         <button
           type="button"
           onClick={handleBack}
-          className="mb-8 inline-flex items-center gap-1 text-xs font-medium text-[#2E6C2E] hover:text-[#38662B]"
+          className="mb-6 inline-flex items-center gap-1 text-xs font-medium text-[#2E6C2E] hover:text-[#38662B] sm:mb-8 sm:text-sm"
         >
-          <span className="text-base">‹</span>
+          <span className="text-base sm:text-lg">‹</span>
           <span>Back</span>
         </button>
 
         {step === 1 && (
           <div className="text-center">
-            <h2 className="text-xl font-semibold text-slate-900 sm:text-2xl">
+            <h2 className="text-lg font-semibold text-slate-900 sm:text-xl md:text-2xl">
               Which degree do you wish to pursue?
             </h2>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+            <div className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4 md:grid-cols-3">
               {degreeOptions.map((option) => (
                 <button
                   key={option}
                   type="button"
                   onClick={() => handleSelect('degree', option)}
-                  className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#D9531E] hover:text-[#D9531E] hover:shadow-md"
+                  className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-xs font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#D9531E] hover:text-[#D9531E] hover:shadow-md sm:px-4 sm:py-3 sm:text-sm"
                 >
                   {option}
                 </button>
@@ -224,18 +224,18 @@ const JourneyWizard = () => {
 
         {step === 2 && (
           <div className="text-center">
-            <h2 className="text-xl font-semibold text-slate-900 sm:text-2xl">
+            <h2 className="text-lg font-semibold text-slate-900 sm:text-xl md:text-2xl">
               Which destination do you wish to pursue your education in?
             </h2>
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            <div className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4 md:grid-cols-3">
               {destinationOptions.map((opt) => (
                 <button
                   key={opt.value}
                   type="button"
                   onClick={() => handleSelect('destination', opt.value)}
-                  className="flex flex-col items-center rounded-xl border border-slate-200 bg-white px-4 py-4 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#D9531E] hover:text-[#D9531E] hover:shadow-md"
+                  className="flex flex-col items-center rounded-xl border border-slate-200 bg-white px-3 py-3 text-xs font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#D9531E] hover:text-[#D9531E] hover:shadow-md sm:px-4 sm:py-4 sm:text-sm"
                 >
-                  <span className="mb-2 text-2xl">{opt.flag}</span>
+                  <span className="mb-1.5 text-xl sm:mb-2 sm:text-2xl">{opt.flag}</span>
                   <span>{opt.label}</span>
                 </button>
               ))}
@@ -245,19 +245,19 @@ const JourneyWizard = () => {
 
         {step === 3 && (
           <div className="text-center">
-            <h2 className="text-xl font-semibold text-slate-900 sm:text-2xl">
+            <h2 className="text-lg font-semibold text-slate-900 sm:text-xl md:text-2xl">
               What's your preferred intake?
             </h2>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+            <div className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4 md:grid-cols-3">
               {intakeOptions.map((opt) => (
                 <button
                   key={opt.value}
                   type="button"
                   onClick={() => handleSelect('intake', opt.value)}
-                  className="relative rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#D9531E] hover:text-[#D9531E] hover:shadow-md"
+                  className="relative rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-xs font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#D9531E] hover:text-[#D9531E] hover:shadow-md sm:px-4 sm:py-3 sm:text-sm"
                 >
                   {opt.tag && (
-                    <span className="absolute -top-2 left-1/2 -translate-x-1/2 rounded-full bg-[#38662B] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
+                    <span className="absolute -top-2 left-1/2 -translate-x-1/2 rounded-full bg-[#38662B] px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-white sm:px-2 sm:text-[10px]">
                       {opt.tag}
                     </span>
                   )}
@@ -270,16 +270,16 @@ const JourneyWizard = () => {
 
         {step === 4 && (
           <div className="text-center">
-            <h2 className="text-xl font-semibold text-slate-900 sm:text-2xl">
+            <h2 className="text-lg font-semibold text-slate-900 sm:text-xl md:text-2xl">
               What is your highest education level?
             </h2>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+            <div className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4 md:grid-cols-3">
               {educationOptions.map((option) => (
                 <button
                   key={option}
                   type="button"
                   onClick={() => handleSelect('educationLevel', option)}
-                  className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#2E6C2E] hover:text-[#2E6C2E] hover:shadow-md"
+                  className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-xs font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#2E6C2E] hover:text-[#2E6C2E] hover:shadow-md sm:px-4 sm:py-3 sm:text-sm"
                 >
                   {option}
                 </button>
@@ -290,16 +290,16 @@ const JourneyWizard = () => {
 
         {step === 5 && (
           <div className="text-center">
-            <h2 className="text-xl font-semibold text-slate-900 sm:text-2xl">
+            <h2 className="text-lg font-semibold text-slate-900 sm:text-xl md:text-2xl">
               What is your English language exam status?
             </h2>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+            <div className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4 md:grid-cols-4">
               {englishExamOptions.map((option) => (
                 <button
                   key={option}
                   type="button"
                   onClick={() => handleSelect('englishExam', option)}
-                  className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#2E6C2E] hover:text-[#2E6C2E] hover:shadow-md"
+                  className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-xs font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#2E6C2E] hover:text-[#2E6C2E] hover:shadow-md sm:px-4 sm:py-3 sm:text-sm"
                 >
                   {option}
                 </button>
@@ -310,16 +310,16 @@ const JourneyWizard = () => {
 
         {step === 6 && (
           <div className="text-center">
-            <h2 className="text-xl font-semibold text-slate-900 sm:text-2xl">
+            <h2 className="text-lg font-semibold text-slate-900 sm:text-xl md:text-2xl">
               Do you have a valid Passport?
             </h2>
-            <div className="mt-8 flex flex-wrap justify-center gap-4 sm:grid sm:grid-cols-3">
+            <div className="mt-6 flex flex-col justify-center gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-4">
               {passportOptions.map((option) => (
                 <button
                   key={option}
                   type="button"
                   onClick={() => handleSelect('passportStatus', option)}
-                  className="rounded-xl border border-slate-200 bg-white px-8 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#D9531E] hover:text-[#D9531E] hover:shadow-md"
+                  className="w-full rounded-xl border border-slate-200 bg-white px-6 py-2.5 text-xs font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#D9531E] hover:text-[#D9531E] hover:shadow-md sm:w-auto sm:px-8 sm:py-3 sm:text-sm"
                 >
                   {option}
                 </button>
@@ -330,16 +330,16 @@ const JourneyWizard = () => {
 
         {step === 7 && (
           <div className="text-center">
-            <h2 className="text-xl font-semibold text-slate-900 sm:text-2xl">
+            <h2 className="text-lg font-semibold text-slate-900 sm:text-xl md:text-2xl">
               What is your estimated total budget for studying abroad?
             </h2>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+            <div className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4 md:grid-cols-3">
               {budgetOptions.map((option) => (
                 <button
                   key={option}
                   type="button"
                   onClick={() => handleSelect('budgetRange', option)}
-                  className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#2E6C2E] hover:text-[#2E6C2E] hover:shadow-md"
+                  className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-xs font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#2E6C2E] hover:text-[#2E6C2E] hover:shadow-md sm:px-4 sm:py-3 sm:text-sm"
                 >
                   {option}
                 </button>
@@ -350,10 +350,10 @@ const JourneyWizard = () => {
 
         {step === 8 && (
           <div className="mx-auto max-w-md">
-            <h2 className="text-center text-xl font-semibold text-slate-900 sm:text-2xl">
+            <h2 className="text-center text-lg font-semibold text-slate-900 sm:text-xl md:text-2xl">
               Personal Details
             </h2>
-            <form onSubmit={handleSubmitDetails} className="mt-8 space-y-4 text-left">
+            <form onSubmit={handleSubmitDetails} className="mt-6 space-y-3.5 text-left sm:mt-8 sm:space-y-4">
               <div>
                 <label className="mb-1 block text-xs font-medium text-slate-500">Name*</label>
                 <input
@@ -381,7 +381,7 @@ const JourneyWizard = () => {
               <div>
                 <label className="mb-1 block text-xs font-medium text-slate-500">Mobile number*</label>
                 <div className="flex rounded-lg border border-slate-200 bg-white text-sm text-slate-800 focus-within:border-[#C44E28] focus-within:ring-1 focus-within:ring-[#C44E28]">
-                  <span className="flex items-center gap-1 border-r border-slate-200 px-3 text-xs text-slate-500">
+                  <span className="flex items-center gap-1 border-r border-slate-200 px-2.5 text-xs text-slate-500 sm:px-3">
                     🇮🇳 +91
                   </span>
                   <input
@@ -389,7 +389,7 @@ const JourneyWizard = () => {
                     required
                     value={answers.phone}
                     onChange={(e) => handleInputChange('phone', e.target.value)}
-                    className="flex-1 bg-transparent px-3 py-2 outline-none"
+                    className="flex-1 bg-transparent px-2.5 py-2 outline-none sm:px-3"
                     placeholder="Enter mobile number"
                   />
                 </div>
@@ -429,7 +429,7 @@ const JourneyWizard = () => {
 
               <button
                 type="submit"
-                className="mt-4 w-full rounded-lg bg-[#C44E28] px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-[#D9531E]"
+                className="mt-5 w-full rounded-lg bg-[#C44E28] px-4 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-[#D9531E] sm:mt-6 sm:py-3"
               >
                 Submit
               </button>

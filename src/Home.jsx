@@ -351,112 +351,111 @@ const Home = () => {
       <section className="relative overflow-hidden bg-white">
         {/* Top bar */}
         <header className="relative z-20">
-          <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
+          <div className="mx-auto flex max-w-6xl items-center justify-between px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4">
             {/* Logo */}
             <div className="flex items-center">
-              <img 
-                src="/Supreme%20Overseas%20-%20Logo%20(1).png" 
-                alt="Supreme Overseas Logo" 
-                className="h-20 w-auto sm:h-24"
+              <img
+                src="/Supreme%20Overseas%20-%20Logo%20(1).png"
+                alt="Supreme Overseas Logo"
+                className="h-14 w-auto sm:h-20 md:h-24"
                 onError={(e) => {
                   console.error('Error loading logo:', e.target.src);
                   e.target.style.display = 'none';
                 }}
               />
             </div>
-            
+
             {/* Call button */}
             <a
               href="tel:8069361480"
-              className="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-medium text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:text-sm"
+              className="inline-flex items-center rounded-full border border-slate-200 bg-white px-2.5 py-1.5 text-[10px] font-medium text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:px-3 sm:py-2 sm:text-xs md:px-4 md:text-sm"
             >
-              Call us 8069361480
+              <span className="hidden sm:inline">Call us </span>8069361480
             </a>
           </div>
         </header>
-        
+
         {/* Hero content */}
-        <div className="relative z-20 mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-12">
-          <div className="flex flex-col items-center lg:flex-row lg:items-center lg:justify-between">
-            {/* Text content */}
-            <div className="text-center lg:w-1/2 lg:text-left">
-              <h1 className="text-3xl font-bold leading-tight text-[#2E6C2E] sm:text-4xl md:text-5xl">
+        <div className="relative z-20">
+          {/* Text content - Centered at top with container */}
+          <div className="mx-auto max-w-6xl px-3 py-6 sm:px-4 sm:py-8 md:px-6 md:py-12">
+            <div className="text-center">
+              <h1 className="text-2xl font-bold leading-tight text-[#2E6C2E] sm:text-3xl md:text-4xl lg:text-5xl">
                 Take the First Step to{' '}
                 <span className="text-[#C44E28]">STUDY ABROAD</span>
               </h1>
-              
-              {/* Benefits row */}
-              <ul className="mt-6 space-y-3 text-sm text-[#38662B] sm:text-base">
-                <li className="flex items-center gap-2">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#38662B]/10 text-[11px] font-bold text-[#2E6C2E]">
+
+              {/* Benefits row - Horizontal on larger screens */}
+              <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:mt-6 sm:flex-row sm:gap-6 md:gap-8">
+                <div className="flex items-center gap-2 text-xs text-[#38662B] sm:text-sm md:text-base">
+                  <span className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-[#38662B]/10 text-[10px] font-bold text-[#2E6C2E] sm:h-5 sm:w-5 sm:text-[11px]">
                     ✓
                   </span>
                   <span>Courses starting from ₹8 Lakhs*</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#38662B]/10 text-[11px] font-bold text-[#2E6C2E]">
+                </div>
+                <div className="flex items-center gap-2 text-xs text-[#38662B] sm:text-sm md:text-base">
+                  <span className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-[#38662B]/10 text-[10px] font-bold text-[#2E6C2E] sm:h-5 sm:w-5 sm:text-[11px]">
                     ✓
                   </span>
                   <span>Scholarship worth ₹10,00,000*</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#38662B]/10 text-[11px] font-bold text-[#2E6C2E]">
+                </div>
+                <div className="flex items-center gap-2 text-xs text-[#38662B] sm:text-sm md:text-base">
+                  <span className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-[#38662B]/10 text-[10px] font-bold text-[#2E6C2E] sm:h-5 sm:w-5 sm:text-[11px]">
                     ✓
                   </span>
                   <span>Offer letter in less than 48 hours*</span>
-                </li>
-              </ul>
-              
+                </div>
+              </div>
+
               {/* CTA button */}
-              <div className="mt-8">
+              <div className="mt-6 sm:mt-8">
                 <button
                   type="button"
                   onClick={() => navigate('/journey')}
-                  className="rounded-lg bg-[#C44E28] px-8 py-4 text-base font-semibold text-white shadow-lg shadow-[#C44E28]/30 transition hover:-translate-y-0.5 hover:bg-[#D9531E] hover:shadow-xl"
+                  className="rounded-lg bg-[#C44E28] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#C44E28]/30 transition hover:-translate-y-0.5 hover:bg-[#D9531E] hover:shadow-xl sm:px-8 sm:py-4 sm:text-base"
                 >
                   Start Your Journey
                 </button>
               </div>
             </div>
-            
-            {/* Image content - Right Side */}
-            <div className="mt-10 lg:mt-0 lg:w-1/2 lg:pl-10">
-              <div className="relative h-80 w-full overflow-hidden rounded-2xl bg-gray-100 shadow-xl sm:h-96 lg:h-[400px]">
-                <img
-                  src="/hero.jpg"
-                  alt="Students studying abroad"
-                  className="h-full w-full object-cover"
-                  onError={(e) => {
-                    console.error('Error loading image:', e.target.src);
-                    e.target.style.display = 'none';
-                    e.target.parentElement.style.background = '#f3f4f6';
-                  }}
-                />
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-[#2E6C2E]/20 to-transparent"></div>
-              </div>
-            </div>
+          </div>
+
+          {/* Image content - Full viewport width */}
+          <div className="relative h-64 w-full overflow-hidden bg-gray-100 sm:h-80 md:h-96 lg:h-[500px]">
+            <img
+              src="/hero1.jpg"
+              alt="Students studying abroad"
+              className="h-full w-full object-cover"
+              onError={(e) => {
+                console.error('Error loading image:', e.target.src);
+                e.target.style.display = 'none';
+                e.target.parentElement.style.background = '#f3f4f6';
+              }}
+            />
+            {/* White shadow overlay at top */}
+            <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white via-white/60 to-transparent sm:h-32 md:h-40"></div>
           </div>
         </div>
       </section>
 
       {/* WHY CHOOSE SECTION */}
-      <section className="bg-[#f8f9fa] py-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="text-center text-2xl font-semibold text-slate-900 sm:text-3xl">
+      <section id="about" className="bg-[#f8f9fa] py-12 sm:py-16">
+        <div className="mx-auto max-w-6xl px-3 sm:px-4 md:px-6">
+          <h2 className="text-center text-xl font-semibold text-slate-900 sm:text-2xl md:text-3xl">
             Why Choose <span className="text-[#C44E28]">Supreme Overseas?</span>
           </h2>
 
-          <div className="mt-10 grid gap-4 md:grid-cols-4">
+          <div className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
             {whyItems.map((item) => (
               <div
                 key={item.label}
-                className="flex flex-col items-center justify-center gap-3 rounded-2xl bg-white px-6 py-8 text-center shadow-sm ring-1 ring-slate-100/80 transition hover:-translate-y-1 hover:shadow-md"
+                className="flex flex-col items-center justify-center gap-2.5 rounded-2xl bg-white px-4 py-6 text-center shadow-sm ring-1 ring-slate-100/80 transition hover:-translate-y-1 hover:shadow-md sm:gap-3 sm:px-6 sm:py-8"
               >
-                <div className={`flex h-12 w-12 items-center justify-center rounded-2xl ${item.color}/10`}>
-                  {React.createElement(item.icon, { className: `h-6 w-6 ${item.color}`, strokeWidth: 1.5 })}
+                <div className={`flex h-10 w-10 items-center justify-center rounded-2xl ${item.color}/10 sm:h-12 sm:w-12`}>
+                  {React.createElement(item.icon, { className: `h-5 w-5 ${item.color} sm:h-6 sm:w-6`, strokeWidth: 1.5 })}
                 </div>
-                <p className="text-sm font-semibold text-slate-900">{item.label}</p>
-                <p className="text-xs text-slate-500">{item.description}</p>
+                <p className="text-xs font-semibold text-slate-900 sm:text-sm">{item.label}</p>
+                <p className="text-[11px] text-slate-500 sm:text-xs">{item.description}</p>
               </div>
             ))}
           </div>
@@ -464,24 +463,24 @@ const Home = () => {
       </section>
 
       {/* ADVANTAGE SECTION */}
-      <section className="bg-white py-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="text-center text-2xl font-semibold text-slate-900 sm:text-3xl">
+      <section id="services" className="bg-white py-12 sm:py-16">
+        <div className="mx-auto max-w-6xl px-3 sm:px-4 md:px-6">
+          <h2 className="text-center text-xl font-semibold text-slate-900 sm:text-2xl md:text-3xl">
             Supreme Overseas <span className="text-[#C44E28]">Advantage</span>
           </h2>
 
-          <div className="mt-10 overflow-hidden rounded-3xl border border-slate-100 bg-sky-50/40 shadow-sm">
+          <div className="mt-8 overflow-hidden rounded-3xl border border-slate-100 bg-sky-50/40 shadow-sm sm:mt-10">
             {/* Top row */}
-            <div className="grid divide-y divide-slate-100 bg-white/60 md:grid-cols-3 md:divide-y-0 md:divide-x">
+            <div className="grid divide-y divide-slate-100 bg-white/60 sm:grid-cols-3 sm:divide-y-0 sm:divide-x">
               {advantageTopRow.map((item) => (
                 <div
                   key={item.label}
-                  className="flex flex-col items-center justify-center gap-3 px-6 py-8 text-center sm:px-10"
+                  className="flex flex-col items-center justify-center gap-2.5 px-4 py-6 text-center sm:gap-3 sm:px-6 sm:py-8 md:px-10"
                 >
-                  <div className={`flex h-11 w-11 items-center justify-center rounded-2xl ${item.color}/10`}>
-                    {React.createElement(item.icon, { className: `h-6 w-6 ${item.color}`, strokeWidth: 1.5 })}
+                  <div className={`flex h-9 w-9 items-center justify-center rounded-2xl ${item.color}/10 sm:h-11 sm:w-11`}>
+                    {React.createElement(item.icon, { className: `h-5 w-5 ${item.color} sm:h-6 sm:w-6`, strokeWidth: 1.5 })}
                   </div>
-                  <p className="text-sm font-medium text-slate-900 sm:text-[0.95rem]">
+                  <p className="text-xs font-medium text-slate-900 sm:text-sm md:text-[0.95rem]">
                     {item.label}
                   </p>
                 </div>
@@ -489,16 +488,16 @@ const Home = () => {
             </div>
 
             {/* Bottom row */}
-            <div className="grid divide-y divide-slate-100 bg-white/60 md:grid-cols-3 md:divide-y-0 md:divide-x">
+            <div className="grid divide-y divide-slate-100 bg-white/60 sm:grid-cols-3 sm:divide-y-0 sm:divide-x">
               {advantageBottomRow.map((item) => (
                 <div
                   key={item.label}
-                  className="flex flex-col items-center justify-center gap-3 px-6 py-8 text-center sm:px-10"
+                  className="flex flex-col items-center justify-center gap-2.5 px-4 py-6 text-center sm:gap-3 sm:px-6 sm:py-8 md:px-10"
                 >
-                  <div className={`flex h-11 w-11 items-center justify-center rounded-2xl ${item.color}/10`}>
-                    {React.createElement(item.icon, { className: `h-6 w-6 ${item.color}` })}
+                  <div className={`flex h-9 w-9 items-center justify-center rounded-2xl ${item.color}/10 sm:h-11 sm:w-11`}>
+                    {React.createElement(item.icon, { className: `h-5 w-5 ${item.color} sm:h-6 sm:w-6` })}
                   </div>
-                  <p className="text-sm font-medium text-slate-900 sm:text-[0.95rem]">
+                  <p className="text-xs font-medium text-slate-900 sm:text-sm md:text-[0.95rem]">
                     {item.label}
                   </p>
                 </div>
@@ -509,56 +508,57 @@ const Home = () => {
       </section>
 
       {/* TOP UNIVERSITIES SECTION */}
-      <section className="bg-[#f5f9ff] py-18 pb-20 pt-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
+      <section id="universities" className="bg-[#f5f9ff] pb-16 pt-12 sm:pb-20 sm:pt-16">
+        <div className="mx-auto max-w-6xl px-3 sm:px-4 md:px-6">
+          <h2 className="text-xl font-semibold text-slate-900 sm:text-2xl md:text-3xl">
             Top Universities to <span className="text-[#C44E28]">Study Abroad</span>
           </h2>
 
           {/* Tabs */}
-          <div className="mt-6 flex flex-wrap items-center gap-6 border-b border-slate-200 pb-2 text-sm sm:text-base">
-            {universityTabs.map((tab) => {
-              const active = tab.id === activeCountry
-              return (
-                <button
-                  key={tab.id}
-                  type="button"
-                  onClick={() => setActiveCountry(tab.id)}
-                  className={`inline-flex items-center gap-2 border-b-2 pb-2 transition ${
-                    active
+          <div className="mt-6 -mx-3 overflow-x-auto px-3 sm:mx-0 sm:px-0">
+            <div className="flex min-w-max items-center gap-4 border-b border-slate-200 pb-2 text-sm sm:min-w-0 sm:flex-wrap sm:gap-6 sm:text-base">
+              {universityTabs.map((tab) => {
+                const active = tab.id === activeCountry
+                return (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    onClick={() => setActiveCountry(tab.id)}
+                    className={`inline-flex flex-shrink-0 items-center gap-1.5 border-b-2 pb-2 transition sm:gap-2 ${active
                       ? 'border-[#C44E28] text-[#C44E28]'
                       : 'border-transparent text-slate-500 hover:text-slate-800'
-                  }`}
-                >
-                  <span className="text-lg">{tab.flag}</span>
-                  <span className="font-medium">{tab.name}</span>
-                </button>
-              )
-            })}
+                      }`}
+                  >
+                    <span className="text-base sm:text-lg">{tab.flag}</span>
+                    <span className="whitespace-nowrap font-medium">{tab.name}</span>
+                  </button>
+                )
+              })}
+            </div>
           </div>
 
           {/* University cards */}
-          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4 xl:grid-cols-3">
             {universitiesByCountry[activeCountry].map((uni) => (
               <div
                 key={uni.name}
-                className="flex items-center gap-4 rounded-2xl bg-white px-5 py-4 shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-0.5 hover:shadow-md"
+                className="flex items-center gap-3 rounded-2xl bg-white px-3 py-3 shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-0.5 hover:shadow-md sm:gap-4 sm:px-5 sm:py-4"
               >
                 {/* Logo placeholder */}
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-slate-50 text-[11px] font-semibold uppercase tracking-tight text-slate-700">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-slate-50 text-[10px] font-semibold uppercase tracking-tight text-slate-700 sm:h-14 sm:w-14 sm:text-[11px]">
                   {uni.short}
                 </div>
 
                 {/* Text */}
-                <div className="flex-1 overflow-hidden">
-                  <p className="truncate text-sm font-semibold text-slate-900 sm:text-[0.95rem]">
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-xs font-semibold text-slate-900 sm:text-sm md:text-[0.95rem]">
                     {uni.name}
                   </p>
-                  <p className="mt-1 text-xs text-slate-500">{uni.location}</p>
+                  <p className="mt-0.5 truncate text-[11px] text-slate-500 sm:mt-1 sm:text-xs">{uni.location}</p>
                 </div>
 
                 {/* Courses badge */}
-                <span className="whitespace-nowrap rounded-full border border-[#2E6C2E]/30 bg-[#2E6C2E]/10 px-3 py-1 text-[11px] font-semibold text-[#2E6C2E]">
+                <span className="flex-shrink-0 whitespace-nowrap rounded-full border border-[#2E6C2E]/30 bg-[#2E6C2E]/10 px-2 py-0.5 text-[10px] font-semibold text-[#2E6C2E] sm:px-3 sm:py-1 sm:text-[11px]">
                   {uni.courses}
                 </span>
               </div>
@@ -568,31 +568,31 @@ const Home = () => {
       </section>
 
       {/* SUCCESS STORIES SECTION */}
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <section id="success-stories" className="bg-white py-12 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-6xl px-3 sm:px-4 md:px-6">
           <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
+              <h2 className="text-xl font-semibold text-slate-900 sm:text-2xl md:text-3xl">
                 45,000+ <span className="text-[#C44E28]">Success Stories</span>
               </h2>
-              <p className="mt-1 text-sm text-slate-500">From Dreamers to Achievers</p>
+              <p className="mt-1 text-xs text-slate-500 sm:text-sm">From Dreamers to Achievers</p>
             </div>
           </div>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4 xl:grid-cols-3">
             {successStories.map((story) => (
               <article
                 key={`${story.name}-${story.to}`}
-                className="flex h-full flex-col justify-between rounded-2xl bg-white px-5 py-5 shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-0.5 hover:shadow-md"
+                className="flex h-full flex-col justify-between rounded-2xl bg-white px-4 py-4 shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-0.5 hover:shadow-md sm:px-5 sm:py-5"
               >
                 <div>
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-sm font-semibold text-slate-700">
+                  <div className="flex items-center gap-2.5 sm:gap-3">
+                    <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-slate-100 text-xs font-semibold text-slate-700 sm:h-10 sm:w-10 sm:text-sm">
                       {story.initials}
                     </div>
-                    <div>
-                      <p className="text-sm font-semibold text-slate-900">{story.name}</p>
-                      <p className="text-xs text-slate-500">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-xs font-semibold text-slate-900 sm:text-sm">{story.name}</p>
+                      <p className="truncate text-[11px] text-slate-500 sm:text-xs">
                         {story.from}
                         <span className="mx-1 text-slate-400">→</span>
                         {story.to}
@@ -600,16 +600,16 @@ const Home = () => {
                     </div>
                   </div>
 
-                  <p className="mt-3 text-xs leading-relaxed text-[#C44E28] sm:text-[0.8rem]">
+                  <p className="mt-2.5 text-[11px] leading-relaxed text-[#C44E28] sm:mt-3 sm:text-xs md:text-[0.8rem]">
                     {story.quote}
                   </p>
                 </div>
 
-                <div className="mt-4 flex items-center justify-between">
-                  <span className="rounded-full bg-[#38662B]/10 px-3 py-1 text-[11px] font-medium text-[#2E6C2E]">
+                <div className="mt-3 flex items-center justify-between gap-2 sm:mt-4">
+                  <span className="flex-shrink-0 rounded-full bg-[#38662B]/10 px-2.5 py-0.5 text-[10px] font-medium text-[#2E6C2E] sm:px-3 sm:py-1 sm:text-[11px]">
                     {story.field}
                   </span>
-                  <span className="truncate text-xs font-semibold text-[#C44E28]">
+                  <span className="truncate text-[11px] font-semibold text-[#C44E28] sm:text-xs">
                     {story.university}
                   </span>
                 </div>
@@ -617,11 +617,11 @@ const Home = () => {
             ))}
           </div>
 
-          <div className="mt-10 flex justify-center">
+          <div className="mt-8 flex justify-center sm:mt-10">
             <button
               type="button"
               onClick={() => navigate('/journey')}
-              className="rounded-lg bg-[#C44E28] px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-[#C44E28]/30 transition hover:-translate-y-0.5 hover:bg-[#D9531E] hover:shadow-xl"
+              className="w-full rounded-lg bg-[#C44E28] px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[#C44E28]/30 transition hover:-translate-y-0.5 hover:bg-[#D9531E] hover:shadow-xl sm:w-auto sm:px-8 sm:py-3"
             >
               Start Your Journey
             </button>
@@ -630,13 +630,13 @@ const Home = () => {
       </section>
 
       {/* STUDY ABROAD INFO SECTION */}
-      <section className="bg-[#f7f2ed] py-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
+      <section className="bg-[#f7f2ed] py-12 sm:py-16">
+        <div className="mx-auto max-w-6xl px-3 sm:px-4 md:px-6">
+          <h2 className="text-xl font-semibold text-slate-900 sm:text-2xl md:text-3xl">
             Study Abroad with <span className="text-[#C44E28]">Supreme Overseas</span>
           </h2>
 
-          <div className="mt-5 max-w-4xl space-y-4 text-sm leading-relaxed text-slate-600 sm:text-[0.95rem]">
+          <div className="mt-4 max-w-4xl space-y-3 text-xs leading-relaxed text-slate-600 sm:mt-5 sm:space-y-4 sm:text-sm md:text-[0.95rem]">
             <p>
               As per government estimates, a little over 9,00,000 Indians were studying abroad in 2022. This grew to
               1.31 million in 2023 and 1.33 million in 2024. As per some estimates, around 1.5 to 2 million Indians will
@@ -648,35 +648,31 @@ const Home = () => {
               USD 70 billion.
             </p>
           </div>
-
-          <button className="mt-5 text-sm font-semibold text-[#2E6C2E] transition hover:text-[#38662B]">
-            Read more …
-          </button>
         </div>
       </section>
 
       {/* FOOTER SECTION */}
-      <footer className="bg-[#2E6C2E] text-white py-12">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <footer id="contact" className="bg-[#2E6C2E] py-10 text-white sm:py-12">
+        <div className="mx-auto max-w-6xl px-3 sm:px-4 md:px-6">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
             {/* Company Info */}
-            <div className="col-span-1 md:col-span-2">
-              <div className="flex items-center mb-4">
-                <img 
-                  src="/Supreme%20Overseas%20-%20Logo%20(1).png" 
-                  alt="Supreme Overseas Logo" 
-                  className="h-12 w-auto"
+            <div className="sm:col-span-2 lg:col-span-2">
+              <div className="mb-3 flex items-center sm:mb-4">
+                <img
+                  src="/Supreme%20Overseas%20-%20Logo%20(1).png"
+                  alt="Supreme Overseas Logo"
+                  className="h-10 w-auto sm:h-12"
                   onError={(e) => {
                     console.error('Error loading footer logo:', e.target.src);
                     e.target.style.display = 'none';
                   }}
                 />
               </div>
-              <p className="text-sm text-green-100 leading-relaxed mb-4">
+              <p className="mb-3 text-xs leading-relaxed text-green-100 sm:mb-4 sm:text-sm">
                 Your trusted partner for studying abroad. We help students achieve their dreams of international education with personalized guidance and comprehensive support.
               </p>
               <div className="flex gap-4">
-                <a href="tel:8069361480" className="text-sm text-green-100 hover:text-white transition">
+                <a href="tel:8069361480" className="text-xs text-green-100 transition hover:text-white sm:text-sm">
                   📞 8069361480
                 </a>
               </div>
@@ -684,33 +680,36 @@ const Home = () => {
 
             {/* Quick Links */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-              <ul className="space-y-2 text-sm text-green-100">
-                <li><a href="#" className="hover:text-white transition">About Us</a></li>
-                <li><a href="#" className="hover:text-white transition">Universities</a></li>
-                <li><a href="#" className="hover:text-white transition">Services</a></li>
-                <li><a href="#" className="hover:text-white transition">Success Stories</a></li>
-                <li><a href="#" className="hover:text-white transition">Contact Us</a></li>
+              <h3 className="mb-3 text-base font-semibold sm:mb-4 sm:text-lg">Quick Links</h3>
+              <ul className="space-y-1.5 text-xs text-green-100 sm:space-y-2 sm:text-sm">
+                <li><a href="#about" className="hover:text-white transition">About Us</a></li>
+                <li><a href="#universities" className="hover:text-white transition">Universities</a></li>
+                <li><a href="#services" className="hover:text-white transition">Services</a></li>
+                <li><a href="#success-stories" className="hover:text-white transition">Success Stories</a></li>
+                <li><a href="#contact" className="hover:text-white transition">Contact Us</a></li>
               </ul>
             </div>
 
             {/* Study Destinations */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Study Destinations</h3>
-              <ul className="space-y-2 text-sm text-green-100">
-                <li><span className="hover:text-white transition cursor-pointer">🇬🇧 United Kingdom</span></li>
-                <li><span className="hover:text-white transition cursor-pointer">🇺🇸 USA</span></li>
-                <li><span className="hover:text-white transition cursor-pointer">🇩🇪 Germany</span></li>
-                <li><span className="hover:text-white transition cursor-pointer">🇨🇦 Canada</span></li>
-                <li><span className="hover:text-white transition cursor-pointer">🇦🇪 Dubai</span></li>
+              <h3 className="mb-3 text-base font-semibold sm:mb-4 sm:text-lg">Study Destinations</h3>
+              <ul className="space-y-1.5 text-xs text-green-100 sm:space-y-2 sm:text-sm">
+                <li><span className="cursor-pointer transition hover:text-white">🇬🇧 United Kingdom</span></li>
+                <li><span className="cursor-pointer transition hover:text-white">🇺🇸 USA</span></li>
+                <li><span className="cursor-pointer transition hover:text-white">🇩🇪 Germany</span></li>
+                <li><span className="cursor-pointer transition hover:text-white">🇨🇦 Canada</span></li>
+                <li><span className="cursor-pointer transition hover:text-white">🇦🇪 Dubai</span></li>
               </ul>
             </div>
           </div>
 
           {/* Bottom Footer */}
-          <div className="mt-8 pt-8 border-t border-green-700/30 text-center">
-            <p className="text-sm text-green-100">
+          <div className="mt-6 border-t border-green-700/30 pt-6 text-center sm:mt-8 sm:pt-8">
+            <p className="text-xs text-green-100 sm:text-sm">
               © 2024 Supreme Overseas. All rights reserved. | Privacy Policy | Terms of Service
+            </p>
+            <p className="mt-2 text-xs text-green-100 sm:text-sm">
+              Designed and Developed by <a href="https://www.vikrin.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-white hover:text-green-200 transition">Vikrin</a>
             </p>
           </div>
         </div>
