@@ -368,9 +368,20 @@ const Home = () => {
             {/* Call button */}
             <a
               href="tel:8069361480"
-              className="inline-flex items-center rounded-full border border-slate-200 bg-white px-2.5 py-1.5 text-[10px] font-medium text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:px-3 sm:py-2 sm:text-xs md:px-4 md:text-sm"
+              className="inline-flex items-center gap-2 rounded-full bg-[#C44E28] px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-[#C44E28]/30 transition hover:-translate-y-0.5 hover:bg-[#D9531E] hover:shadow-xl sm:px-5 sm:py-2.5 sm:text-base"
             >
-              <span className="hidden sm:inline">Call us </span>8069361480
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="h-4 w-4 sm:h-5 sm:w-5" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2"
+              >
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              <span>Call us</span>
+              <span className="font-bold">8069361480</span>
             </a>
           </div>
         </header>
@@ -602,7 +613,7 @@ const Home = () => {
                     </div>
                   </div>
 
-                  <p className="mt-2.5 text-[11px] leading-relaxed text-[#C44E28] sm:mt-3 sm:text-xs md:text-[0.8rem]">
+                  <p className="mt-2.5 text-[11px] leading-relaxed text-[#2E6C2E] sm:mt-3 sm:text-xs md:text-[0.8rem]">
                     {story.quote}
                   </p>
                 </div>
@@ -706,12 +717,10 @@ const Home = () => {
           </div>
 
           {/* Bottom Footer */}
-          <div className="mt-6 border-t border-green-700/30 pt-6 text-center sm:mt-8 sm:pt-8">
+          <div className="mt-6 text-center sm:mt-8">
+            <div className="mx-auto max-w-xs border-t border-green-700/30 pt-6 sm:max-w-sm"></div>
             <p className="text-xs text-green-100 sm:text-sm">
-              © 2024 Supreme Overseas. All rights reserved. | Privacy Policy | Terms of Service
-            </p>
-            <p className="mt-2 text-xs text-green-100 sm:text-sm">
-              Designed and Developed by <a href="https://www.vikrin.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-white hover:text-green-200 transition">Vikrin</a>
+              © 2024 Supreme Overseas. All rights reserved. | Designed and Developed by <a href="https://www.vikrin.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-white hover:text-green-200 transition">Vikrin</a> | Privacy Policy | Terms of Service
             </p>
           </div>
         </div>
