@@ -165,14 +165,17 @@ const JourneyWizard = () => {
       <header className="border-b border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-5xl px-4 py-4 sm:px-6">
           <div className="flex items-center justify-center">
-            <div className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-tr from-sky-400 to-blue-600 text-xs font-bold tracking-tight text-white">
-                LE
-              </div>
-              <div className="leading-tight">
-                <div className="text-base font-bold lowercase text-slate-900">leverage</div>
-                <div className="text-xs font-semibold lowercase text-blue-600">edu</div>
-              </div>
+            {/* Logo image */}
+            <div className="flex items-center">
+              <img
+                src="/Supreme%20Overseas%20-%20Logo%20(1).png"
+                alt="Supreme Overseas Logo"
+                className="h-12 w-auto"
+                onError={(e) => {
+                  console.error('Error loading logo:', e.target.src)
+                  e.target.style.display = 'none'
+                }}
+              />
             </div>
           </div>
 
@@ -180,9 +183,9 @@ const JourneyWizard = () => {
             Take the First Step to Study Abroad
           </p>
 
-          <div className="mt-4 h-0.5 w-full bg-blue-100">
+          <div className="mt-4 h-0.5 w-full bg-[#f7f2ed]">
             <div
-              className="h-full bg-blue-500 transition-all"
+              className="h-full bg-[#C44E28] transition-all"
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -193,7 +196,7 @@ const JourneyWizard = () => {
         <button
           type="button"
           onClick={handleBack}
-          className="mb-8 inline-flex items-center gap-1 text-xs font-medium text-blue-600 hover:text-blue-700"
+          className="mb-8 inline-flex items-center gap-1 text-xs font-medium text-[#2E6C2E] hover:text-[#38662B]"
         >
           <span className="text-base">‹</span>
           <span>Back</span>
@@ -210,7 +213,7 @@ const JourneyWizard = () => {
                   key={option}
                   type="button"
                   onClick={() => handleSelect('degree', option)}
-                  className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-500 hover:text-blue-600 hover:shadow-md"
+                  className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#D9531E] hover:text-[#D9531E] hover:shadow-md"
                 >
                   {option}
                 </button>
@@ -230,7 +233,7 @@ const JourneyWizard = () => {
                   key={opt.value}
                   type="button"
                   onClick={() => handleSelect('destination', opt.value)}
-                  className="flex flex-col items-center rounded-xl border border-slate-200 bg-white px-4 py-4 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-500 hover:text-blue-600 hover:shadow-md"
+                  className="flex flex-col items-center rounded-xl border border-slate-200 bg-white px-4 py-4 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#D9531E] hover:text-[#D9531E] hover:shadow-md"
                 >
                   <span className="mb-2 text-2xl">{opt.flag}</span>
                   <span>{opt.label}</span>
@@ -251,10 +254,10 @@ const JourneyWizard = () => {
                   key={opt.value}
                   type="button"
                   onClick={() => handleSelect('intake', opt.value)}
-                  className="relative rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-500 hover:text-blue-600 hover:shadow-md"
+                  className="relative rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#D9531E] hover:text-[#D9531E] hover:shadow-md"
                 >
                   {opt.tag && (
-                    <span className="absolute -top-2 left-1/2 -translate-x-1/2 rounded-full bg-emerald-500 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
+                    <span className="absolute -top-2 left-1/2 -translate-x-1/2 rounded-full bg-[#38662B] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
                       {opt.tag}
                     </span>
                   )}
@@ -276,7 +279,7 @@ const JourneyWizard = () => {
                   key={option}
                   type="button"
                   onClick={() => handleSelect('educationLevel', option)}
-                  className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-500 hover:text-blue-600 hover:shadow-md"
+                  className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#2E6C2E] hover:text-[#2E6C2E] hover:shadow-md"
                 >
                   {option}
                 </button>
@@ -296,7 +299,7 @@ const JourneyWizard = () => {
                   key={option}
                   type="button"
                   onClick={() => handleSelect('englishExam', option)}
-                  className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-500 hover:text-blue-600 hover:shadow-md"
+                  className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#2E6C2E] hover:text-[#2E6C2E] hover:shadow-md"
                 >
                   {option}
                 </button>
@@ -316,7 +319,7 @@ const JourneyWizard = () => {
                   key={option}
                   type="button"
                   onClick={() => handleSelect('passportStatus', option)}
-                  className="rounded-xl border border-slate-200 bg-white px-8 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-500 hover:text-blue-600 hover:shadow-md"
+                  className="rounded-xl border border-slate-200 bg-white px-8 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#D9531E] hover:text-[#D9531E] hover:shadow-md"
                 >
                   {option}
                 </button>
@@ -336,7 +339,7 @@ const JourneyWizard = () => {
                   key={option}
                   type="button"
                   onClick={() => handleSelect('budgetRange', option)}
-                  className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-500 hover:text-blue-600 hover:shadow-md"
+                  className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-[#2E6C2E] hover:text-[#2E6C2E] hover:shadow-md"
                 >
                   {option}
                 </button>
@@ -359,7 +362,7 @@ const JourneyWizard = () => {
                   value={answers.fullName}
                   onChange={(e) => handleInputChange('fullName', e.target.value)}
                   placeholder="Enter Full Name"
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 outline-none ring-blue-500 focus:border-blue-400 focus:ring-1"
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 outline-none ring-[#C44E28] focus:border-[#C44E28] focus:ring-1"
                 />
               </div>
 
@@ -371,13 +374,13 @@ const JourneyWizard = () => {
                   value={answers.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
                   placeholder="Enter Email Address"
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 outline-none ring-blue-500 focus:border-blue-400 focus:ring-1"
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 outline-none ring-[#2E6C2E] focus:border-[#2E6C2E] focus:ring-1"
                 />
               </div>
 
               <div>
                 <label className="mb-1 block text-xs font-medium text-slate-500">Mobile number*</label>
-                <div className="flex rounded-lg border border-slate-200 bg-white text-sm text-slate-800 focus-within:border-blue-400 focus-within:ring-1 focus-within:ring-blue-500">
+                <div className="flex rounded-lg border border-slate-200 bg-white text-sm text-slate-800 focus-within:border-[#C44E28] focus-within:ring-1 focus-within:ring-[#C44E28]">
                   <span className="flex items-center gap-1 border-r border-slate-200 px-3 text-xs text-slate-500">
                     🇮🇳 +91
                   </span>
@@ -397,7 +400,7 @@ const JourneyWizard = () => {
                 <select
                   value={answers.state}
                   onChange={(e) => handleInputChange('state', e.target.value)}
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 outline-none ring-blue-500 focus:border-blue-400 focus:ring-1"
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 outline-none ring-[#2E6C2E] focus:border-[#2E6C2E] focus:ring-1"
                 >
                   <option value="">Select State</option>
                   {stateOptions.map((state) => (
@@ -413,7 +416,7 @@ const JourneyWizard = () => {
                 <select
                   value={answers.city}
                   onChange={(e) => handleInputChange('city', e.target.value)}
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 outline-none ring-blue-500 focus:border-blue-400 focus:ring-1"
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 outline-none ring-[#2E6C2E] focus:border-[#2E6C2E] focus:ring-1"
                 >
                   <option value="">Select City</option>
                   {cityOptions.map((city) => (
@@ -426,7 +429,7 @@ const JourneyWizard = () => {
 
               <button
                 type="submit"
-                className="mt-4 w-full rounded-lg bg-blue-500 px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-blue-600"
+                className="mt-4 w-full rounded-lg bg-[#C44E28] px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-[#D9531E]"
               >
                 Submit
               </button>

@@ -1,57 +1,79 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import {
+  GraduationCap,
+  Star,
+  Award,
+  TrendingUp,
+  Search,
+  User,
+  FileText,
+  Landmark,
+  CreditCard,
+  Home as HomeIcon,
+} from 'lucide-react'
 
 const Home = () => {
   const whyItems = [
     {
-      label: '850+ University Partners',
+      label: 'University Partners',
       description: 'Global universities you can trust',
-      icon: '🤝',
+      icon: GraduationCap,
+      color: 'text-[#2E6C2E]',
     },
     {
-      label: '45,000+ Success Stories',
+      label: 'Success Stories',
       description: 'Students placed across top destinations',
-      icon: '🎓',
+      icon: Star,
+      color: 'text-[#D9531E]',
     },
     {
-      label: 'Scholarship up to 50%*',
+      label: 'Scholarship',
       description: 'Merit-based & need-based scholarships',
-      icon: '💰',
+      icon: Award,
+      color: 'text-[#2E6C2E]',
     },
     {
-      label: 'Courses starting at ₹8 Lakhs*',
-      description: 'Curated programs to fit your budget',
-      icon: '📚',
+      label: 'Course Pricing',
+      description: 'Transparent and competitive pricing',
+      icon: TrendingUp,
+      color: 'text-[#D9531E]',
     },
   ]
 
   const advantageTopRow = [
     {
       label: "Finding the Program That's Right for You",
-      icon: '🔎',
+      icon: Search,
+      color: 'text-[#2E6C2E]',
     },
     {
       label: 'Curated Expert-led Application Assistance',
-      icon: '👤',
+      icon: User,
+      color: 'text-[#38662B]',
     },
     {
       label: 'English Assessment Test Prep On-the-go',
-      icon: '📝',
+      icon: FileText,
+      color: 'text-[#D9531E]',
     },
   ]
 
   const advantageBottomRow = [
     {
       label: 'VISA Interview Assistance',
-      icon: '🛂',
+      icon: Landmark,
+      color: 'text-[#2E6C2E]',
     },
     {
       label: 'Loan Assistance',
-      icon: '💳',
+      icon: CreditCard,
+      color: 'text-[#D9531E]',
     },
     {
       label: 'Making Sure You Stay Right, And Stay Well',
-      icon: '🏠',
+      icon: HomeIcon,
+      color: 'text-[#38662B]',
     },
   ]
 
@@ -326,28 +348,23 @@ const Home = () => {
   return (
     <main className="relative min-h-screen bg-slate-50">
       {/* HERO SECTION */}
-      <section className="relative overflow-hidden pb-24">
-        {/* White gradient overlay */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white via-white/90 to-white/10" />
-
+      <section className="relative overflow-hidden bg-white">
         {/* Top bar */}
         <header className="relative z-20">
-          <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 sm:py-5">
+          <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
             {/* Logo */}
-            <div className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-tr from-sky-400 to-blue-600 text-xs font-bold tracking-tight text-white">
-                LE
-              </div>
-              <div className="leading-tight">
-                <div className="text-base font-bold lowercase text-slate-900">
-                  leverage
-                </div>
-                <div className="text-xs font-semibold lowercase text-blue-600">
-                  edu
-                </div>
-              </div>
+            <div className="flex items-center">
+              <img 
+                src="/Supreme%20Overseas%20-%20Logo%20(1).png" 
+                alt="Supreme Overseas Logo" 
+                className="h-20 w-auto sm:h-24"
+                onError={(e) => {
+                  console.error('Error loading logo:', e.target.src);
+                  e.target.style.display = 'none';
+                }}
+              />
             </div>
-
+            
             {/* Call button */}
             <a
               href="tel:8069361480"
@@ -357,63 +374,76 @@ const Home = () => {
             </a>
           </div>
         </header>
-
+        
         {/* Hero content */}
-        <div className="relative z-20 mx-auto max-w-5xl px-4 pb-10 pt-6 text-center sm:px-6 sm:pt-10">
-          <h1 className="text-2xl font-bold leading-snug text-slate-900 sm:text-3xl md:text-[2.4rem] md:leading-snug">
-            Take the First Step to{' '}
-            <span className="whitespace-nowrap text-blue-600">STUDY ABROAD</span>
-          </h1>
-
-          {/* Benefits row */}
-          <ul className="mt-5 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs text-slate-600 sm:text-sm">
-            <li className="inline-flex items-center gap-2">
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-50 text-[11px] font-bold text-emerald-500">
-                ✓
-              </span>
-              <span>Courses starting from ₹8 Lakhs*</span>
-            </li>
-            <li className="inline-flex items-center gap-2">
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-50 text-[11px] font-bold text-emerald-500">
-                ✓
-              </span>
-              <span>Scholarship worth ₹10,00,000*</span>
-            </li>
-            <li className="inline-flex items-center gap-2">
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-50 text-[11px] font-bold text-emerald-500">
-                ✓
-              </span>
-              <span>Offer letter in less than 48 hours*</span>
-            </li>
-          </ul>
-
-          {/* CTA button */}
-          <div className="mt-7">
-            <button
-              type="button"
-              onClick={() => navigate('/journey')}
-              className="rounded-lg bg-blue-600 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/30 transition hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-xl"
-            >
-              Start Your Journey
-            </button>
+        <div className="relative z-20 mx-auto max-w-5xl px-4 py-8 sm:px-6 sm:py-12">
+          <div className="flex flex-col items-center lg:flex-row lg:items-center lg:justify-between">
+            {/* Text content */}
+            <div className="text-center lg:w-1/2 lg:text-left">
+              <h1 className="text-3xl font-bold leading-tight text-[#2E6C2E] sm:text-4xl md:text-5xl">
+                Take the First Step to{' '}
+                <span className="text-[#C44E28]">STUDY ABROAD</span>
+              </h1>
+              
+              {/* Benefits row */}
+              <ul className="mt-6 space-y-3 text-sm text-[#38662B] sm:text-base">
+                <li className="flex items-center gap-2">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#38662B]/10 text-[11px] font-bold text-[#2E6C2E]">
+                    ✓
+                  </span>
+                  <span>Courses starting from ₹8 Lakhs*</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#38662B]/10 text-[11px] font-bold text-[#2E6C2E]">
+                    ✓
+                  </span>
+                  <span>Scholarship worth ₹10,00,000*</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#38662B]/10 text-[11px] font-bold text-[#2E6C2E]">
+                    ✓
+                  </span>
+                  <span>Offer letter in less than 48 hours*</span>
+                </li>
+              </ul>
+              
+              {/* CTA button */}
+              <div className="mt-8">
+                <button
+                  type="button"
+                  onClick={() => navigate('/journey')}
+                  className="rounded-lg bg-[#C44E28] px-8 py-4 text-base font-semibold text-white shadow-lg shadow-[#C44E28]/30 transition hover:-translate-y-0.5 hover:bg-[#D9531E] hover:shadow-xl"
+                >
+                  Start Your Journey
+                </button>
+              </div>
+            </div>
+            
+            {/* Image content - Right Side */}
+            <div className="mt-10 lg:mt-0 lg:w-1/2 lg:pl-10">
+              <div className="relative h-80 w-full overflow-hidden rounded-2xl bg-gray-100 shadow-xl sm:h-96 lg:h-[400px]">
+                <img
+                  src="/hero.jpg"
+                  alt="Students studying abroad"
+                  className="h-full w-full object-cover"
+                  onError={(e) => {
+                    console.error('Error loading image:', e.target.src);
+                    e.target.style.display = 'none';
+                    e.target.parentElement.style.background = '#f3f4f6';
+                  }}
+                />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-[#2E6C2E]/20 to-transparent"></div>
+              </div>
+            </div>
           </div>
         </div>
-
-        {/* Background campus image */}
-        <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-[260px] bg-cover bg-bottom sm:h-[320px] lg:h-[420px]"
-          style={{
-            backgroundImage:
-              "url('https://images.pexels.com/photos/207691/pexels-photo-207691.jpeg')",
-          }}
-        />
       </section>
 
       {/* WHY CHOOSE SECTION */}
-      <section className="bg-[#f5f9ff] py-16">
+      <section className="bg-[#f8f9fa] py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="text-center text-2xl font-semibold text-slate-900 sm:text-3xl">
-            Why Choose <span className="text-blue-600">Leverage Edu?</span>
+            Why Choose <span className="text-[#C44E28]">Supreme Overseas?</span>
           </h2>
 
           <div className="mt-10 grid gap-4 md:grid-cols-4">
@@ -422,8 +452,8 @@ const Home = () => {
                 key={item.label}
                 className="flex flex-col items-center justify-center gap-3 rounded-2xl bg-white px-6 py-8 text-center shadow-sm ring-1 ring-slate-100/80 transition hover:-translate-y-1 hover:shadow-md"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-2xl">
-                  <span>{item.icon}</span>
+                <div className={`flex h-12 w-12 items-center justify-center rounded-2xl ${item.color}/10`}>
+                  {React.createElement(item.icon, { className: `h-6 w-6 ${item.color}`, strokeWidth: 1.5 })}
                 </div>
                 <p className="text-sm font-semibold text-slate-900">{item.label}</p>
                 <p className="text-xs text-slate-500">{item.description}</p>
@@ -437,7 +467,7 @@ const Home = () => {
       <section className="bg-white py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="text-center text-2xl font-semibold text-slate-900 sm:text-3xl">
-            Leverage Edu <span className="text-blue-600">Advantage</span>
+            Supreme Overseas <span className="text-[#C44E28]">Advantage</span>
           </h2>
 
           <div className="mt-10 overflow-hidden rounded-3xl border border-slate-100 bg-sky-50/40 shadow-sm">
@@ -448,8 +478,8 @@ const Home = () => {
                   key={item.label}
                   className="flex flex-col items-center justify-center gap-3 px-6 py-8 text-center sm:px-10"
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-50 text-xl">
-                    <span>{item.icon}</span>
+                  <div className={`flex h-11 w-11 items-center justify-center rounded-2xl ${item.color}/10`}>
+                    {React.createElement(item.icon, { className: `h-6 w-6 ${item.color}`, strokeWidth: 1.5 })}
                   </div>
                   <p className="text-sm font-medium text-slate-900 sm:text-[0.95rem]">
                     {item.label}
@@ -465,8 +495,8 @@ const Home = () => {
                   key={item.label}
                   className="flex flex-col items-center justify-center gap-3 px-6 py-8 text-center sm:px-10"
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-50 text-xl">
-                    <span>{item.icon}</span>
+                  <div className={`flex h-11 w-11 items-center justify-center rounded-2xl ${item.color}/10`}>
+                    {React.createElement(item.icon, { className: `h-6 w-6 ${item.color}` })}
                   </div>
                   <p className="text-sm font-medium text-slate-900 sm:text-[0.95rem]">
                     {item.label}
@@ -482,7 +512,7 @@ const Home = () => {
       <section className="bg-[#f5f9ff] py-18 pb-20 pt-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
-            Top Universities to <span className="text-blue-600">Study Abroad</span>
+            Top Universities to <span className="text-[#C44E28]">Study Abroad</span>
           </h2>
 
           {/* Tabs */}
@@ -496,7 +526,7 @@ const Home = () => {
                   onClick={() => setActiveCountry(tab.id)}
                   className={`inline-flex items-center gap-2 border-b-2 pb-2 transition ${
                     active
-                      ? 'border-blue-600 text-blue-600'
+                      ? 'border-[#C44E28] text-[#C44E28]'
                       : 'border-transparent text-slate-500 hover:text-slate-800'
                   }`}
                 >
@@ -528,7 +558,7 @@ const Home = () => {
                 </div>
 
                 {/* Courses badge */}
-                <span className="whitespace-nowrap rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-[11px] font-semibold text-amber-700">
+                <span className="whitespace-nowrap rounded-full border border-[#2E6C2E]/30 bg-[#2E6C2E]/10 px-3 py-1 text-[11px] font-semibold text-[#2E6C2E]">
                   {uni.courses}
                 </span>
               </div>
@@ -543,7 +573,7 @@ const Home = () => {
           <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
-                45,000+ <span className="text-blue-600">Success Stories</span>
+                45,000+ <span className="text-[#C44E28]">Success Stories</span>
               </h2>
               <p className="mt-1 text-sm text-slate-500">From Dreamers to Achievers</p>
             </div>
@@ -570,16 +600,16 @@ const Home = () => {
                     </div>
                   </div>
 
-                  <p className="mt-3 text-xs leading-relaxed text-slate-600 sm:text-[0.8rem]">
+                  <p className="mt-3 text-xs leading-relaxed text-[#C44E28] sm:text-[0.8rem]">
                     {story.quote}
                   </p>
                 </div>
 
                 <div className="mt-4 flex items-center justify-between">
-                  <span className="rounded-full bg-sky-50 px-3 py-1 text-[11px] font-medium text-sky-700">
+                  <span className="rounded-full bg-[#38662B]/10 px-3 py-1 text-[11px] font-medium text-[#2E6C2E]">
                     {story.field}
                   </span>
-                  <span className="truncate text-xs font-semibold text-slate-500">
+                  <span className="truncate text-xs font-semibold text-[#C44E28]">
                     {story.university}
                   </span>
                 </div>
@@ -591,7 +621,7 @@ const Home = () => {
             <button
               type="button"
               onClick={() => navigate('/journey')}
-              className="rounded-lg bg-blue-600 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/30 transition hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-xl"
+              className="rounded-lg bg-[#C44E28] px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-[#C44E28]/30 transition hover:-translate-y-0.5 hover:bg-[#D9531E] hover:shadow-xl"
             >
               Start Your Journey
             </button>
@@ -600,10 +630,10 @@ const Home = () => {
       </section>
 
       {/* STUDY ABROAD INFO SECTION */}
-      <section className="bg-[#f5f9ff] py-16">
+      <section className="bg-[#f7f2ed] py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
-            Study Abroad with <span className="text-blue-600">Leverage Edu</span>
+            Study Abroad with <span className="text-[#C44E28]">Supreme Overseas</span>
           </h2>
 
           <div className="mt-5 max-w-4xl space-y-4 text-sm leading-relaxed text-slate-600 sm:text-[0.95rem]">
@@ -619,11 +649,72 @@ const Home = () => {
             </p>
           </div>
 
-          <button className="mt-5 text-sm font-semibold text-blue-600 hover:text-blue-700">
+          <button className="mt-5 text-sm font-semibold text-[#2E6C2E] transition hover:text-[#38662B]">
             Read more …
           </button>
         </div>
       </section>
+
+      {/* FOOTER SECTION */}
+      <footer className="bg-[#2E6C2E] text-white py-12">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Company Info */}
+            <div className="col-span-1 md:col-span-2">
+              <div className="flex items-center mb-4">
+                <img 
+                  src="/Supreme%20Overseas%20-%20Logo%20(1).png" 
+                  alt="Supreme Overseas Logo" 
+                  className="h-12 w-auto"
+                  onError={(e) => {
+                    console.error('Error loading footer logo:', e.target.src);
+                    e.target.style.display = 'none';
+                  }}
+                />
+              </div>
+              <p className="text-sm text-green-100 leading-relaxed mb-4">
+                Your trusted partner for studying abroad. We help students achieve their dreams of international education with personalized guidance and comprehensive support.
+              </p>
+              <div className="flex gap-4">
+                <a href="tel:8069361480" className="text-sm text-green-100 hover:text-white transition">
+                  📞 8069361480
+                </a>
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+              <ul className="space-y-2 text-sm text-green-100">
+                <li><a href="#" className="hover:text-white transition">About Us</a></li>
+                <li><a href="#" className="hover:text-white transition">Universities</a></li>
+                <li><a href="#" className="hover:text-white transition">Services</a></li>
+                <li><a href="#" className="hover:text-white transition">Success Stories</a></li>
+                <li><a href="#" className="hover:text-white transition">Contact Us</a></li>
+              </ul>
+            </div>
+
+            {/* Study Destinations */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Study Destinations</h3>
+              <ul className="space-y-2 text-sm text-green-100">
+                <li><span className="hover:text-white transition cursor-pointer">🇬🇧 United Kingdom</span></li>
+                <li><span className="hover:text-white transition cursor-pointer">🇺🇸 USA</span></li>
+                <li><span className="hover:text-white transition cursor-pointer">🇩🇪 Germany</span></li>
+                <li><span className="hover:text-white transition cursor-pointer">🇨🇦 Canada</span></li>
+                <li><span className="hover:text-white transition cursor-pointer">🇦🇪 Dubai</span></li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom Footer */}
+          <div className="mt-8 pt-8 border-t border-green-700/30 text-center">
+            <p className="text-sm text-green-100">
+              © 2024 Supreme Overseas. All rights reserved. | Privacy Policy | Terms of Service
+            </p>
+          </div>
+        </div>
+      </footer>
     </main>
   )
 }
