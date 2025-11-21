@@ -699,7 +699,7 @@ const Home = () => {
                 <li><a href="#universities" className="hover:text-white transition">Universities</a></li>
                 <li><a href="#services" className="hover:text-white transition">Services</a></li>
                 <li><a href="#success-stories" className="hover:text-white transition">Success Stories</a></li>
-                <li><a href="#contact" className="hover:text-white transition">📞 Contact Us</a></li>
+               
               </ul>
             </div>
 
