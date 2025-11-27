@@ -1,79 +1,145 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
-  GraduationCap,
-  Star,
-  Award,
-  TrendingUp,
-  Search,
-  User,
-  FileText,
-  Landmark,
-  CreditCard,
-  Home as HomeIcon,
-} from 'lucide-react'
+  BookOpenIcon,
+  AcademicCapIcon,
+  CurrencyDollarIcon,
+  DocumentTextIcon,
+  UserGroupIcon,
+  GlobeAltIcon,
+  ChatBubbleLeftRightIcon,
+  BuildingLibraryIcon
+} from '@heroicons/react/24/outline'
 
 const Home = () => {
+  const [activeCountry, setActiveCountry] = useState('uk')
+  const [currentStory, setCurrentStory] = useState(0)
+  const [expandedStory, setExpandedStory] = useState(null)
+
+  const successStories = [
+    {
+      name: 'Arigela Bala Pawan',
+      initials: 'AB',
+      from: 'Andhra Pradesh',
+      to: 'UK',
+      quote:
+        'My mentor made shortlisting, applications, and visas a breeze. I had support at every step of the way.',
+      field: 'MSc Computer Science',
+      university: 'Ravensbourne University London',
+      loan: '₹40 Lakhs'
+    },
+    {
+      name: 'Bellamkonda Vamsi Krishna',
+      initials: 'BV',
+      from: 'Andhra Pradesh',
+      to: 'USA',
+      quote:
+        'Extremely satisfied with my college application process. Clear guidance and a truly student-first approach.',
+      field: 'MS in Civil Engineering',
+      university: 'Bradley University',
+      loan: '₹45 Lakhs'
+    },
+    {
+      name: 'Karicheti Lavanya',
+      initials: 'KL',
+      from: 'Andhra Pradesh',
+      to: 'USA',
+      quote:
+        'My name is Karicheti Lavanya, and securing my USA student visa has been one of the most significant milestones in my academic journey. While I was in the final semester of my Bachelor of Technology in Electronics and Communication Engineering at Malineni Lakshmaiah Women\'s Engineering College, Guntur, Andhra Pradesh. I began my study abroad journey with Supreme Overseas, recommended by my friend Vamsi Krishna Reddy. This became the turning point that shaped my path to studying in the United States. Under the guidance of Chairman Sravan Kumar Sir, I received personalized TOEFL training, precise visa documentation support, and professional preparation for my visa interview. His mentorship, dedication, and encouragement helped me confidently secure admission and my MS in Electrical and Computer Engineering at Wichita State University. I am deeply grateful to Supreme Overseas and Sravan Kumar Sir for their unwavering support in making my dream of studying in the United States a reality.',
+      shortQuote:
+        'Secured USA student visa and MS in Electrical and Computer Engineering at Wichita State University with personalized TOEFL training and visa documentation support.',
+      field: 'MS in Electrical and Computer Engineering',
+      university: 'Wichita State University',
+      loan: ''
+    },
+    {
+      name: 'Peruboina Navya',
+      initials: 'PN',
+      from: 'Andhra Pradesh',
+      to: 'USA',
+      quote:
+        'My journey toward securing a U.S. student visa was not easy. During my first attempt, my visa was unfortunately rejected due to incorrect documentation prepared by a fraudulent study-abroad consultancy in Guntur, Andhra Pradesh. This was an extremely challenging phase for me, as the mistake was beyond my control. At that crucial time, my friend Praneeth recommended Supreme Overseas and introduced me to Chairman Sravan Kumar Sir for my second visa attempt. This recommendation changed everything for me. Under Sravan Kumar Sir\'s guidance, I received exceptional support and professional training. He personally prepared my visa documentation with utmost accuracy, ensured that I was fully confident for my visa interview, and guided me through every step of the process. His dedication and expertise helped me secure my USA student visa approval on my second attempt. What truly stood out was the level of care and support beyond consultancy services. He arranged food and accommodation for me, ensured airport pickup and drop in the USA, and helped me settle into my new flat comfortably. This kind of personal support is something I had never experienced from any consultancy before. I am deeply grateful to Supreme Overseas and Sravan Kumar Sir for playing a crucial role in making my dream of studying in the United States a reality.',
+      shortQuote:
+        'Overcame visa rejection and secured USA student visa approval on second attempt with exceptional support and professional training.',
+      field: 'MS in Public Health',
+      university: 'University of New Haven',
+      loan: ''
+    },
+    {
+      name: 'Muthineni Giridhar Babu',
+      initials: 'MG',
+      from: 'Andhra Pradesh',
+      to: 'USA',
+      quote:
+        'My name is Muthineni Giridhar Babu, and pursuing my MS in Cyber Security at Sacred Heart University has been a long-standing dream. After completing my Bachelor of Technoloy in 2013, I worked as a software engineer in Bengaluru, and my goal has always been to advance my career while settling in the USA with my family. At the age of 33, being married with a son, I initially thought that obtaining a U.S. student visa would be extremely challenging. I carefully searched for the best study abroad consultancy to guide me through this process. My cousin Venkatesh Chowdary recommended Supreme Overseas and introduced me to Chairman Sravan Kumar. From the very beginning, Sravan Kumar Sir took personal care of my application, guiding me at every step. He and his brother Prasanth (USA) conducted multiple mock interviews to ensure I was fully prepared for the visa process. Their professional guidance, encouragement, and attention to detail made a significant difference. Thanks to their unwavering support, my dream has become a reality—my USA student visa was successfully approved, and I am now ready to begin my Master\'s in Cyber Security at Sacred Heart University.',
+      shortQuote:
+        'At age 33, successfully obtained USA student visa for MS in Cyber Security at Sacred Heart University with personal care and mock interviews.',
+      field: 'MS in Cyber Security',
+      university: 'Sacred Heart University',
+      loan: ''
+    },
+  ]
+
   const whyItems = [
     {
-      value: '850+',
-      label: 'University Partners',
-      icon: GraduationCap,
-      color: 'text-[#2E6C2E]',
+      icon: BookOpenIcon,
+      label: '1000+ Courses',
+      value: '1000+',
+      color: 'text-blue-600',
     },
     {
-      value: '45,000+',
-      label: 'Success Stories',
-      icon: Star,
-      color: 'text-[#D9531E]',
+      icon: UserGroupIcon,
+      label: '45000+ Students',
+      value: '45K+',
+      color: 'text-green-600',
     },
     {
-      value: 'up to 50%*',
-      label: 'Scholarship',
-      icon: Award,
-      color: 'text-[#2E6C2E]',
+      icon: CurrencyDollarIcon,
+      label: '₹10 Lakhs Scholarships',
+      value: '₹10L',
+      color: 'text-amber-600',
     },
     {
-      value: '₹8 Lakhs*',
-      label: 'Courses starting at',
-      icon: TrendingUp,
-      color: 'text-[#D9531E]',
+      icon: AcademicCapIcon,
+      label: '98% Visa Success',
+      value: '98%',
+      color: 'text-purple-600',
     },
   ]
 
   const advantageTopRow = [
     {
-      label: "Finding the Program That's Right for You",
-      icon: Search,
-      color: 'text-[#2E6C2E]',
+      icon: DocumentTextIcon,
+      label: 'Application Assistance',
+      color: 'text-blue-600',
     },
     {
-      label: 'Curated Expert-led Application Assistance',
-      icon: User,
-      color: 'text-[#38662B]',
+      icon: ChatBubbleLeftRightIcon,
+      label: 'Visa Guidance',
+      color: 'text-green-600',
     },
     {
-      label: 'English Assessment Test Prep On-the-go',
-      icon: FileText,
-      color: 'text-[#D9531E]',
+      icon: CurrencyDollarIcon,
+      label: 'Education Loan',
+      color: 'text-amber-600',
     },
   ]
 
   const advantageBottomRow = [
     {
-      label: 'VISA Interview Assistance',
-      icon: Landmark,
-      color: 'text-[#2E6C2E]',
+      icon: BuildingLibraryIcon,
+      label: 'University Selection',
+      color: 'text-purple-600',
     },
     {
-      label: 'Loan Assistance',
-      icon: CreditCard,
-      color: 'text-[#D9531E]',
+      icon: GlobeAltIcon,
+      label: 'Pre-Departure Briefing',
+      color: 'text-red-600',
     },
     {
-      label: 'Making Sure You Stay Right, And Stay Well',
-      icon: HomeIcon,
-      color: 'text-[#38662B]',
+      icon: UserGroupIcon,
+      label: 'Career Counseling',
+      color: 'text-indigo-600',
     },
   ]
 
@@ -89,153 +155,153 @@ const Home = () => {
     uk: [
       {
         name: 'University of Birmingham',
-        location: 'Birmingham, United Kingdom',
-        courses: '497+ Courses',
+        location: 'Birmingham, UK',
+        courses: '95+ Courses',
         short: 'UoB',
       },
       {
         name: 'Queen Mary University of London',
-        location: 'London, United Kingdom',
-        courses: '519+ Courses',
+        location: 'London, UK',
+        courses: '78+ Courses',
         short: 'QMUL',
       },
       {
-        name: 'University of Essex',
-        location: 'Colchester, United Kingdom',
-        courses: '450+ Courses',
-        short: 'UE',
+        name: 'University of Leeds',
+        location: 'Leeds, UK',
+        courses: '64+ Courses',
+        short: 'UoL',
+      },
+      {
+        name: 'University of Southampton',
+        location: 'Southampton, UK',
+        courses: '52+ Courses',
+        short: 'UoS',
+      },
+      {
+        name: 'University of Strathclyde',
+        location: 'Glasgow, UK',
+        courses: '48+ Courses',
+        short: 'UoS',
       },
       {
         name: 'Coventry University',
-        location: 'Coventry, United Kingdom',
-        courses: '503+ Courses',
+        location: 'Coventry, UK',
+        courses: '36+ Courses',
         short: 'CU',
-      },
-      {
-        name: 'Nottingham Trent University',
-        location: 'Nottingham, United Kingdom',
-        courses: '335+ Courses',
-        short: 'NTU',
-      },
-      {
-        name: 'University of East London',
-        location: 'London, United Kingdom',
-        courses: '373+ Courses',
-        short: 'UEL',
       },
     ],
     usa: [
       {
-        name: 'Adelphi University',
-        location: 'Garden City, United States',
-        courses: '214+ Courses',
-        short: 'AU',
+        name: 'University of Illinois',
+        location: 'Urbana-Champaign, USA',
+        courses: '89+ Courses',
+        short: 'UIUC',
       },
       {
-        name: 'Western New England University',
-        location: 'Springfield, United States',
-        courses: '64+ Courses',
-        short: 'WNE',
+        name: 'Central Michigan University',
+        location: 'Mount Pleasant, USA',
+        courses: '42+ Courses',
+        short: 'CMU',
       },
       {
-        name: 'University of the Pacific',
-        location: 'Stockton, United States',
-        courses: '194+ Courses',
-        short: 'UoP',
+        name: 'University of New Haven',
+        location: 'West Haven, USA',
+        courses: '38+ Courses',
+        short: 'UNH',
       },
       {
-        name: 'Cleveland State University',
-        location: 'Cleveland, United States',
-        courses: '230+ Courses',
-        short: 'CSU',
+        name: 'Wichita State University',
+        location: 'Wichita, USA',
+        courses: '29+ Courses',
+        short: 'WSU',
       },
       {
-        name: 'University of Dayton',
-        location: 'Dayton, United States',
-        courses: '359+ Courses',
-        short: 'UD',
+        name: 'Bradley University',
+        location: 'Peoria, USA',
+        courses: '22+ Courses',
+        short: 'BU',
       },
       {
-        name: 'Johns Hopkins University',
-        location: 'Baltimore, United States',
-        courses: '43+ Courses',
-        short: 'JHU',
+        name: 'Sacred Heart University',
+        location: 'Fairfield, USA',
+        courses: '18+ Courses',
+        short: 'SHU',
       },
     ],
     germany: [
       {
-        name: 'International University of Applied Sciences',
-        location: 'Bad Honnef, Germany',
-        courses: '25+ Courses',
-        short: 'IU',
+        name: 'Berlin School of Business and Innovation',
+        location: 'Berlin, Germany',
+        courses: '12+ Courses',
+        short: 'BSBI',
       },
       {
-        name: 'SRH - Hochschulen Heidelberg',
-        location: 'Heidelberg, Germany',
+        name: 'GISMA Business School',
+        location: 'Hannover, Germany',
+        courses: '8+ Courses',
+        short: 'GISMA',
+      },
+      {
+        name: 'EU Business School',
+        location: 'Munich, Germany',
+        courses: '15+ Courses',
+        short: 'EUBS',
+      },
+      {
+        name: 'SRH Berlin University',
+        location: 'Berlin, Germany',
         courses: '9+ Courses',
         short: 'SRH',
       },
       {
-        name: 'SRH - Berlin University of Applied Science',
-        location: 'Berlin, Germany',
-        courses: '55+ Courses',
-        short: 'SRH Berlin',
-      },
-      {
-        name: 'Technical University of Munich',
+        name: 'Munich Business School',
         location: 'Munich, Germany',
-        courses: '14+ Courses',
-        short: 'TUM',
+        courses: '7+ Courses',
+        short: 'MBS',
       },
       {
-        name: 'Berlin School of Business and Innovation (BSBI)',
-        location: 'Berlin, Germany',
-        courses: '36+ Courses',
-        short: 'BSBI',
-      },
-      {
-        name: 'University of Europe for Applied Sciences',
-        location: 'Berlin, Germany',
-        courses: '14+ Courses',
-        short: 'UE',
+        name: 'EBS Universität',
+        location: 'Wiesbaden, Germany',
+        courses: '11+ Courses',
+        short: 'EBS',
       },
     ],
     canada: [
       {
-        name: 'University Canada West',
-        location: 'Vancouver, Canada',
-        courses: '5+ Courses',
-        short: 'UCW',
+        name: 'University of Niagara Falls',
+        location: 'Niagara Falls, Canada',
+        courses: '22+ Courses',
+        short: 'UNF',
       },
       {
-        name: 'Conestoga College',
-        location: 'Kitchener, Canada',
-        courses: '242+ Courses',
-        short: 'Conestoga',
+        name: 'Lakeshore College',
+        location: 'Lakeshore, Canada',
+        courses: '167+ Courses',
+        short: 'LC',
       },
       {
-        name: 'Seneca College',
+        name: 'Humber College',
         location: 'Toronto, Canada',
-        courses: '151+ Courses',
-        short: 'Seneca',
+        courses: '98+ Courses',
+        short: 'Humber',
+      },
+      {
+        name: 'Centennial College',
+        location: 'Toronto, Canada',
+        courses: '76+ Courses',
+        short: 'Centennial',
       },
       {
         name: 'George Brown College',
         location: 'Toronto, Canada',
-        courses: '140+ Courses',
-        short: 'George Brown',
+        courses: '65+ Courses',
+        short: 'GBC',
       },
       {
-        name: 'Humber College',
-        location: 'Lakeshore, Canada',
-        courses: '167+ Courses',
-        short: 'Humber',
-      },
-      {
-        name: 'University of Niagara Falls Canada',
-        location: 'Niagara Falls, Canada',
-        courses: '5+ Courses',
-        short: 'UNF',
+        name: 'Seneca College',
+        location: 'Toronto, Canada',
+        courses: '54+ Courses',
+        short: 'Seneca',
       },
     ],
     dubai: [
@@ -278,73 +344,6 @@ const Home = () => {
     ],
   }
 
-  const [activeCountry, setActiveCountry] = useState('uk')
-  const [currentStory, setCurrentStory] = useState(0)
-  const carouselRef = useRef(null)
-
-  const successStories = [
-    {
-      name: 'Kshitij',
-      initials: 'KS',
-      from: 'Delhi',
-      to: 'United Kingdom',
-      quote:
-        'My mentor made shortlisting, applications, and visas a breeze. I had support at every step of the way.',
-      field: 'Data Science',
-      university: 'University of Birmingham',
-    },
-    {
-      name: 'Samad',
-      initials: 'SA',
-      from: 'Gujarat',
-      to: 'United Kingdom',
-      quote:
-        'Extremely satisfied with my college application process. Clear guidance and a truly student-first approach.',
-      field: 'Data Science',
-      university: 'Queen Mary University of London',
-    },
-    {
-      name: 'Shubham',
-      initials: 'SH',
-      from: 'Telangana',
-      to: 'United States',
-      quote:
-        'Smooth process, supportive loan team, and constant check-ins. I felt confident about every decision.',
-      field: 'Sciences',
-      university: 'University of Illinois',
-    },
-    {
-      name: 'Naveenkumar',
-      initials: 'NK',
-      from: 'Karnataka',
-      to: 'United States',
-      quote:
-        'I received multiple admits with complete support on applications and documentation. They handled the complexity.',
-      field: 'Data Science',
-      university: 'Central Michigan University',
-    },
-    {
-      name: 'Shreya',
-      initials: 'SR',
-      from: 'Noida',
-      to: 'Germany',
-      quote:
-        'Proactive, detail‑oriented mentoring made my Germany dream come true. The team showcased my profile brilliantly.',
-      field: 'Management',
-      university: 'BSBI',
-    },
-    {
-      name: 'Hanna',
-      initials: 'HA',
-      from: 'Maharashtra',
-      to: 'Canada',
-      quote:
-        'End‑to‑end support from exam prep to accommodation. The process felt convenient and stress‑free.',
-      field: 'Data Science',
-      university: 'Humber College',
-    },
-  ]
-
   const navigate = useNavigate()
 
   // Auto-slide carousel for success stories
@@ -373,7 +372,7 @@ const Home = () => {
               <img
                 src="/Supreme%20Overseas%20-%20Logo%20(1).png"
                 alt="Supreme Overseas Logo"
-                className="h-10 w-auto sm:h-20 md:h-24"
+                className="h-14 w-auto sm:h-24 md:h-32"
                 onError={(e) => {
                   console.error('Error loading logo:', e.target.src);
                   e.target.style.display = 'none';
@@ -405,41 +404,41 @@ const Home = () => {
         {/* Hero content */}
         <div className="relative z-20">
           {/* Text content - Mobile optimized */}
-          <div className="mx-auto max-w-6xl px-4 pt-4 pb-6 sm:px-4 sm:py-8 md:px-6 md:py-12">
+          <div className="mx-auto max-w-6xl px-5 pt-8 pb-10 sm:px-4 sm:py-8 md:px-6 md:py-12">
             <div className="text-left sm:text-center">
-              <h1 className="text-[22px] font-bold leading-snug text-[#2E6C2E] sm:text-3xl md:text-4xl lg:text-5xl">
+              <h1 className="text-4xl font-extrabold leading-tight text-[#2E6C2E] sm:text-3xl md:text-4xl lg:text-5xl">
                 Take the First Step to{' '}
-                <span className="block text-[#C44E28] sm:inline">STUDY ABROAD</span>
+                <span className="mt-2 block text-5xl text-[#C44E28] sm:mt-0 sm:inline sm:text-3xl md:text-4xl lg:text-5xl">STUDY ABROAD</span>
               </h1>
 
               {/* Benefits - Mobile: vertical list, Desktop: horizontal */}
-              <div className="mt-4 space-y-2.5 sm:mt-6 sm:flex sm:flex-row sm:items-center sm:justify-center sm:gap-6 sm:space-y-0 md:gap-8">
-                <div className="flex items-center gap-2 text-sm text-[#38662B] sm:text-sm md:text-base">
-                  <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#38662B]/10 text-xs font-bold text-[#2E6C2E] sm:h-5 sm:w-5 sm:text-[11px]">
+              <div className="mt-8 space-y-4 sm:mt-6 sm:flex sm:flex-row sm:items-center sm:justify-center sm:gap-6 sm:space-y-0 md:gap-8">
+                <div className="flex items-start gap-3.5 text-lg font-medium text-[#38662B] sm:items-center sm:gap-2 sm:text-sm md:text-base">
+                  <span className="mt-1 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#38662B]/10 text-base font-bold text-[#2E6C2E] sm:mt-0 sm:h-5 sm:w-5 sm:text-[11px]">
                     ✓
                   </span>
-                  <span className="text-[13px] sm:text-sm md:text-base">Courses starting from ₹8 Lakhs*</span>
+                  <span className="leading-snug sm:leading-normal">Courses starting from ₹8 Lakhs*</span>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-[#38662B] sm:text-sm md:text-base">
-                  <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#38662B]/10 text-xs font-bold text-[#2E6C2E] sm:h-5 sm:w-5 sm:text-[11px]">
+                <div className="flex items-start gap-3.5 text-lg font-medium text-[#38662B] sm:items-center sm:gap-2 sm:text-sm md:text-base">
+                  <span className="mt-1 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#38662B]/10 text-base font-bold text-[#2E6C2E] sm:mt-0 sm:h-5 sm:w-5 sm:text-[11px]">
                     ✓
                   </span>
-                  <span className="text-[13px] sm:text-sm md:text-base">Scholarship worth ₹10,00,000*</span>
+                  <span className="leading-snug sm:leading-normal">Scholarship worth ₹10,00,000*</span>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-[#38662B] sm:text-sm md:text-base">
-                  <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#38662B]/10 text-xs font-bold text-[#2E6C2E] sm:h-5 sm:w-5 sm:text-[11px]">
+                <div className="flex items-start gap-3.5 text-lg font-medium text-[#38662B] sm:items-center sm:gap-2 sm:text-sm md:text-base">
+                  <span className="mt-1 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#38662B]/10 text-base font-bold text-[#2E6C2E] sm:mt-0 sm:h-5 sm:w-5 sm:text-[11px]">
                     ✓
                   </span>
-                  <span className="text-[13px] sm:text-sm md:text-base">Offer letter in less than 48 hours*</span>
+                  <span className="leading-snug sm:leading-normal">Offer letter in less than 48 hours*</span>
                 </div>
               </div>
 
               {/* CTA button */}
-              <div className="mt-5 sm:mt-8">
+              <div className="mt-10 sm:mt-8">
                 <button
                   type="button"
                   onClick={() => navigate('/journey')}
-                  className="w-full rounded-lg bg-[#C44E28] px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#C44E28]/30 transition hover:-translate-y-0.5 hover:bg-[#D9531E] hover:shadow-xl sm:w-auto sm:px-8 sm:py-4"
+                  className="w-full rounded-2xl bg-[#C44E28] px-6 py-5 text-xl font-bold text-white shadow-xl shadow-[#C44E28]/30 transition hover:-translate-y-1 hover:bg-[#D9531E] hover:shadow-2xl sm:w-auto sm:rounded-lg sm:px-8 sm:py-4 sm:text-base sm:font-semibold"
                 >
                   Start Your Journey
                 </button>
@@ -490,36 +489,237 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ADVANTAGE SECTION */}
-      <section id="services" className="bg-[#f8f9fa] py-8 sm:bg-white sm:py-16">
+      {/* OUR SERVICES SECTION */}
+      <section id="services" className="bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 py-12 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-4 md:px-6">
-          <h2 className="text-left text-lg font-bold text-slate-900 sm:text-center sm:text-2xl md:text-3xl">
-            Supreme Overseas <span className="text-[#C44E28]">Advantage</span>
-          </h2>
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl">
+              Our <span className="bg-gradient-to-r from-[#C44E28] to-[#D9531E] bg-clip-text text-transparent">Services</span>
+            </h2>
+            <p className="mt-3 text-sm text-slate-600 sm:text-base">Comprehensive support for your study abroad journey</p>
+          </div>
 
-          {/* Mobile: 2 columns, Desktop: border box with dividers */}
-          <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-0 sm:overflow-hidden sm:rounded-3xl sm:border sm:border-slate-100 sm:bg-sky-50/40 sm:shadow-sm">
-            {/* Combined array for mobile, split rows for desktop */}
-            {[...advantageTopRow, ...advantageBottomRow].map((item, idx) => (
-              <div
-                key={item.label}
-                className={`flex flex-col items-center justify-center gap-2 rounded-xl bg-white p-3.5 text-center shadow-sm ring-1 ring-slate-100 sm:rounded-none sm:gap-3 sm:px-6 sm:py-8 sm:shadow-none sm:ring-0 md:px-10 ${idx < 3 ? 'sm:border-b sm:border-slate-100' : ''
-                  } ${idx % 3 !== 2 ? 'sm:border-r sm:border-slate-100' : ''
-                  }`}
-              >
-                <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${item.color}/10 sm:h-11 sm:w-11 sm:rounded-2xl`}>
-                  {React.createElement(item.icon, { className: `h-5 w-5 ${item.color} sm:h-6 sm:w-6`, strokeWidth: 1.5 })}
+          {/* Services Grid with Rich Content */}
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {/* Application Assistance */}
+            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg ring-1 ring-slate-100 transition-all hover:-translate-y-2 hover:shadow-2xl sm:p-8">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+              <div className="relative">
+                <div className="mb-5">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg shadow-blue-500/30">
+                    {React.createElement(DocumentTextIcon, { className: 'h-7 w-7 text-white', strokeWidth: 1.5 })}
+                  </div>
+                  <h3 className="mt-4 text-xl font-bold text-slate-900">Application Assistance</h3>
                 </div>
-                <p className="text-[11px] font-medium leading-tight text-slate-700 sm:text-xs sm:text-slate-900 md:text-[0.95rem]">
-                  {item.label}
+
+                <p className="mb-4 text-sm leading-relaxed text-slate-600">
+                  Complete support throughout your application journey
                 </p>
+
+                <ul className="space-y-2.5 text-sm text-slate-600">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-blue-50 text-xs font-bold text-blue-600">✓</span>
+                    <span>Document preparation & review</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-blue-50 text-xs font-bold text-blue-600">✓</span>
+                    <span>SOP & LOR writing assistance</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-blue-50 text-xs font-bold text-blue-600">✓</span>
+                    <span>Application tracking & follow-up</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-blue-50 text-xs font-bold text-blue-600">✓</span>
+                    <span>Offer letter within 48 hours</span>
+                  </li>
+                </ul>
               </div>
-            ))}
+            </div>
+
+            {/* Visa Guidance */}
+            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg ring-1 ring-slate-100 transition-all hover:-translate-y-2 hover:shadow-2xl sm:p-8">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+              <div className="relative">
+                <div className="mb-5">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-green-500 to-green-600 shadow-lg shadow-green-500/30">
+                    {React.createElement(ChatBubbleLeftRightIcon, { className: 'h-7 w-7 text-white', strokeWidth: 1.5 })}
+                  </div>
+                  <h3 className="mt-4 text-xl font-bold text-slate-900">Visa Guidance</h3>
+                </div>
+
+                <p className="mb-4 text-sm leading-relaxed text-slate-600">
+                  Expert visa assistance with 98% success rate
+                </p>
+
+                <ul className="space-y-2.5 text-sm text-slate-600">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-green-50 text-xs font-bold text-green-600">✓</span>
+                    <span>Complete documentation support</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-green-50 text-xs font-bold text-green-600">✓</span>
+                    <span>Mock interview preparation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-green-50 text-xs font-bold text-green-600">✓</span>
+                    <span>Visa filing & appointment booking</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-green-50 text-xs font-bold text-green-600">✓</span>
+                    <span>Post-visa rejection assistance</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Education Loan */}
+            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg ring-1 ring-slate-100 transition-all hover:-translate-y-2 hover:shadow-2xl sm:p-8">
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+              <div className="relative">
+                <div className="mb-5">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 shadow-lg shadow-amber-500/30">
+                    {React.createElement(CurrencyDollarIcon, { className: 'h-7 w-7 text-white', strokeWidth: 1.5 })}
+                  </div>
+                  <h3 className="mt-4 text-xl font-bold text-slate-900">Education Loan</h3>
+                </div>
+
+                <p className="mb-4 text-sm leading-relaxed text-slate-600">
+                  Financial support to make your dreams affordable
+                </p>
+
+                <ul className="space-y-2.5 text-sm text-slate-600">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-amber-50 text-xs font-bold text-amber-600">✓</span>
+                    <span>Best bank & NBFC connections</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-amber-50 text-xs font-bold text-amber-600">✓</span>
+                    <span>Competitive interest rates</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-amber-50 text-xs font-bold text-amber-600">✓</span>
+                    <span>Loan sanction assistance</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-amber-50 text-xs font-bold text-amber-600">✓</span>
+                    <span>Collateral & non-collateral options</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* University Selection */}
+            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg ring-1 ring-slate-100 transition-all hover:-translate-y-2 hover:shadow-2xl sm:p-8">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+              <div className="relative">
+                <div className="mb-5">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 shadow-lg shadow-purple-500/30">
+                    {React.createElement(BuildingLibraryIcon, { className: 'h-7 w-7 text-white', strokeWidth: 1.5 })}
+                  </div>
+                  <h3 className="mt-4 text-xl font-bold text-slate-900">University Selection</h3>
+                </div>
+
+                <p className="mb-4 text-sm leading-relaxed text-slate-600">
+                  Find your perfect academic match globally
+                </p>
+
+                <ul className="space-y-2.5 text-sm text-slate-600">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-purple-50 text-xs font-bold text-purple-600">✓</span>
+                    <span>1000+ partner universities</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-purple-50 text-xs font-bold text-purple-600">✓</span>
+                    <span>Course & specialization guidance</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-purple-50 text-xs font-bold text-purple-600">✓</span>
+                    <span>Budget-based recommendations</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-purple-50 text-xs font-bold text-purple-600">✓</span>
+                    <span>Career outcome analysis</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Pre-Departure Briefing */}
+            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg ring-1 ring-slate-100 transition-all hover:-translate-y-2 hover:shadow-2xl sm:p-8">
+              <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+              <div className="relative">
+                <div className="mb-5">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-red-500 to-red-600 shadow-lg shadow-red-500/30">
+                    {React.createElement(GlobeAltIcon, { className: 'h-7 w-7 text-white', strokeWidth: 1.5 })}
+                  </div>
+                  <h3 className="mt-4 text-xl font-bold text-slate-900">Pre-Departure Briefing</h3>
+                </div>
+
+                <p className="mb-4 text-sm leading-relaxed text-slate-600">
+                  Prepare for a smooth transition to your new life
+                </p>
+
+                <ul className="space-y-2.5 text-sm text-slate-600">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-red-50 text-xs font-bold text-red-600">✓</span>
+                    <span>Accommodation arrangements</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-red-50 text-xs font-bold text-red-600">✓</span>
+                    <span>Airport pickup & drop support</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-red-50 text-xs font-bold text-red-600">✓</span>
+                    <span>Cultural orientation sessions</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-red-50 text-xs font-bold text-red-600">✓</span>
+                    <span>Banking & SIM card assistance</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Career Counseling */}
+            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg ring-1 ring-slate-100 transition-all hover:-translate-y-2 hover:shadow-2xl sm:p-8">
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+              <div className="relative">
+                <div className="mb-5">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 shadow-lg shadow-indigo-500/30">
+                    {React.createElement(UserGroupIcon, { className: 'h-7 w-7 text-white', strokeWidth: 1.5 })}
+                  </div>
+                  <h3 className="mt-4 text-xl font-bold text-slate-900">Career Counseling</h3>
+                </div>
+
+                <p className="mb-4 text-sm leading-relaxed text-slate-600">
+                  Strategic planning for your future success
+                </p>
+
+                <ul className="space-y-2.5 text-sm text-slate-600">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-indigo-50 text-xs font-bold text-indigo-600">✓</span>
+                    <span>Personalized career roadmap</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-indigo-50 text-xs font-bold text-indigo-600">✓</span>
+                    <span>Industry-specific guidance</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-indigo-50 text-xs font-bold text-indigo-600">✓</span>
+                    <span>Resume & LinkedIn optimization</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-indigo-50 text-xs font-bold text-indigo-600">✓</span>
+                    <span>Job placement assistance</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* TOP UNIVERSITIES SECTION */}
       <section id="universities" className="bg-white py-8 sm:bg-[#f5f9ff] sm:pb-20 sm:pt-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-4 md:px-6">
           <h2 className="text-left text-lg font-bold text-slate-900 sm:text-xl sm:font-semibold md:text-3xl">
@@ -582,59 +782,109 @@ const Home = () => {
       </section>
 
       {/* SUCCESS STORIES SECTION */}
-      <section id="success-stories" className="bg-white py-12 sm:py-16 md:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-4 md:px-6">
-          <div className="flex flex-col gap-1">
-            <div>
-              <h2 className="text-xl font-semibold text-slate-900 sm:text-2xl md:text-3xl">
-                45,000+ <span className="text-[#C44E28]">Success Stories</span>
-              </h2>
-              <p className="mt-1 text-xs text-slate-500 sm:text-sm">From Dreamers to Achievers</p>
+      <section id="success-stories" className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30 py-12 sm:py-16 md:py-20">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-[#C44E28]/5 to-transparent blur-3xl"></div>
+          <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-gradient-to-br from-[#2E6C2E]/5 to-transparent blur-3xl"></div>
+        </div>
+
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-4 md:px-6">
+          {/* Section Header */}
+          <div className="text-center mb-8 sm:mb-12">
+            <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#C44E28]/10 to-[#2E6C2E]/10 px-3 py-1.5 mb-3">
+              <svg className="h-4 w-4 text-[#C44E28]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <span className="text-xs font-semibold text-slate-700">Our Success Stories</span>
             </div>
+            <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl">
+              <span className="bg-gradient-to-r from-[#C44E28] via-[#D9531E] to-[#C44E28] bg-clip-text text-transparent">45,000+</span>
+              {' '}Dreamers to Achievers
+            </h2>
+            <p className="mt-3 text-sm text-slate-600 sm:text-base max-w-2xl mx-auto">
+              Real stories from students who transformed their dreams into reality
+            </p>
           </div>
 
           {/* Mobile: Auto-sliding carousel, Desktop: Grid */}
-          <div className="mt-6 sm:mt-8">
+          <div className="mt-8 sm:mt-12">
             {/* Mobile Carousel */}
             <div className="relative block sm:hidden">
-              <div className="overflow-hidden" ref={carouselRef}>
+              <div className="overflow-hidden">
                 <div
-                  className="flex transition-transform duration-500 ease-out"
+                  className="flex transition-transform duration-700 ease-out"
                   style={{ transform: `translateX(-${currentStory * 100}%)` }}
                 >
                   {successStories.map((story) => (
                     <article
                       key={`${story.name}-${story.to}`}
-                      className="w-full flex-shrink-0 px-1"
+                      className="w-full flex-shrink-0 px-2"
                     >
-                      <div className="flex h-full flex-col justify-between rounded-2xl bg-white px-4 py-4 shadow-sm ring-1 ring-slate-100">
-                        <div>
-                          <div className="flex items-center gap-2.5">
-                            <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-slate-100 text-xs font-semibold text-slate-700">
-                              {story.initials}
+                      <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white to-slate-50/50 p-[2px] shadow-xl">
+                        {/* Gradient border */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#C44E28] via-[#D9531E] to-[#2E6C2E] opacity-50 blur-sm"></div>
+
+                        <div className="relative flex h-full flex-col justify-between rounded-2xl bg-white px-5 py-6 backdrop-blur-sm">
+                          {/* Header */}
+                          <div>
+                            <div className="flex items-start gap-3">
+                              <div className="relative flex h-12 w-12 flex-shrink-0 items-center justify-center">
+                                {/* Animated gradient ring */}
+                                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#C44E28] to-[#D9531E] opacity-20 blur-md animate-pulse"></div>
+                                <div className="relative flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#C44E28] to-[#D9531E] text-base font-bold text-white shadow-lg shadow-[#C44E28]/30">
+                                  {story.initials}
+                                </div>
+                              </div>
+                              <div className="min-w-0 flex-1">
+                                <h3 className="text-base font-bold text-slate-900 leading-tight">{story.name}</h3>
+                                <div className="mt-1.5 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-slate-100 to-blue-50 px-2.5 py-1">
+                                  <span className="text-xs font-medium text-slate-700">{story.from}</span>
+                                  <svg className="h-3.5 w-3.5 text-[#C44E28]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                  </svg>
+                                  <span className="text-xs font-semibold text-[#C44E28]">{story.to}</span>
+                                </div>
+                              </div>
                             </div>
-                            <div className="min-w-0 flex-1">
-                              <p className="truncate text-xs font-semibold text-slate-900">{story.name}</p>
-                              <p className="truncate text-[11px] text-slate-500">
-                                {story.from}
-                                <span className="mx-1 text-slate-400">→</span>
-                                {story.to}
+
+                            {/* Quote */}
+                            <div className="mt-4 relative">
+                              <div className="absolute -left-1.5 -top-1.5 text-4xl font-serif text-[#C44E28]/10 leading-none">"</div>
+                              <p className="relative pl-5 text-xs leading-relaxed text-slate-700 italic">
+                                {expandedStory === `${story.name}-${story.to}` ? story.quote : (story.shortQuote || story.quote)}
                               </p>
                             </div>
+                            {story.shortQuote && story.quote !== story.shortQuote && (
+                              <button
+                                onClick={() => setExpandedStory(expandedStory === `${story.name}-${story.to}` ? null : `${story.name}-${story.to}`)}
+                                className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-[#C44E28] hover:gap-2 transition-all"
+                              >
+                                {expandedStory === `${story.name}-${story.to}` ? 'Show Less' : 'Read More'}
+                                <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                              </button>
+                            )}
                           </div>
 
-                          <p className="mt-2.5 text-[11px] leading-relaxed text-[#2E6C2E]">
-                            {story.quote}
-                          </p>
-                        </div>
-
-                        <div className="mt-3 flex items-center justify-between gap-2">
-                          <span className="flex-shrink-0 rounded-full bg-[#0088FF]/10 px-2.5 py-0.5 text-[10px] font-medium text-[#0088FF]">
-                            {story.field}
-                          </span>
-                          <span className="truncate text-[11px] font-semibold text-slate-700">
-                            {story.university}
-                          </span>
+                          {/* Footer */}
+                          <div className="mt-5 space-y-2">
+                            <div className="rounded-lg bg-gradient-to-r from-[#2E6C2E]/10 to-[#38662B]/10 px-3 py-2 border border-[#2E6C2E]/20">
+                              <p className="text-[10px] font-medium text-slate-600">Program</p>
+                              <p className="text-xs font-bold text-[#2E6C2E] mt-0.5">{story.field}</p>
+                            </div>
+                            <div className="rounded-lg bg-gradient-to-r from-[#C44E28]/5 to-[#D9531E]/5 px-3 py-2 border border-[#C44E28]/20">
+                              <p className="text-[10px] font-medium text-slate-600">University</p>
+                              <p className="text-xs font-bold text-[#C44E28] mt-0.5">{story.university}</p>
+                            </div>
+                            {story.loan && (
+                              <div className="rounded-lg bg-gradient-to-r from-amber-50 to-yellow-50 px-3 py-2 border border-amber-200">
+                                <p className="text-[10px] font-medium text-amber-700">Education Loan</p>
+                                <p className="text-xs font-bold text-amber-900 mt-0.5">{story.loan}</p>
+                              </div>
+                            )}
+                          </div>
                         </div>
                       </div>
                     </article>
@@ -642,15 +892,15 @@ const Home = () => {
                 </div>
               </div>
 
-              {/* Dot indicators */}
-              <div className="mt-4 flex justify-center gap-1.5">
+              {/* Modern dot indicators */}
+              <div className="mt-6 flex justify-center gap-2">
                 {successStories.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => handleDotClick(index)}
-                    className={`h-1.5 rounded-full transition-all ${index === currentStory
-                      ? 'w-6 bg-[#0088FF]'
-                      : 'w-1.5 bg-slate-300'
+                    className={`h-2 rounded-full transition-all ${index === currentStory
+                      ? 'w-8 bg-gradient-to-r from-[#C44E28] to-[#D9531E]'
+                      : 'w-2 bg-slate-300 hover:bg-slate-400'
                       }`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
@@ -659,50 +909,89 @@ const Home = () => {
             </div>
 
             {/* Desktop Grid */}
-            <div className="hidden grid-cols-2 gap-4 sm:grid xl:grid-cols-3">
+            <div className="hidden grid-cols-1 gap-6 sm:grid lg:grid-cols-2">
               {successStories.map((story) => (
                 <article
                   key={`${story.name}-${story.to}`}
-                  className="flex h-full flex-col justify-between rounded-2xl bg-white px-5 py-5 shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-0.5 hover:shadow-md"
+                  className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white to-slate-50/50 p-[2px] transition-all hover:scale-[1.01] hover:shadow-xl"
                 >
-                  <div>
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-slate-100 text-sm font-semibold text-slate-700">
-                        {story.initials}
+                  {/* Animated gradient border */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#C44E28] via-[#D9531E] to-[#2E6C2E] opacity-0 group-hover:opacity-75 transition-opacity blur-sm"></div>
+
+                  <div className="relative flex h-full flex-col justify-between rounded-2xl bg-white p-6 backdrop-blur-sm shadow-lg">
+                    {/* Header */}
+                    <div>
+                      <div className="flex items-start gap-4">
+                        <div className="relative flex h-14 w-14 flex-shrink-0 items-center justify-center">
+                          {/* Animated gradient ring */}
+                          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#C44E28] to-[#D9531E] opacity-20 blur-lg group-hover:opacity-40 transition-opacity"></div>
+                          <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[#C44E28] to-[#D9531E] text-lg font-bold text-white shadow-lg shadow-[#C44E28]/30">
+                            {story.initials}
+                          </div>
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <h3 className="text-lg font-bold text-slate-900 leading-tight">{story.name}</h3>
+                          <div className="mt-2 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-slate-100 to-blue-50 px-3 py-1.5">
+                            <span className="text-sm font-medium text-slate-700">{story.from}</span>
+                            <svg className="h-4 w-4 text-[#C44E28]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                            <span className="text-sm font-semibold text-[#C44E28]">{story.to}</span>
+                          </div>
+                        </div>
                       </div>
-                      <div className="min-w-0 flex-1">
-                        <p className="truncate text-sm font-semibold text-slate-900">{story.name}</p>
-                        <p className="truncate text-xs text-slate-500">
-                          {story.from}
-                          <span className="mx-1 text-slate-400">→</span>
-                          {story.to}
+
+                      {/* Quote */}
+                      <div className="mt-5 relative">
+                        <div className="absolute -left-2 -top-2 text-5xl font-serif text-[#C44E28]/10 leading-none">"</div>
+                        <p className="relative pl-8 text-sm leading-relaxed text-slate-700 italic">
+                          {expandedStory === `${story.name}-${story.to}` ? story.quote : (story.shortQuote || story.quote)}
                         </p>
                       </div>
+                      {story.shortQuote && story.quote !== story.shortQuote && (
+                        <button
+                          onClick={() => setExpandedStory(expandedStory === `${story.name}-${story.to}` ? null : `${story.name}-${story.to}`)}
+                          className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-[#C44E28] hover:gap-2 transition-all"
+                        >
+                          {expandedStory === `${story.name}-${story.to}` ? 'Show Less' : 'Read More'}
+                          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </button>
+                      )}
                     </div>
 
-                    <p className="mt-3 text-xs leading-relaxed text-[#2E6C2E] md:text-[0.8rem]">
-                      {story.quote}
-                    </p>
-                  </div>
-
-                  <div className="mt-4 flex items-center justify-between gap-2">
-                    <span className="flex-shrink-0 rounded-full bg-[#38662B]/10 px-3 py-1 text-[11px] font-medium text-[#2E6C2E]">
-                      {story.field}
-                    </span>
-                    <span className="truncate text-xs font-semibold text-[#C44E28]">
-                      {story.university}
-                    </span>
+                    {/* Footer */}
+                    <div className="mt-6 space-y-2.5">
+                      <div className="grid grid-cols-1 gap-2.5">
+                        <div className="rounded-lg bg-gradient-to-r from-[#2E6C2E]/10 to-[#38662B]/10 px-4 py-2.5 border border-[#2E6C2E]/20">
+                          <p className="text-[10px] font-medium text-slate-600 uppercase tracking-wide">Program</p>
+                          <p className="text-sm font-bold text-[#2E6C2E] mt-0.5">{story.field}</p>
+                        </div>
+                        <div className="rounded-lg bg-gradient-to-r from-[#C44E28]/5 to-[#D9531E]/5 px-4 py-2.5 border border-[#C44E28]/20">
+                          <p className="text-[10px] font-medium text-slate-600 uppercase tracking-wide">University</p>
+                          <p className="text-sm font-bold text-[#C44E28] mt-0.5">{story.university}</p>
+                        </div>
+                        {story.loan && (
+                          <div className="rounded-lg bg-gradient-to-r from-amber-50 to-yellow-50 px-4 py-2.5 border border-amber-200">
+                            <p className="text-[10px] font-medium text-amber-700 uppercase tracking-wide">Education Loan</p>
+                            <p className="text-sm font-bold text-amber-900 mt-0.5">{story.loan}</p>
+                          </div>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </article>
               ))}
             </div>
           </div>
 
-          <div className="mt-8 flex justify-center sm:mt-10">
+          {/* CTA Button */}
+          <div className="mt-10 flex justify-center sm:mt-12">
             <button
               type="button"
               onClick={() => navigate('/journey')}
-              className="w-full rounded-lg bg-[#C44E28] px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[#C44E28]/30 transition hover:-translate-y-0.5 hover:bg-[#D9531E] hover:shadow-xl sm:w-auto sm:px-8 sm:py-3"
+              className="rounded-xl bg-[#C44E28] px-8 py-4 text-base font-bold text-white shadow-lg shadow-[#C44E28]/30 transition-all hover:-translate-y-1 hover:bg-[#D9531E] hover:shadow-xl sm:px-10 sm:py-5 sm:text-lg"
             >
               Start Your Journey
             </button>
@@ -733,67 +1022,66 @@ const Home = () => {
       </section>
 
       {/* FOOTER SECTION */}
-      <footer id="contact" className="bg-[#2E6C2E] py-10 text-white sm:py-12">
-        <div className="mx-auto max-w-6xl px-3 sm:px-4 md:px-6">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
+      <footer id="contact" className="bg-slate-900 py-12 text-white sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
             {/* Company Info */}
             <div className="sm:col-span-2 lg:col-span-2">
-              <div className="mb-3 flex items-center sm:mb-4">
+              <div className="mb-6 flex items-center">
                 <img
                   src="/Supreme%20Overseas%20-%20Logo%20(1).png"
                   alt="Supreme Overseas Logo"
-                  className="h-10 w-auto sm:h-12"
+                  className="h-12 w-auto brightness-0 invert opacity-90 sm:h-14"
                   onError={(e) => {
                     console.error('Error loading footer logo:', e.target.src);
                     e.target.style.display = 'none';
                   }}
                 />
               </div>
-              <p className="mb-3 text-xs leading-relaxed text-green-100 sm:mb-4 sm:text-sm">
+              <p className="mb-6 max-w-md text-sm leading-relaxed text-slate-400">
                 Your trusted partner for studying abroad. We help students achieve their dreams of international education with personalized guidance and comprehensive support.
               </p>
               <div className="flex gap-4">
-                <a href="tel:8069361480" className="text-xs text-green-100 transition hover:text-white sm:text-sm">
-                  📞 8069361480
+                <a href="tel:8069361480" className="inline-flex items-center gap-2 text-sm font-medium text-slate-300 transition hover:text-[#C44E28]">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-800 text-[#C44E28]">📞</span>
+                  8069361480
                 </a>
               </div>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h3 className="mb-3 text-base font-semibold sm:mb-4 sm:text-lg">Quick Links</h3>
-              <ul className="space-y-1.5 text-xs text-green-100 sm:space-y-2 sm:text-sm">
-                <li><a href="#about" className="hover:text-white transition">About Us</a></li>
-                <li><a href="#universities" className="hover:text-white transition">Universities</a></li>
-                <li><a href="#services" className="hover:text-white transition">Services</a></li>
-                <li><a href="#success-stories" className="hover:text-white transition">Success Stories</a></li>
-
+              <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-slate-200">Quick Links</h3>
+              <ul className="space-y-3 text-sm text-slate-400">
+                <li><a href="#about" className="hover:text-[#C44E28] transition-colors">About Us</a></li>
+                <li><a href="#universities" className="hover:text-[#C44E28] transition-colors">Universities</a></li>
+                <li><a href="#services" className="hover:text-[#C44E28] transition-colors">Services</a></li>
+                <li><a href="#success-stories" className="hover:text-[#C44E28] transition-colors">Success Stories</a></li>
               </ul>
             </div>
 
             {/* Study Destinations */}
             <div>
-              <h3 className="mb-3 text-base font-semibold sm:mb-4 sm:text-lg">Study Destinations</h3>
-              <ul className="space-y-1.5 text-xs text-green-100 sm:space-y-2 sm:text-sm">
-                <li><span className="cursor-pointer transition hover:text-white">🇬🇧 United Kingdom</span></li>
-                <li><span className="cursor-pointer transition hover:text-white">🇺🇸 USA</span></li>
-                <li><span className="cursor-pointer transition hover:text-white">🇩🇪 Germany</span></li>
-                <li><span className="cursor-pointer transition hover:text-white">🇨🇦 Canada</span></li>
-                <li><span className="cursor-pointer transition hover:text-white">🇦🇪 Dubai</span></li>
+              <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-slate-200">Study Destinations</h3>
+              <ul className="space-y-3 text-sm text-slate-400">
+                <li><span className="cursor-pointer hover:text-[#C44E28] transition-colors flex items-center gap-2">🇬🇧 United Kingdom</span></li>
+                <li><span className="cursor-pointer hover:text-[#C44E28] transition-colors flex items-center gap-2">🇺🇸 USA</span></li>
+                <li><span className="cursor-pointer hover:text-[#C44E28] transition-colors flex items-center gap-2">🇩🇪 Germany</span></li>
+                <li><span className="cursor-pointer hover:text-[#C44E28] transition-colors flex items-center gap-2">🇨🇦 Canada</span></li>
+                <li><span className="cursor-pointer hover:text-[#C44E28] transition-colors flex items-center gap-2">🇦🇪 Dubai</span></li>
               </ul>
             </div>
           </div>
 
           {/* Bottom Footer */}
-          <div className="mt-6 text-center sm:mt-8">
-            <div className="mx-auto max-w-xs border-t border-green-700/30 pt-6 sm:max-w-sm"></div>
-            <p className="text-xs text-green-100 sm:text-sm">
-              © 2024 Supreme Overseas. All rights reserved. | Designed and Developed by <a href="https://www.vikrin.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-white hover:text-green-200 transition">Vikrin</a> | Privacy Policy | Terms of Service
+          <div className="mt-12 border-t border-slate-800 pt-8 text-center">
+            <p className="text-xs text-slate-500 sm:text-sm">
+              © 2024 Supreme Overseas. All rights reserved. | Designed and Developed by <a href="https://www.vikrin.com/" target="_blank" rel="noopener noreferrer" className="font-medium text-slate-400 hover:text-[#C44E28] transition-colors">Vikrin</a> | Privacy Policy | Terms of Service
             </p>
           </div>
         </div>
       </footer>
-    </main>
+    </main >
   )
 }
 
