@@ -405,7 +405,7 @@ const Home = () => {
         <div className="relative z-20">
           {/* Text content - Mobile optimized */}
           <div className="mx-auto max-w-6xl px-5 pt-8 pb-10 sm:px-4 sm:py-8 md:px-6 md:py-12">
-            <div className="text-left sm:text-center">
+            <div className="text-center">
               <h1 className="text-4xl font-extrabold leading-tight text-[#2E6C2E] sm:text-3xl md:text-4xl lg:text-5xl">
                 Take the First Step to{' '}
                 <span className="mt-2 block text-5xl text-[#C44E28] sm:mt-0 sm:inline sm:text-3xl md:text-4xl lg:text-5xl">STUDY ABROAD</span>
@@ -465,24 +465,45 @@ const Home = () => {
       </section>
 
       {/* WHY CHOOSE SECTION */}
-      <section id="about" className="bg-white py-8 sm:bg-[#f8f9fa] sm:py-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-4 md:px-6">
-          <h2 className="text-left text-lg font-bold text-slate-900 sm:text-center sm:text-2xl md:text-3xl">
-            Why Choose <span className="text-[#C44E28]">Supreme Overseas?</span>
-          </h2>
+      <section id="about" className="relative overflow-hidden bg-slate-900 py-16 sm:py-24">
+        {/* Decorative background elements */}
+        <div className="absolute top-0 left-0 -mt-20 -ml-20 h-96 w-96 rounded-full bg-[#2E6C2E]/20 blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 -mb-20 -mr-20 h-96 w-96 rounded-full bg-[#C44E28]/20 blur-3xl"></div>
 
-          {/* Mobile: 2x2 grid, Desktop: 4 columns */}
-          <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
-            {whyItems.map((item) => (
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl font-bold text-white sm:text-4xl">
+              Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C44E28] to-[#D9531E]">Supreme Overseas?</span>
+            </h2>
+            <p className="mt-4 text-lg text-slate-400 max-w-2xl mx-auto">
+              We are committed to your success with a proven track record of excellence.
+            </p>
+          </div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+            {whyItems.map((item, index) => (
               <div
                 key={item.label}
-                className="flex flex-col items-center justify-center gap-2 rounded-xl bg-white p-4 text-center shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-0.5 hover:shadow-md sm:gap-3 sm:rounded-2xl sm:px-6 sm:py-8"
+                className="group relative overflow-hidden rounded-2xl bg-slate-800/50 p-6 text-center backdrop-blur-sm ring-1 ring-white/10 transition-all hover:-translate-y-2 hover:bg-slate-800 hover:shadow-2xl hover:shadow-[#C44E28]/10"
               >
-                <div className={`flex h-11 w-11 items-center justify-center rounded-xl ${item.color}/10 sm:h-12 sm:w-12 sm:rounded-2xl`}>
-                  {React.createElement(item.icon, { className: `h-6 w-6 ${item.color} sm:h-6 sm:w-6`, strokeWidth: 1.5 })}
+                {/* Hover Gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${item.color.replace('text-', 'from-')}/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100`}></div>
+
+                <div className="relative flex flex-col items-center justify-center">
+                  <div className={`mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-900 ring-1 ring-white/10 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    {React.createElement(item.icon, { className: `h-8 w-8 ${item.color}`, strokeWidth: 1.5 })}
+                  </div>
+
+                  <div className="space-y-1">
+                    <p className={`text-3xl font-bold ${item.color} sm:text-4xl`}>
+                      {item.value}
+                    </p>
+                    <p className="text-sm font-medium text-slate-400 sm:text-base">
+                      {item.label.replace(item.value, '').trim() || item.label}
+                    </p>
+                  </div>
                 </div>
-                <p className="text-base font-bold text-slate-900 sm:text-lg sm:font-semibold">{item.value}</p>
-                <p className="text-[11px] text-slate-600 sm:text-xs sm:font-semibold sm:text-slate-900">{item.label}</p>
               </div>
             ))}
           </div>
@@ -720,61 +741,82 @@ const Home = () => {
         </div>
       </section>
 
-      <section id="universities" className="bg-white py-8 sm:bg-[#f5f9ff] sm:pb-20 sm:pt-16">
-        <div className="mx-auto max-w-6xl px-4 sm:px-4 md:px-6">
-          <h2 className="text-left text-lg font-bold text-slate-900 sm:text-xl sm:font-semibold md:text-3xl">
-            Top Universities to <span className="text-[#C44E28]">Study Abroad</span>
-          </h2>
+      <section id="universities" className="bg-slate-50 py-16 sm:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+              Top Universities to <span className="text-[#C44E28]">Study Abroad</span>
+            </h2>
+            <p className="mt-4 text-lg text-slate-600">
+              Explore world-class institutions across the globe
+            </p>
+          </div>
 
           {/* Tabs */}
-          <div className="mt-5 -mx-4 sm:mx-0 sm:mt-6">
-            <div className="overflow-x-auto px-4 sm:px-0">
-              <div className="flex min-w-max items-center gap-3 sm:gap-4 border-b border-slate-200 pb-2 text-sm sm:min-w-0 sm:flex-wrap sm:gap-6 sm:text-base">
-                {universityTabs.map((tab) => {
-                  const active = tab.id === activeCountry
-                  return (
-                    <button
-                      key={tab.id}
-                      type="button"
-                      onClick={() => setActiveCountry(tab.id)}
-                      className={`inline-flex flex-shrink-0 items-center gap-1.5 border-b-2 pb-2 transition sm:gap-2 ${active
-                        ? 'border-[#C44E28] text-[#C44E28]'
-                        : 'border-transparent text-slate-500 hover:text-slate-800'
-                        }`}
-                    >
-                      <span className="text-base sm:text-lg">{tab.flag}</span>
-                      <span className="whitespace-nowrap text-[13px] font-medium sm:text-base">{tab.name}</span>
-                    </button>
-                  )
-                })}
-              </div>
+          <div className="mb-10 flex justify-center">
+            <div className="inline-flex flex-wrap justify-center gap-2 rounded-2xl bg-white p-2 shadow-sm ring-1 ring-slate-200 sm:gap-3">
+              {universityTabs.map((tab) => {
+                const active = tab.id === activeCountry
+                return (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    onClick={() => setActiveCountry(tab.id)}
+                    className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all sm:px-6 sm:py-3 sm:text-base ${active
+                      ? 'bg-[#C44E28] text-white shadow-md shadow-orange-500/20'
+                      : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                      }`}
+                  >
+                    <span className="text-lg sm:text-xl">{tab.flag}</span>
+                    <span>{tab.name}</span>
+                  </button>
+                )
+              })}
             </div>
           </div>
 
           {/* University cards */}
-          <div className="mt-5 space-y-3 sm:mt-8 sm:grid sm:grid-cols-2 sm:gap-4 sm:space-y-0 xl:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {universitiesByCountry[activeCountry].map((uni) => (
               <div
                 key={uni.name}
-                className="flex items-center gap-3 rounded-xl bg-white px-3 py-3.5 shadow-sm ring-1 ring-slate-200 transition hover:shadow-md sm:gap-4 sm:rounded-2xl sm:px-5 sm:py-4 sm:hover:-translate-y-0.5"
+                className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 transition-all hover:-translate-y-1 hover:shadow-xl hover:ring-[#C44E28]/20"
               >
-                {/* Logo placeholder */}
-                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-slate-50 text-[9px] font-bold uppercase tracking-tight text-slate-700 sm:h-14 sm:w-14 sm:rounded-xl sm:text-[11px]">
-                  {uni.short}
+                <div className="flex items-start justify-between">
+                  <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-slate-50 text-sm font-bold uppercase tracking-tight text-slate-700 ring-1 ring-slate-100 group-hover:bg-[#C44E28]/5 group-hover:text-[#C44E28] transition-colors">
+                    {uni.short}
+                  </div>
+                  <span className="inline-flex items-center rounded-full bg-green-50 px-2.5 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+                    Top Ranked
+                  </span>
                 </div>
 
-                {/* Text */}
-                <div className="min-w-0 flex-1">
-                  <p className="truncate text-[13px] font-semibold text-slate-900 sm:text-sm md:text-[0.95rem]">
+                <div className="mt-6">
+                  <h3 className="text-lg font-bold leading-tight text-slate-900 group-hover:text-[#C44E28] transition-colors">
                     {uni.name}
+                  </h3>
+                  <p className="mt-2 flex items-center text-sm text-slate-500">
+                    <svg className="mr-1.5 h-4 w-4 flex-shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                    </svg>
+                    {uni.location}
                   </p>
-                  <p className="mt-0.5 truncate text-[11px] text-slate-500 sm:mt-1 sm:text-xs">{uni.location}</p>
                 </div>
 
-                {/* Courses badge */}
-                <span className="flex-shrink-0 whitespace-nowrap rounded-md bg-yellow-50 px-2 py-1 text-[10px] font-bold text-yellow-700 sm:rounded-full sm:border sm:border-[#2E6C2E]/30 sm:bg-[#2E6C2E]/10 sm:px-3 sm:py-1 sm:text-[11px] sm:font-semibold sm:text-[#2E6C2E]">
-                  {uni.courses}
-                </span>
+                <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-4">
+                  <div className="flex items-center gap-2">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-50 text-[#C44E28]">
+                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                      </svg>
+                    </span>
+                    <span className="text-sm font-semibold text-slate-700">{uni.courses}</span>
+                  </div>
+                  <button className="text-sm font-medium text-[#C44E28] hover:text-[#D9531E] transition-colors">
+                    View Details →
+                  </button>
+                </div>
               </div>
             ))}
           </div>
@@ -782,12 +824,12 @@ const Home = () => {
       </section>
 
       {/* SUCCESS STORIES SECTION */}
-      <section id="success-stories" className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30 py-12 sm:py-16 md:py-20">
+      < section id="success-stories" className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30 py-12 sm:py-16 md:py-20" >
         {/* Decorative background elements */}
-        <div className="absolute inset-0 overflow-hidden">
+        < div className="absolute inset-0 overflow-hidden" >
           <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-[#C44E28]/5 to-transparent blur-3xl"></div>
           <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-gradient-to-br from-[#2E6C2E]/5 to-transparent blur-3xl"></div>
-        </div>
+        </div >
 
         <div className="relative mx-auto max-w-6xl px-4 sm:px-4 md:px-6">
           {/* Section Header */}
@@ -997,32 +1039,93 @@ const Home = () => {
             </button>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* STUDY ABROAD INFO SECTION */}
-      <section className="bg-[#f7f2ed] py-12 sm:py-16">
-        <div className="mx-auto max-w-6xl px-3 sm:px-4 md:px-6">
-          <h2 className="text-xl font-semibold text-slate-900 sm:text-2xl md:text-3xl">
-            Study Abroad with <span className="text-[#C44E28]">Supreme Overseas</span>
-          </h2>
+      < section className="relative overflow-hidden bg-white py-16 sm:py-24" >
+        {/* Decorative background */}
+        < div className="absolute top-0 right-0 -mt-20 -mr-20 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-[#2E6C2E]/5 to-transparent blur-3xl" ></div >
+        <div className="absolute bottom-0 left-0 -mb-20 -ml-20 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-[#C44E28]/5 to-transparent blur-3xl"></div>
 
-          <div className="mt-4 max-w-4xl space-y-3 text-xs leading-relaxed text-slate-600 sm:mt-5 sm:space-y-4 sm:text-sm md:text-[0.95rem]">
-            <p>
-              As per government estimates, a little over 9,00,000 Indians were studying abroad in 2022. This grew to
-              1.31 million in 2023 and 1.33 million in 2024. As per some estimates, around 1.5 to 2 million Indians will
-              be studying abroad in 2025.
-            </p>
-            <p>
-              India has the second-largest number of students studying overseas, surpassed only by China. In 2019,
-              Indians spent USD 37 billion on higher education overseas and in 2025, the spending is expected to cross
-              USD 70 billion.
-            </p>
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            {/* Content */}
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-orange-50 px-3 py-1 text-xs font-semibold text-[#C44E28] ring-1 ring-inset ring-orange-500/10">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange-400 opacity-75"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-orange-500"></span>
+                </span>
+                Market Insights
+              </div>
+
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+                The Rising Wave of <br />
+                <span className="text-[#2E6C2E]">Global Education</span>
+              </h2>
+
+              <div className="mt-6 space-y-6 text-base leading-relaxed text-slate-600">
+                <p>
+                  The landscape of international education is evolving rapidly. As per government estimates, over <span className="font-bold text-slate-900">9,00,000 Indians</span> were studying abroad in 2022. This number surged to <span className="font-bold text-slate-900">1.33 million</span> in 2024, reflecting the growing aspirations of Indian students.
+                </p>
+                <p>
+                  Projections indicate that by 2025, around <span className="font-bold text-[#C44E28]">1.5 to 2 million</span> Indians will be pursuing education overseas. India now holds the distinction of having the second-largest number of students studying abroad, surpassed only by China.
+                </p>
+                <p>
+                  The economic impact is equally significant. In 2019, Indian students spent USD 37 billion on higher education overseas. By 2025, this spending is expected to cross a staggering <span className="font-bold text-[#2E6C2E]">USD 70 billion</span>.
+                </p>
+              </div>
+            </div>
+
+            {/* Stats Visuals */}
+            <div className="relative">
+              <div className="grid gap-6 sm:grid-cols-2">
+                {/* Stat Card 1 */}
+                <div className="relative overflow-hidden rounded-2xl bg-white p-6 shadow-xl ring-1 ring-slate-900/5 transition hover:-translate-y-1 hover:shadow-2xl">
+                  <div className="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-gradient-to-br from-[#2E6C2E]/10 to-transparent blur-xl"></div>
+                  <dt className="text-sm font-medium text-slate-500">Students Abroad (2024)</dt>
+                  <dd className="mt-2 text-3xl font-bold tracking-tight text-[#2E6C2E]">1.33 M+</dd>
+                  <div className="mt-4 flex items-center text-xs font-medium text-green-600">
+                    <svg className="mr-1 h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+                    </svg>
+                    Rapid Growth
+                  </div>
+                </div>
+
+                {/* Stat Card 2 */}
+                <div className="relative overflow-hidden rounded-2xl bg-white p-6 shadow-xl ring-1 ring-slate-900/5 transition hover:-translate-y-1 hover:shadow-2xl sm:translate-y-8">
+                  <div className="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-gradient-to-br from-[#C44E28]/10 to-transparent blur-xl"></div>
+                  <dt className="text-sm font-medium text-slate-500">Projected Spending (2025)</dt>
+                  <dd className="mt-2 text-3xl font-bold tracking-tight text-[#C44E28]">$70 B+</dd>
+                  <div className="mt-4 flex items-center text-xs font-medium text-orange-600">
+                    <svg className="mr-1 h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Economic Impact
+                  </div>
+                </div>
+
+                {/* Stat Card 3 */}
+                <div className="relative overflow-hidden rounded-2xl bg-white p-6 shadow-xl ring-1 ring-slate-900/5 transition hover:-translate-y-1 hover:shadow-2xl">
+                  <div className="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-gradient-to-br from-blue-500/10 to-transparent blur-xl"></div>
+                  <dt className="text-sm font-medium text-slate-500">Global Rank</dt>
+                  <dd className="mt-2 text-3xl font-bold tracking-tight text-slate-900">#2</dd>
+                  <div className="mt-4 flex items-center text-xs font-medium text-blue-600">
+                    <svg className="mr-1 h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                    </svg>
+                    After China
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* FOOTER SECTION */}
-      <footer id="contact" className="bg-slate-900 py-12 text-white sm:py-16">
+      < footer id="contact" className="bg-slate-900 py-12 text-white sm:py-16" >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
             {/* Company Info */}
@@ -1080,7 +1183,7 @@ const Home = () => {
             </p>
           </div>
         </div>
-      </footer>
+      </footer >
     </main >
   )
 }
