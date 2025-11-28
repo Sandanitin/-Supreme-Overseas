@@ -444,43 +444,6 @@ const Home = () => {
 
       {/* HERO SECTION - with padding top to account for fixed navbar */}
       <section className="relative overflow-hidden bg-white pt-20 sm:pt-32 md:pt-40">
-        {/* Top bar */}
-        <header className="relative z-20">
-          <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-4 sm:py-3 md:px-6 md:py-4">
-            {/* Logo */}
-            <div className="flex items-center">
-              <img
-                src="/SO%20-%20Replace.png"
-                alt="Supreme Overseas Logo"
-                className="h-14 w-auto sm:h-24 md:h-32"
-                onError={(e) => {
-                  console.error('Error loading logo:', e.target.src);
-                  e.target.style.display = 'none';
-                }}
-              />
-            </div>
-
-            {/* Call button */}
-            <a
-              href="tel:8069361480"
-              className="inline-flex items-center gap-1.5 rounded-full border border-slate-300 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-sm transition hover:bg-slate-50 sm:gap-2 sm:px-5 sm:py-2.5 sm:text-base sm:rounded-full sm:border-[#C44E28] sm:bg-[#C44E28] sm:text-white sm:shadow-lg sm:shadow-[#C44E28]/30 sm:hover:bg-[#D9531E]"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-3.5 w-3.5 sm:h-5 sm:w-5"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
-              <span className="hidden sm:inline">Call us</span>
-              <span className="font-semibold sm:font-bold">8069361480</span>
-            </a>
-          </div>
-        </header>
-
         {/* Hero content */}
         <div className="relative z-20">
           {/* Text content - Mobile optimized */}
