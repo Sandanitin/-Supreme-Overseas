@@ -85,14 +85,14 @@ const Home = () => {
   const whyItems = [
     {
       icon: BookOpenIcon,
-      label: '1000+ Courses',
-      value: '1000+',
+      label: '100+ Courses',
+      value: '100+',
       color: 'text-blue-600',
     },
     {
       icon: UserGroupIcon,
-      label: '45000+ Students',
-      value: '45K+',
+      label: '2000+ Students',
+      value: '2K+',
       color: 'text-green-600',
     },
     {
