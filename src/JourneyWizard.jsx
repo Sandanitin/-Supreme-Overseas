@@ -168,7 +168,7 @@ const JourneyWizard = () => {
             {/* Logo image */}
             <div className="flex items-center">
               <img
-                src="/Supreme%20Overseas%20-%20Logo%20(1).png"
+                src="/SO%20-%20Replace.png"
                 alt="Supreme Overseas Logo"
                 className="h-10 w-auto sm:h-12"
                 onError={(e) => {
@@ -219,10 +219,10 @@ const JourneyWizard = () => {
                   className="relative rounded-2xl border-2 border-slate-100 bg-white px-4 py-5 text-sm font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-5 sm:py-6 sm:text-base"
                 >
                   <div className="flex items-center justify-center">
-                    <span className="mr-2 text-lg">📚</span>
+
                     <span>{option}</span>
                   </div>
-                  <div className="absolute -right-2 -top-2 h-4 w-4 rounded-full bg-[#C44E28]"></div>
+
                 </button>
               ))}
             </div>
@@ -246,10 +246,10 @@ const JourneyWizard = () => {
                   className="relative rounded-2xl border-2 border-slate-100 bg-white px-4 py-6 text-base font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-5 sm:py-7"
                 >
                   <div className="flex flex-col items-center">
-                    <span className="mb-2 text-3xl">{opt.flag}</span>
+
                     <span>{opt.label}</span>
                   </div>
-                  <div className="absolute -right-2 -top-2 h-4 w-4 rounded-full bg-[#C44E28]"></div>
+
                 </button>
               ))}
             </div>
@@ -278,10 +278,10 @@ const JourneyWizard = () => {
                     </span>
                   )}
                   <div className="flex items-center justify-center">
-                    <span className="mr-2 text-lg">📅</span>
+
                     <span>{opt.label}</span>
                   </div>
-                  <div className="absolute -right-2 -top-2 h-4 w-4 rounded-full bg-[#C44E28]"></div>
+
                 </button>
               ))}
             </div>
@@ -305,10 +305,10 @@ const JourneyWizard = () => {
                   className="relative rounded-2xl border-2 border-slate-100 bg-white px-4 py-5 text-base font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-5 sm:py-6"
                 >
                   <div className="flex items-center justify-center">
-                    <span className="mr-2 text-lg">🎓</span>
+
                     <span>{option}</span>
                   </div>
-                  <div className="absolute -right-2 -top-2 h-4 w-4 rounded-full bg-[#C44E28]"></div>
+
                 </button>
               ))}
             </div>
@@ -332,10 +332,10 @@ const JourneyWizard = () => {
                   className="relative rounded-2xl border-2 border-slate-100 bg-white px-4 py-5 text-base font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-5 sm:py-6"
                 >
                   <div className="flex items-center justify-center">
-                    <span className="mr-2 text-lg">📝</span>
+
                     <span>{option}</span>
                   </div>
-                  <div className="absolute -right-2 -top-2 h-4 w-4 rounded-full bg-[#C44E28]"></div>
+
                 </button>
               ))}
             </div>
@@ -359,10 +359,10 @@ const JourneyWizard = () => {
                   className="relative w-full rounded-2xl border-2 border-slate-100 bg-white px-6 py-5 text-base font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:w-auto sm:px-8 sm:py-6"
                 >
                   <div className="flex items-center justify-center">
-                    <span className="mr-2 text-lg">🛂</span>
+
                     <span>{option}</span>
                   </div>
-                  <div className="absolute -right-2 -top-2 h-4 w-4 rounded-full bg-[#C44E28]"></div>
+
                 </button>
               ))}
             </div>
@@ -386,10 +386,10 @@ const JourneyWizard = () => {
                   className="relative rounded-2xl border-2 border-slate-100 bg-white px-4 py-5 text-base font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-5 sm:py-6"
                 >
                   <div className="flex items-center justify-center">
-                    <span className="mr-2 text-lg">💰</span>
+
                     <span>{option}</span>
                   </div>
-                  <div className="absolute -right-2 -top-2 h-4 w-4 rounded-full bg-[#C44E28]"></div>
+
                 </button>
               ))}
             </div>
@@ -433,7 +433,7 @@ const JourneyWizard = () => {
                 <label className="mb-2 block text-sm font-bold text-slate-700">Mobile Number*</label>
                 <div className="flex rounded-2xl border-2 border-slate-200 bg-white text-base text-slate-800 transition duration-300 focus-within:border-[#C44E28] focus-within:ring-2 focus-within:ring-[#C44E28]">
                   <span className="flex items-center gap-2 border-r-2 border-slate-200 px-4 text-slate-600">
-                    🇮🇳 +91
+                    +91
                   </span>
                   <input
                     type="tel"

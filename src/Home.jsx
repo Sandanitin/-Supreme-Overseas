@@ -8,13 +8,15 @@ import {
   UserGroupIcon,
   GlobeAltIcon,
   ChatBubbleLeftRightIcon,
-  BuildingLibraryIcon
+  BuildingLibraryIcon,
+  CheckCircleIcon
 } from '@heroicons/react/24/outline'
 
 const Home = () => {
   const [activeCountry, setActiveCountry] = useState('uk')
   const [currentStory, setCurrentStory] = useState(0)
   const [expandedStory, setExpandedStory] = useState(null)
+  const [isHoveringCarousel, setIsHoveringCarousel] = useState(false)
 
   const successStories = [
     {
@@ -348,12 +350,15 @@ const Home = () => {
 
   // Auto-slide carousel for success stories
   useEffect(() => {
+    // Don't auto-slide if user is hovering over the carousel
+    if (isHoveringCarousel) return
+
     const interval = setInterval(() => {
       setCurrentStory((prev) => (prev + 1) % successStories.length)
     }, 4000) // Change slide every 4 seconds
 
     return () => clearInterval(interval)
-  }, [successStories.length])
+  }, [successStories.length, isHoveringCarousel])
 
   // Handle manual dot click
   const handleDotClick = (index) => {
@@ -370,7 +375,7 @@ const Home = () => {
             {/* Logo */}
             <div className="flex items-center">
               <img
-                src="/Supreme%20Overseas%20-%20Logo%20(1).png"
+                src="/SO%20-%20Replace.png"
                 alt="Supreme Overseas Logo"
                 className="h-14 w-auto sm:h-24 md:h-32"
                 onError={(e) => {
@@ -414,21 +419,15 @@ const Home = () => {
               {/* Benefits - Mobile: vertical list, Desktop: horizontal */}
               <div className="mt-8 space-y-4 sm:mt-6 sm:flex sm:flex-row sm:items-center sm:justify-center sm:gap-6 sm:space-y-0 md:gap-8">
                 <div className="flex items-start gap-3.5 text-lg font-medium text-[#38662B] sm:items-center sm:gap-2 sm:text-sm md:text-base">
-                  <span className="mt-1 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#38662B]/10 text-base font-bold text-[#2E6C2E] sm:mt-0 sm:h-5 sm:w-5 sm:text-[11px]">
-                    ✓
-                  </span>
+                  {React.createElement(CheckCircleIcon, { className: 'mt-1 h-7 w-7 flex-shrink-0 text-[#2E6C2E] sm:mt-0 sm:h-5 sm:w-5', strokeWidth: 2 })}
                   <span className="leading-snug sm:leading-normal">Courses starting from ₹8 Lakhs*</span>
                 </div>
                 <div className="flex items-start gap-3.5 text-lg font-medium text-[#38662B] sm:items-center sm:gap-2 sm:text-sm md:text-base">
-                  <span className="mt-1 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#38662B]/10 text-base font-bold text-[#2E6C2E] sm:mt-0 sm:h-5 sm:w-5 sm:text-[11px]">
-                    ✓
-                  </span>
+                  {React.createElement(CheckCircleIcon, { className: 'mt-1 h-7 w-7 flex-shrink-0 text-[#2E6C2E] sm:mt-0 sm:h-5 sm:w-5', strokeWidth: 2 })}
                   <span className="leading-snug sm:leading-normal">Scholarship worth ₹10,00,000*</span>
                 </div>
                 <div className="flex items-start gap-3.5 text-lg font-medium text-[#38662B] sm:items-center sm:gap-2 sm:text-sm md:text-base">
-                  <span className="mt-1 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#38662B]/10 text-base font-bold text-[#2E6C2E] sm:mt-0 sm:h-5 sm:w-5 sm:text-[11px]">
-                    ✓
-                  </span>
+                  {React.createElement(CheckCircleIcon, { className: 'mt-1 h-7 w-7 flex-shrink-0 text-[#2E6C2E] sm:mt-0 sm:h-5 sm:w-5', strokeWidth: 2 })}
                   <span className="leading-snug sm:leading-normal">Offer letter in less than 48 hours*</span>
                 </div>
               </div>
@@ -465,17 +464,17 @@ const Home = () => {
       </section>
 
       {/* WHY CHOOSE SECTION */}
-      <section id="about" className="relative overflow-hidden bg-slate-900 py-16 sm:py-24">
+      <section id="about" className="relative overflow-hidden bg-gradient-to-br from-slate-50 to-white py-16 sm:py-24">
         {/* Decorative background elements */}
-        <div className="absolute top-0 left-0 -mt-20 -ml-20 h-96 w-96 rounded-full bg-[#2E6C2E]/20 blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 -mb-20 -mr-20 h-96 w-96 rounded-full bg-[#C44E28]/20 blur-3xl"></div>
+        <div className="absolute top-0 right-0 -mt-32 -mr-32 h-96 w-96 rounded-full bg-[#2E6C2E]/5 blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 -mb-32 -ml-32 h-96 w-96 rounded-full bg-[#C44E28]/5 blur-3xl"></div>
 
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl font-bold text-white sm:text-4xl">
-              Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C44E28] to-[#D9531E]">Supreme Overseas?</span>
+            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">
+              Why Choose <span className="text-[#C44E28]">Supreme Overseas?</span>
             </h2>
-            <p className="mt-4 text-lg text-slate-400 max-w-2xl mx-auto">
+            <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
               We are committed to your success with a proven track record of excellence.
             </p>
           </div>
@@ -485,13 +484,13 @@ const Home = () => {
             {whyItems.map((item, index) => (
               <div
                 key={item.label}
-                className="group relative overflow-hidden rounded-2xl bg-slate-800/50 p-6 text-center backdrop-blur-sm ring-1 ring-white/10 transition-all hover:-translate-y-2 hover:bg-slate-800 hover:shadow-2xl hover:shadow-[#C44E28]/10"
+                className="group relative overflow-hidden rounded-2xl bg-white p-6 text-center shadow-md ring-1 ring-slate-100 transition-all hover:-translate-y-2 hover:shadow-2xl"
               >
                 {/* Hover Gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${item.color.replace('text-', 'from-')}/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-br ${item.color.replace('text-', 'from-')}/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100`}></div>
 
                 <div className="relative flex flex-col items-center justify-center">
-                  <div className={`mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-900 ring-1 ring-white/10 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-50 ring-1 ring-slate-200 shadow-sm group-hover:scale-110 transition-transform duration-300`}>
                     {React.createElement(item.icon, { className: `h-8 w-8 ${item.color}`, strokeWidth: 1.5 })}
                   </div>
 
@@ -499,7 +498,7 @@ const Home = () => {
                     <p className={`text-3xl font-bold ${item.color} sm:text-4xl`}>
                       {item.value}
                     </p>
-                    <p className="text-sm font-medium text-slate-400 sm:text-base">
+                    <p className="text-sm font-medium text-slate-600 sm:text-base">
                       {item.label.replace(item.value, '').trim() || item.label}
                     </p>
                   </div>
@@ -824,12 +823,12 @@ const Home = () => {
       </section>
 
       {/* SUCCESS STORIES SECTION */}
-      < section id="success-stories" className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30 py-12 sm:py-16 md:py-20" >
+      <section id="success-stories" className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30 py-12 sm:py-16 md:py-20">
         {/* Decorative background elements */}
-        < div className="absolute inset-0 overflow-hidden" >
+        <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-gradient-to-br from-[#C44E28]/5 to-transparent blur-3xl"></div>
           <div className="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-gradient-to-br from-[#2E6C2E]/5 to-transparent blur-3xl"></div>
-        </div >
+        </div>
 
         <div className="relative mx-auto max-w-6xl px-4 sm:px-4 md:px-6">
           {/* Section Header */}
@@ -852,7 +851,14 @@ const Home = () => {
           {/* Mobile: Auto-sliding carousel, Desktop: Grid */}
           <div className="mt-8 sm:mt-12">
             {/* Mobile Carousel */}
-            <div className="relative block sm:hidden">
+            <div
+              className="relative block sm:hidden"
+              onMouseEnter={() => setIsHoveringCarousel(true)}
+              onMouseLeave={() => setIsHoveringCarousel(false)}
+              onTouchStart={() => setIsHoveringCarousel(true)}
+              onTouchEnd={() => setIsHoveringCarousel(false)}
+              onTouchCancel={() => setIsHoveringCarousel(false)}
+            >
               <div className="overflow-hidden">
                 <div
                   className="flex transition-transform duration-700 ease-out"
@@ -933,21 +939,6 @@ const Home = () => {
                   ))}
                 </div>
               </div>
-
-              {/* Modern dot indicators */}
-              <div className="mt-6 flex justify-center gap-2">
-                {successStories.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleDotClick(index)}
-                    className={`h-2 rounded-full transition-all ${index === currentStory
-                      ? 'w-8 bg-gradient-to-r from-[#C44E28] to-[#D9531E]'
-                      : 'w-2 bg-slate-300 hover:bg-slate-400'
-                      }`}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
-              </div>
             </div>
 
             {/* Desktop Grid */}
@@ -1026,20 +1017,20 @@ const Home = () => {
                 </article>
               ))}
             </div>
-          </div>
 
-          {/* CTA Button */}
-          <div className="mt-10 flex justify-center sm:mt-12">
-            <button
-              type="button"
-              onClick={() => navigate('/journey')}
-              className="rounded-xl bg-[#C44E28] px-8 py-4 text-base font-bold text-white shadow-lg shadow-[#C44E28]/30 transition-all hover:-translate-y-1 hover:bg-[#D9531E] hover:shadow-xl sm:px-10 sm:py-5 sm:text-lg"
-            >
-              Start Your Journey
-            </button>
+            {/* CTA Button */}
+            <div className="mt-10 flex justify-center sm:mt-12">
+              <button
+                type="button"
+                onClick={() => navigate('/journey')}
+                className="rounded-xl bg-[#C44E28] px-8 py-4 text-base font-bold text-white shadow-lg shadow-[#C44E28]/30 transition-all hover:-translate-y-1 hover:bg-[#D9531E] hover:shadow-xl sm:px-10 sm:py-5 sm:text-lg"
+              >
+                Start Your Journey
+              </button>
+            </div>
           </div>
         </div>
-      </section >
+      </section>
 
       {/* STUDY ABROAD INFO SECTION */}
       < section className="relative overflow-hidden bg-white py-16 sm:py-24" >
@@ -1132,9 +1123,9 @@ const Home = () => {
             <div className="sm:col-span-2 lg:col-span-2">
               <div className="mb-6 flex items-center">
                 <img
-                  src="/Supreme%20Overseas%20-%20Logo%20(1).png"
+                  src="/SO%20-%20Replace.png"
                   alt="Supreme Overseas Logo"
-                  className="h-12 w-auto brightness-0 invert opacity-90 sm:h-14"
+                  className="h-12 w-auto sm:h-14"
                   onError={(e) => {
                     console.error('Error loading footer logo:', e.target.src);
                     e.target.style.display = 'none';
