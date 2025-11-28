@@ -145,6 +145,14 @@ const Home = () => {
     },
   ]
 
+  const footerDestinations = [
+    { label: 'United Kingdom', emoji: '🇬🇧', image: 'https://flagcdn.com/w40/gb.png' },
+    { label: 'USA', emoji: '🇺🇸', image: 'https://flagcdn.com/w40/us.png' },
+    { label: 'Germany', emoji: '🇩🇪', image: 'https://flagcdn.com/w40/de.png' },
+    { label: 'Canada', emoji: '🇨🇦', image: 'https://flagcdn.com/w40/ca.png' },
+    { label: 'Dubai', emoji: '🇦🇪', image: 'https://flagcdn.com/w40/ae.png' },
+  ]
+
   const universityTabs = [
     { id: 'uk', name: 'United Kingdom', flag: '🇬🇧' },
     { id: 'usa', name: 'USA', flag: '🇺🇸' },
@@ -160,36 +168,42 @@ const Home = () => {
         location: 'Birmingham, UK',
         courses: '95+ Courses',
         short: 'UoB',
+        logo: '/universities/university-of-birmingham.png',
       },
       {
         name: 'Queen Mary University of London',
         location: 'London, UK',
         courses: '78+ Courses',
         short: 'QMUL',
+        logo: '/universities/queen-mary-london.png',
       },
       {
         name: 'University of Leeds',
         location: 'Leeds, UK',
         courses: '64+ Courses',
         short: 'UoL',
+        logo: '/universities/university-of-leeds.png',
       },
       {
         name: 'University of Southampton',
         location: 'Southampton, UK',
         courses: '52+ Courses',
         short: 'UoS',
+        logo: '/universities/university-of-southampton.png',
       },
       {
         name: 'University of Strathclyde',
         location: 'Glasgow, UK',
         courses: '48+ Courses',
         short: 'UoS',
+        logo: '/universities/university-of-strathclyde.png',
       },
       {
         name: 'Coventry University',
         location: 'Coventry, UK',
         courses: '36+ Courses',
         short: 'CU',
+        logo: '/universities/coventry-university.png',
       },
     ],
     usa: [
@@ -198,36 +212,42 @@ const Home = () => {
         location: 'Urbana-Champaign, USA',
         courses: '89+ Courses',
         short: 'UIUC',
+        logo: '/universities/university-of-illinois.png',
       },
       {
         name: 'Central Michigan University',
         location: 'Mount Pleasant, USA',
         courses: '42+ Courses',
         short: 'CMU',
+        logo: '/universities/central-michigan.png',
       },
       {
         name: 'University of New Haven',
         location: 'West Haven, USA',
         courses: '38+ Courses',
         short: 'UNH',
+        logo: '/universities/university-of-new-haven.png',
       },
       {
         name: 'Wichita State University',
         location: 'Wichita, USA',
         courses: '29+ Courses',
         short: 'WSU',
+        logo: '/universities/wichita-state.png',
       },
       {
         name: 'Bradley University',
         location: 'Peoria, USA',
         courses: '22+ Courses',
         short: 'BU',
+        logo: '/universities/bradley-university.png',
       },
       {
         name: 'Sacred Heart University',
         location: 'Fairfield, USA',
         courses: '18+ Courses',
         short: 'SHU',
+        logo: '/universities/sacred-heart.png',
       },
     ],
     germany: [
@@ -236,36 +256,42 @@ const Home = () => {
         location: 'Berlin, Germany',
         courses: '12+ Courses',
         short: 'BSBI',
+        logo: '/universities/bsbi-berlin.png',
       },
       {
         name: 'GISMA Business School',
         location: 'Hannover, Germany',
         courses: '8+ Courses',
         short: 'GISMA',
+        logo: '/universities/gisma-business.png',
       },
       {
         name: 'EU Business School',
         location: 'Munich, Germany',
         courses: '15+ Courses',
         short: 'EUBS',
+        logo: '/universities/eu-business.png',
       },
       {
         name: 'SRH Berlin University',
         location: 'Berlin, Germany',
         courses: '9+ Courses',
         short: 'SRH',
+        logo: '/universities/srh-berlin.png',
       },
       {
         name: 'Munich Business School',
         location: 'Munich, Germany',
         courses: '7+ Courses',
         short: 'MBS',
+        logo: '/universities/munich-business.png',
       },
       {
         name: 'EBS Universität',
         location: 'Wiesbaden, Germany',
         courses: '11+ Courses',
         short: 'EBS',
+        logo: '/universities/ebs-universitat.png',
       },
     ],
     canada: [
@@ -274,36 +300,42 @@ const Home = () => {
         location: 'Niagara Falls, Canada',
         courses: '22+ Courses',
         short: 'UNF',
+        logo: '/universities/niagara-falls.png',
       },
       {
         name: 'Lakeshore College',
         location: 'Lakeshore, Canada',
         courses: '167+ Courses',
         short: 'LC',
+        logo: '/universities/lakeshore-college.png',
       },
       {
         name: 'Humber College',
         location: 'Toronto, Canada',
         courses: '98+ Courses',
         short: 'Humber',
+        logo: '/universities/humber-college.png',
       },
       {
         name: 'Centennial College',
         location: 'Toronto, Canada',
         courses: '76+ Courses',
         short: 'Centennial',
+        logo: '/universities/centennial-college.png',
       },
       {
         name: 'George Brown College',
         location: 'Toronto, Canada',
         courses: '65+ Courses',
         short: 'GBC',
+        logo: '/universities/george-brown.png',
       },
       {
         name: 'Seneca College',
         location: 'Toronto, Canada',
         courses: '54+ Courses',
         short: 'Seneca',
+        logo: '/universities/seneca-college.png',
       },
     ],
     dubai: [
@@ -312,36 +344,42 @@ const Home = () => {
         location: 'Dubai',
         courses: '95+ Courses',
         short: 'UoB Dubai',
+        logo: '/universities/university-of-birmingham.png',
       },
       {
         name: 'Middlesex University',
         location: 'Dubai',
         courses: '64+ Courses',
         short: 'MU',
+        logo: '/universities/middlesex-university.png',
       },
       {
         name: 'Heriot-Watt University',
         location: 'Dubai',
         courses: '56+ Courses',
         short: 'HWU',
+        logo: '/universities/heriot-watt.png',
       },
       {
         name: 'Manipal University',
         location: 'Dubai',
         courses: '42+ Courses',
         short: 'Manipal',
+        logo: '/universities/manipal-university.png',
       },
       {
         name: 'De Montfort University',
         location: 'Dubai',
         courses: '22+ Courses',
         short: 'DMU',
+        logo: '/universities/de-montfort.png',
       },
       {
         name: 'Amity University',
         location: 'Dubai',
         courses: '11+ Courses',
         short: 'Amity',
+        logo: '/universities/amity-university.png',
       },
     ],
   }
@@ -782,8 +820,25 @@ const Home = () => {
                 className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 transition-all hover:-translate-y-1 hover:shadow-xl hover:ring-[#C44E28]/20"
               >
                 <div className="flex items-start justify-between">
-                  <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-slate-50 text-sm font-bold uppercase tracking-tight text-slate-700 ring-1 ring-slate-100 group-hover:bg-[#C44E28]/5 group-hover:text-[#C44E28] transition-colors">
-                    {uni.short}
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-slate-50 ring-1 ring-slate-100 group-hover:ring-[#C44E28]/30 transition-all">
+                      <img
+                        src={uni.logo}
+                        alt={`${uni.name} logo`}
+                        className="h-full w-full object-contain p-1.5"
+                        loading="lazy"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          const fallback = document.createElement('span');
+                          fallback.textContent = uni.short;
+                          fallback.className = 'text-xs font-semibold uppercase tracking-wide text-slate-600 group-hover:text-[#C44E28]';
+                          e.target.parentElement?.appendChild(fallback);
+                        }}
+                      />
+                    </div>
+                    <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                      {uni.short}
+                    </span>
                   </div>
                   <span className="inline-flex items-center rounded-full bg-green-50 px-2.5 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
                     Top Ranked
@@ -812,7 +867,10 @@ const Home = () => {
                     </span>
                     <span className="text-sm font-semibold text-slate-700">{uni.courses}</span>
                   </div>
-                  <button className="text-sm font-medium text-[#C44E28] hover:text-[#D9531E] transition-colors">
+                  <button
+                    onClick={() => navigate('/journey')}
+                    className="text-sm font-medium text-[#C44E28] hover:text-[#D9531E] transition-colors cursor-pointer"
+                  >
                     View Details →
                   </button>
                 </div>
@@ -1157,12 +1215,30 @@ const Home = () => {
             {/* Study Destinations */}
             <div>
               <h3 className="mb-6 text-sm font-bold uppercase tracking-wider text-slate-200">Study Destinations</h3>
-              <ul className="space-y-3 text-sm text-slate-400">
-                <li><span className="cursor-pointer hover:text-[#C44E28] transition-colors flex items-center gap-2">🇬🇧 United Kingdom</span></li>
-                <li><span className="cursor-pointer hover:text-[#C44E28] transition-colors flex items-center gap-2">🇺🇸 USA</span></li>
-                <li><span className="cursor-pointer hover:text-[#C44E28] transition-colors flex items-center gap-2">🇩🇪 Germany</span></li>
-                <li><span className="cursor-pointer hover:text-[#C44E28] transition-colors flex items-center gap-2">🇨🇦 Canada</span></li>
-                <li><span className="cursor-pointer hover:text-[#C44E28] transition-colors flex items-center gap-2">🇦🇪 Dubai</span></li>
+              <ul className="space-y-4 text-sm text-slate-400">
+                {footerDestinations.map((destination) => (
+                  <li key={destination.label}>
+                    <span className="flex items-center gap-3 cursor-pointer hover:text-[#C44E28] transition-colors">
+                      <span className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full border border-slate-700 bg-slate-800 text-xs font-semibold text-white/70">
+                        <img
+                          src={destination.image}
+                          alt={`${destination.label} flag`}
+                          loading="lazy"
+                          className="h-full w-full object-cover"
+                          data-emoji={destination.emoji}
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none'
+                            if (e.currentTarget.parentElement) {
+                              e.currentTarget.parentElement.textContent = e.currentTarget.dataset.emoji || ''
+                              e.currentTarget.parentElement.classList.add('text-lg')
+                            }
+                          }}
+                        />
+                      </span>
+                      <span>{destination.label}</span>
+                    </span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

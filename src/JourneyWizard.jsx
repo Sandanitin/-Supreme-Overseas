@@ -18,19 +18,19 @@ const degreeOptions = [
 ]
 
 const destinationOptions = [
-  { value: 'UK', label: 'UK', flag: '🇬🇧' },
-  { value: 'Ireland', label: 'Ireland', flag: '🇮🇪' },
-  { value: 'Dubai', label: 'Dubai', flag: '🇦🇪' },
-  { value: 'Germany', label: 'Germany', flag: '🇩🇪' },
-  { value: 'Italy', label: 'Italy', flag: '🇮🇹' },
-  { value: 'France', label: 'France', flag: '🇫🇷' },
-  { value: 'US', label: 'US', flag: '🇺🇸' },
-  { value: 'Canada', label: 'Canada', flag: '🇨🇦' },
-  { value: 'Australia', label: 'Australia', flag: '🇦🇺' },
-  { value: 'New Zealand', label: 'New Zealand', flag: '🇳🇿' },
-  { value: 'Malaysia', label: 'Malaysia', flag: '🇲🇾' },
-  { value: 'Singapore', label: 'Singapore', flag: '🇸🇬' },
-  { value: 'Other', label: 'Other', flag: '🌍' },
+  { value: 'UK', label: 'UK', flag: '🇬🇧', image: 'https://flagcdn.com/w80/gb.png' },
+  { value: 'Ireland', label: 'Ireland', flag: '🇮🇪', image: 'https://flagcdn.com/w80/ie.png' },
+  { value: 'Dubai', label: 'Dubai', flag: '🇦🇪', image: 'https://flagcdn.com/w80/ae.png' },
+  { value: 'Germany', label: 'Germany', flag: '🇩🇪', image: 'https://flagcdn.com/w80/de.png' },
+  { value: 'Italy', label: 'Italy', flag: '🇮🇹', image: 'https://flagcdn.com/w80/it.png' },
+  { value: 'France', label: 'France', flag: '🇫🇷', image: 'https://flagcdn.com/w80/fr.png' },
+  { value: 'US', label: 'US', flag: '🇺🇸', image: 'https://flagcdn.com/w80/us.png' },
+  { value: 'Canada', label: 'Canada', flag: '🇨🇦', image: 'https://flagcdn.com/w80/ca.png' },
+  { value: 'Australia', label: 'Australia', flag: '🇦🇺', image: 'https://flagcdn.com/w80/au.png' },
+  { value: 'New Zealand', label: 'New Zealand', flag: '🇳🇿', image: 'https://flagcdn.com/w80/nz.png' },
+  { value: 'Malaysia', label: 'Malaysia', flag: '🇲🇾', image: 'https://flagcdn.com/w80/my.png' },
+  { value: 'Singapore', label: 'Singapore', flag: '🇸🇬', image: 'https://flagcdn.com/w80/sg.png' },
+  { value: 'Other', label: 'Other', flag: '🌍', image: 'https://flagcdn.com/w80/un.png' },
 ]
 
 const intakeOptions = [
@@ -245,11 +245,21 @@ const JourneyWizard = () => {
                   onClick={() => handleSelect('destination', opt.value)}
                   className="relative rounded-2xl border-2 border-slate-100 bg-white px-4 py-6 text-base font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-5 sm:py-7"
                 >
-                  <div className="flex flex-col items-center">
-
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border border-slate-100 bg-slate-50 shadow-sm">
+                      <img
+                        src={opt.image}
+                        alt={`${opt.label} flag`}
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none'
+                        }}
+                      />
+                    </div>
+                    <span className="text-xs uppercase tracking-wide text-slate-500">{opt.flag}</span>
                     <span>{opt.label}</span>
                   </div>
-
                 </button>
               ))}
             </div>
