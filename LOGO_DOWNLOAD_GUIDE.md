@@ -2,7 +2,7 @@
 
 Please download the following authentic university logos and save them to `public/universities/` folder:
 
-## UK Universities
+## xx Universities
 
 1. **University of Birmingham**
    - URL: https://www.stickpng.com/img/icons-logos-emojis/russell-group-universities/university-of-birmingham-crest

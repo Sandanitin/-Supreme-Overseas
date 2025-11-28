@@ -154,11 +154,11 @@ const Home = () => {
   ]
 
   const universityTabs = [
-    { id: 'uk', name: 'United Kingdom', flag: '🇬🇧' },
-    { id: 'usa', name: 'USA', flag: '🇺🇸' },
-    { id: 'germany', name: 'Germany', flag: '🇩🇪' },
-    { id: 'canada', name: 'Canada', flag: '🇨🇦' },
-    { id: 'dubai', name: 'Dubai', flag: '🇦🇪' },
+    { id: 'uk', name: 'United Kingdom' },
+    { id: 'usa', name: 'USA'},
+    { id: 'germany', name: 'Germany'},
+    { id: 'canada', name: 'Canada'},
+    { id: 'dubai', name: 'Dubai' },
   ]
 
   const universitiesByCountry = {
