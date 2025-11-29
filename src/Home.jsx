@@ -413,7 +413,7 @@ const Home = () => {
             <img
               src="/SO%20-%20Replace.png"
               alt="Supreme Overseas Logo"
-              className="h-14 w-auto sm:h-24 md:h-32"
+              className="h- w-auto sm:h-9"
               onError={(e) => {
                 console.error('Error loading logo:', e.target.src);
                 e.target.style.display = 'none';
