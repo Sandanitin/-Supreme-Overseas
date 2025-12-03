@@ -25,10 +25,13 @@ const Home = () => {
       from: 'Andhra Pradesh',
       to: 'UK',
       quote:
-        'My mentor made shortlisting, applications, and visas a breeze. I had support at every step of the way.',
+        'My UK student visa journey was smooth and stress-free thanks to Supreme Overseas. Chairman Sravan Kumar sir supported me at every step—he provided complete loan assistance, helped me secure my ₹40 lakhs education loan, and guided me throughout the entire process. He also arranged food, accommodation near my university, and airport pickup in the UK. I am truly grateful for his constant support and dedicated mentorship throughout my journey to Ravensbourne University London.',
+      shortQuote:
+        'My UK student visa journey was smooth and stress-free thanks to Supreme Overseas.',
       field: 'MSc Computer Science',
       university: 'Ravensbourne University London',
-      loan: '₹40 Lakhs'
+      loan: '₹40 Lakhs',
+      image: '/students/Arigela Bala Pawan.png'
     },
     {
       name: 'Bellamkonda Vamsi Krishna',
@@ -36,10 +39,13 @@ const Home = () => {
       from: 'Andhra Pradesh',
       to: 'USA',
       quote:
-        'Extremely satisfied with my college application process. Clear guidance and a truly student-first approach.',
+        'My USA student visa journey was smooth and successful thanks to Supreme Overseas. I completed my B.Tech at VVIT, Guntur, and with the guidance of Chairman Sravan Kumar sir, every step toward my MS admission at Bradley University became easier. He supported me throughout—from helping me secure my ₹45 lakhs education loan to arranging food, accommodation, and airport pickup in the USA. I’m truly grateful for his constant support and mentorship.',
+      shortQuote:
+        'My USA student visa journey was smooth and successful thanks to Supreme Overseas.',
       field: 'MS in Civil Engineering',
       university: 'Bradley University',
-      loan: '₹45 Lakhs'
+      loan: '₹45 Lakhs',
+      image: '/students/Bellamkonda Vamsi Krishna.png'
     },
     {
       name: 'Karicheti Lavanya',
@@ -47,12 +53,13 @@ const Home = () => {
       from: 'Andhra Pradesh',
       to: 'USA',
       quote:
-        'My name is Karicheti Lavanya, and securing my USA student visa has been one of the most significant milestones in my academic journey. While I was in the final semester of my Bachelor of Technology in Electronics and Communication Engineering at Malineni Lakshmaiah Women\'s Engineering College, Guntur, Andhra Pradesh. I began my study abroad journey with Supreme Overseas, recommended by my friend Vamsi Krishna Reddy. This became the turning point that shaped my path to studying in the United States. Under the guidance of Chairman Sravan Kumar Sir, I received personalized TOEFL training, precise visa documentation support, and professional preparation for my visa interview. His mentorship, dedication, and encouragement helped me confidently secure admission and my MS in Electrical and Computer Engineering at Wichita State University. I am deeply grateful to Supreme Overseas and Sravan Kumar Sir for their unwavering support in making my dream of studying in the United States a reality.',
+        'My name is Karicheti Lavanya, and securing my USA student visa has been one of the most significant milestones in my academic journey. While I was in the final semester of my Bachelor of Technology in Electronics and Communication Engineering at Malineni Lakshmaiah Women’s Engineering College, Guntur, Andhra Pradesh. I began my study abroad journey with Supreme Overseas, recommended by my friend Vamsi Krishna Reddy. This became the turning point that shaped my path to studying in the United States. Under the guidance of Chairman Sravan Kumar Sir, I received personalized TOEFL training, precise visa documentation support, and professional preparation for my visa interview. His mentorship, dedication, and encouragement helped me confidently secure admission and my MS in Electrical and Computer Engineering at Wichita State University. I am deeply grateful to Supreme Overseas and Sravan Kumar Sir for their unwavering support in making my dream of studying in the United States a reality.',
       shortQuote:
-        'Secured USA student visa and MS in Electrical and Computer Engineering at Wichita State University with personalized TOEFL training and visa documentation support.',
+        'Securing my USA student visa has been one of the most significant milestones in my academic journey.',
       field: 'MS in Electrical and Computer Engineering',
       university: 'Wichita State University',
-      loan: ''
+      loan: '',
+      image: '/students/Karicheti Lavanya.png'
     },
     {
       name: 'Peruboina Navya',
@@ -60,12 +67,13 @@ const Home = () => {
       from: 'Andhra Pradesh',
       to: 'USA',
       quote:
-        'My journey toward securing a U.S. student visa was not easy. During my first attempt, my visa was unfortunately rejected due to incorrect documentation prepared by a fraudulent study-abroad consultancy in Guntur, Andhra Pradesh. This was an extremely challenging phase for me, as the mistake was beyond my control. At that crucial time, my friend Praneeth recommended Supreme Overseas and introduced me to Chairman Sravan Kumar Sir for my second visa attempt. This recommendation changed everything for me. Under Sravan Kumar Sir\'s guidance, I received exceptional support and professional training. He personally prepared my visa documentation with utmost accuracy, ensured that I was fully confident for my visa interview, and guided me through every step of the process. His dedication and expertise helped me secure my USA student visa approval on my second attempt. What truly stood out was the level of care and support beyond consultancy services. He arranged food and accommodation for me, ensured airport pickup and drop in the USA, and helped me settle into my new flat comfortably. This kind of personal support is something I had never experienced from any consultancy before. I am deeply grateful to Supreme Overseas and Sravan Kumar Sir for playing a crucial role in making my dream of studying in the United States a reality.',
+        'My name is Peruboina Navya, and I am from the United States. I am currently pursuing my Master of Science in Public Health at the University of New Haven. I completed my Bachelor of Pharmacy (B. Pharmacy) at Vignan Pharmacy College, Guntur. My journey toward securing a U.S. student visa was not easy. During my first attempt, my visa was unfortunately rejected due to incorrect documentation prepared by a fraudulent study-abroad consultancy in Guntur, Andhra Pradesh. This was an extremely challenging phase for me, as the mistake was beyond my control. At that crucial time, my friend Praneeth recommended Supreme Overseas and introduced me to Chairman Sravan Kumar Sir for my second visa attempt. This recommendation changed everything for me. Under Sravan Kumar Sir’s guidance, I received exceptional support and professional training. He personally prepared my visa documentation with utmost accuracy, ensured that I was fully confident for my visa interview, and guided me through every step of the process. His dedication and expertise helped me secure my USA student visa approval on my second attempt. What truly stood out was the level of care and support beyond consultancy services. He arranged food and accommodation for me, ensured airport pickup and drop in the USA, and helped me settle into my new flat comfortably. This kind of personal support is something I had never experienced from any consultancy before. I am deeply grateful to Supreme Overseas and Sravan Kumar Sir for playing a crucial role in making my dream of studying in the United States a reality.',
       shortQuote:
-        'Overcame visa rejection and secured USA student visa approval on second attempt with exceptional support and professional training.',
+        'My journey toward securing a U.S. student visa was not easy, but Supreme Overseas changed everything for me.',
       field: 'MS in Public Health',
       university: 'University of New Haven',
-      loan: ''
+      loan: '',
+      image: '/students/Navya Peruboina.png'
     },
     {
       name: 'Muthineni Giridhar Babu',
@@ -73,12 +81,41 @@ const Home = () => {
       from: 'Andhra Pradesh',
       to: 'USA',
       quote:
-        'My name is Muthineni Giridhar Babu, and pursuing my MS in Cyber Security at Sacred Heart University has been a long-standing dream. After completing my Bachelor of Technoloy in 2013, I worked as a software engineer in Bengaluru, and my goal has always been to advance my career while settling in the USA with my family. At the age of 33, being married with a son, I initially thought that obtaining a U.S. student visa would be extremely challenging. I carefully searched for the best study abroad consultancy to guide me through this process. My cousin Venkatesh Chowdary recommended Supreme Overseas and introduced me to Chairman Sravan Kumar. From the very beginning, Sravan Kumar Sir took personal care of my application, guiding me at every step. He and his brother Prasanth (USA) conducted multiple mock interviews to ensure I was fully prepared for the visa process. Their professional guidance, encouragement, and attention to detail made a significant difference. Thanks to their unwavering support, my dream has become a reality—my USA student visa was successfully approved, and I am now ready to begin my Master\'s in Cyber Security at Sacred Heart University.',
+        'My name is Muthineni Giridhar Babu, and pursuing my MS in Cyber Security at Sacred Heart University has been a long-standing dream. After completing my Bachelor of Technoloy in 2013, I worked as a software engineer in Bengaluru, and my goal has always been to advance my career while settling in the USA with my family. At the age of 33, being married with a son, I initially thought that obtaining a U.S. student visa would be extremely challenging. I carefully searched for the best study abroad consultancy to guide me through this process. My cousin Venkatesh Chowdary recommended Supreme Overseas and introduced me to Chairman Sravan Kumar. From the very beginning, Sravan Kumar Sir took personal care of my application, guiding me at every step. He and his brother Prasanth (USA) conducted multiple mock interviews to ensure I was fully prepared for the visa process. Their professional guidance, encouragement, and attention to detail made a significant difference. Thanks to their unwavering support, my dream has become a reality—my USA student visa was successfully approved, and I am now ready to begin my Master’s in Cyber Security at Sacred Heart University.',
       shortQuote:
-        'At age 33, successfully obtained USA student visa for MS in Cyber Security at Sacred Heart University with personal care and mock interviews.',
+        'Pursuing my MS in Cyber Security at Sacred Heart University has been a long-standing dream.',
       field: 'MS in Cyber Security',
       university: 'Sacred Heart University',
-      loan: ''
+      loan: '',
+      image: '/students/Muthineni Giridhar Babu.png'
+    },
+    {
+      name: 'M Tulasi Ram',
+      initials: 'MT',
+      from: 'Andhra Pradesh',
+      to: 'USA',
+      quote:
+        'I’m thrilled to share that I have successfully secured my USA Student Visa and will soon begin my Master’s journey at Western New England University. This achievement was made possible with the constant support of Supreme Overseas and especially Chairman Sravan Kumar sir. From helping me secure my ₹44 Lakhs education loan, guiding me through the visa process, to arranging food and accommodation near my university, and even airport pickup and drop in the USA, Sravan Kumar sir supported me at every step. I am extremely grateful for his mentorship and Supreme Overseas’ dedication in shaping my study abroad journey. Excited to start this new chapter!',
+      shortQuote:
+        'I have successfully secured my USA Student Visa and will soon begin my Master’s journey at Western New England University.',
+      field: 'MS in Cyber Security',
+      university: 'Western New England University',
+      loan: '₹44 Lakhs',
+      image: '/students/M Tulasi Ram.png'
+    },
+    {
+      name: 'Singamsetty Naveen',
+      initials: 'SN',
+      from: 'Andhra Pradesh',
+      to: 'UK',
+      quote:
+        'I am Singamsetty Naveen from Andhra Pradesh, India. I have successfully secured my student visa to pursue MSc in Computer Science at Coventry University, UK. For this journey, I availed an education loan of 42 Lakhs, which has made my dream of studying abroad possible. I would like to extend my heartfelt gratitude to Mr. Sravan Kumar, Chairman of Supreme Overseas, who supported me at every step of my study abroad journey. From guiding me through the visa application process to assisting with the education loan, Mr. Kumar ensured a smooth and hassle-free experience. Moreover, he arranged my accommodation very close to the university and provided airport pick-up and drop-off services, making my transition to the UK seamless and comfortable. His guidance and support were invaluable in helping me achieve this milestone. I am excited to embark on this new academic journey and look forward to gaining enriching experiences at Coventry University.',
+      shortQuote:
+        'I have successfully secured my student visa to pursue MSc in Computer Science at Coventry University, UK.',
+      field: 'MSc in Computer Science',
+      university: 'Coventry University',
+      loan: '₹42 Lakhs',
+      image: '/students/Singamsetty Naveen.png'
     },
   ]
 
@@ -155,9 +192,9 @@ const Home = () => {
 
   const universityTabs = [
     { id: 'uk', name: 'United Kingdom' },
-    { id: 'usa', name: 'USA'},
-    { id: 'germany', name: 'Germany'},
-    { id: 'canada', name: 'Canada'},
+    { id: 'usa', name: 'USA' },
+    { id: 'germany', name: 'Germany' },
+    { id: 'canada', name: 'Canada' },
     { id: 'dubai', name: 'Dubai' },
   ]
 
@@ -898,7 +935,7 @@ const Home = () => {
               <span className="text-xs font-semibold text-slate-700">Our Success Stories</span>
             </div>
             <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl">
-              <span className="bg-gradient-to-r from-[#C44E28] via-[#D9531E] to-[#C44E28] bg-clip-text text-transparent">45,000+</span>
+              <span className="bg-gradient-to-r from-[#C44E28] via-[#D9531E] to-[#C44E28] bg-clip-text text-transparent">5,000+</span>
               {' '}Dreamers to Achievers
             </h2>
             <p className="mt-3 text-sm text-slate-600 sm:text-base max-w-2xl mx-auto">
@@ -938,8 +975,16 @@ const Home = () => {
                               <div className="relative flex h-12 w-12 flex-shrink-0 items-center justify-center">
                                 {/* Animated gradient ring */}
                                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#C44E28] to-[#D9531E] opacity-20 blur-md animate-pulse"></div>
-                                <div className="relative flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#C44E28] to-[#D9531E] text-base font-bold text-white shadow-lg shadow-[#C44E28]/30">
-                                  {story.initials}
+                                <div className="relative flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#C44E28] to-[#D9531E] text-base font-bold text-white shadow-lg shadow-[#C44E28]/30 overflow-hidden">
+                                  {story.image ? (
+                                    <img
+                                      src={story.image}
+                                      alt={story.name}
+                                      className="h-full w-full object-cover"
+                                    />
+                                  ) : (
+                                    story.initials
+                                  )}
                                 </div>
                               </div>
                               <div className="min-w-0 flex-1">
@@ -1016,8 +1061,16 @@ const Home = () => {
                         <div className="relative flex h-14 w-14 flex-shrink-0 items-center justify-center">
                           {/* Animated gradient ring */}
                           <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#C44E28] to-[#D9531E] opacity-20 blur-lg group-hover:opacity-40 transition-opacity"></div>
-                          <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[#C44E28] to-[#D9531E] text-lg font-bold text-white shadow-lg shadow-[#C44E28]/30">
-                            {story.initials}
+                          <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[#C44E28] to-[#D9531E] text-lg font-bold text-white shadow-lg shadow-[#C44E28]/30 overflow-hidden">
+                            {story.image ? (
+                              <img
+                                src={story.image}
+                                alt={story.name}
+                                className="h-full w-full object-cover"
+                              />
+                            ) : (
+                              story.initials
+                            )}
                           </div>
                         </div>
                         <div className="min-w-0 flex-1">
