@@ -51,9 +51,9 @@ I've now deleted those incorrect files.
 - ✅ Dublin Business School - Has custom logo
 - ✅ National College of Ireland - Has custom logo
 - ✅ Dublin City University - Has correct DCU logo
-- ❌ University of Limerick - **DELETED (now shows "UL" text)**
-- ❌ Technological University Dublin - **DELETED (now shows "TU DUBLIN" text)**
-- ❌ University College Dublin - **DELETED (now shows "UCD" text)**
+- ✅ University of Limerick - **FIXED (logo now displaying)**
+- ✅ Technological University Dublin - **FIXED (logo now displaying)**
+- ✅ University College Dublin - **FIXED (logo now displaying)**
 
 ---
 
