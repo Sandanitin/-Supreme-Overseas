@@ -188,6 +188,7 @@ const Home = () => {
     { label: 'Germany', emoji: '🇩🇪', image: 'https://flagcdn.com/w40/de.png' },
     { label: 'Canada', emoji: '🇨🇦', image: 'https://flagcdn.com/w40/ca.png' },
     { label: 'Dubai', emoji: '🇦🇪', image: 'https://flagcdn.com/w40/ae.png' },
+    { label: 'Ireland', emoji: '🇮🇪', image: 'https://flagcdn.com/w40/ie.png' },
   ]
 
   const universityTabs = [
@@ -196,6 +197,7 @@ const Home = () => {
     { id: 'germany', name: 'Germany' },
     { id: 'canada', name: 'Canada' },
     { id: 'dubai', name: 'Dubai' },
+    { id: 'ireland', name: 'Ireland' },
   ]
 
   const universitiesByCountry = {
@@ -417,6 +419,50 @@ const Home = () => {
         courses: '11+ Courses',
         short: 'Amity',
         logo: '/universities/amity-university.png',
+      },
+    ],
+    ireland: [
+      {
+        name: 'Dublin Business School',
+        location: 'Dublin, Ireland',
+        courses: '45+ Courses',
+        short: 'DBS',
+        logo: '/universities/dublin-business-school.png',
+      },
+      {
+        name: 'National College of Ireland',
+        location: 'Dublin, Ireland',
+        courses: '38+ Courses',
+        short: 'NCI',
+        logo: '/universities/national-college-of-ireland.png',
+      },
+      {
+        name: 'Dublin City University',
+        location: 'Dublin, Ireland',
+        courses: '120+ Courses',
+        short: 'DCU',
+        logo: '/universities/dublin-city-university.png',
+      },
+      {
+        name: 'University of Limerick',
+        location: 'Limerick, Ireland',
+        courses: '95+ Courses',
+        short: 'UL',
+        logo: '/universities/university-of-limerick.png',
+      },
+      {
+        name: 'Technological University Dublin',
+        location: 'Dublin, Ireland',
+        courses: '110+ Courses',
+        short: 'TU Dublin',
+        logo: '/universities/technological-university-dublin.png',
+      },
+      {
+        name: 'University College Dublin',
+        location: 'Dublin, Ireland',
+        courses: '150+ Courses',
+        short: 'UCD',
+        logo: '/universities/university-college-dublin.png',
       },
     ],
   }
