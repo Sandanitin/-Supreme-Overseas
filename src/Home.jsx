@@ -555,15 +555,26 @@ const Home = () => {
 
               {/* CTA button */}
               <div className="mt-10 sm:mt-8">
-                <button
-                  type="button"
-                  onClick={() => navigate('/journey')}
-                  className="w-full rounded-2xl bg-[#C44E28] px-6 py-5 text-xl font-bold text-white shadow-xl shadow-[#C44E28]/30 transition hover:-translate-y-1 hover:bg-[#D9531E] hover:shadow-2xl sm:w-auto sm:rounded-lg sm:px-8 sm:py-4 sm:text-base sm:font-semibold"
-                >
-                  Start Your Journey
-                </button>
-              </div>
-            </div>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <button
+                    type="button"
+                    onClick={() => navigate('/journey?userType=employee')}
+                    className="relative w-full sm:w-auto rounded-2xl bg-[#2E6C2E] px-6 py-5 text-xl font-bold text-white shadow-xl shadow-[#2E6C2E]/30 transition-all duration-300 hover:-translate-y-2 hover:bg-[#38662B] hover:shadow-2xl sm:rounded-lg sm:px-8 sm:py-4 sm:text-base sm:font-semibold animate-float"
+                  >
+                    <span className="relative z-10">Start Your Journey - Employee</span>
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#2E6C2E] to-[#38662B] opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
+                  </button>
+                  
+                  <button
+                    type="button"
+                    onClick={() => navigate('/journey?userType=student')}
+                    className="relative w-full sm:w-auto rounded-2xl bg-[#C44E28] px-6 py-5 text-xl font-bold text-white shadow-xl shadow-[#C44E28]/30 transition-all duration-300 hover:-translate-y-2 hover:bg-[#D9531E] hover:shadow-2xl sm:rounded-lg sm:px-8 sm:py-4 sm:text-base sm:font-semibold animate-float animation-delay-300"
+                  >
+                    <span className="relative z-10">Start Your Journey - Student</span>
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#C44E28] to-[#D9531E] opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
+                  </button>
+                </div>
+              </div>            </div>
           </div>
 
           {/* Image content - Full viewport width */}
@@ -1176,20 +1187,28 @@ const Home = () => {
             </div>
 
             {/* CTA Button */}
-            <div className="mt-10 flex justify-center sm:mt-12">
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center sm:mt-12">
               <button
                 type="button"
-                onClick={() => navigate('/journey')}
-                className="rounded-xl bg-[#C44E28] px-8 py-4 text-base font-bold text-white shadow-lg shadow-[#C44E28]/30 transition-all hover:-translate-y-1 hover:bg-[#D9531E] hover:shadow-xl sm:px-10 sm:py-5 sm:text-lg"
+                onClick={() => navigate('/journey?userType=employee')}
+                className="relative w-full sm:w-auto rounded-xl bg-[#2E6C2E] px-8 py-4 text-base font-bold text-white shadow-lg shadow-[#2E6C2E]/30 transition-all duration-300 hover:-translate-y-2 hover:bg-[#38662B] hover:shadow-xl sm:px-10 sm:py-5 sm:text-lg animate-float"
               >
-                Start Your Journey
+                <span className="relative z-10">Start Your Journey - Employee</span>
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#2E6C2E] to-[#38662B] opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
+              </button>
+              
+              <button
+                type="button"
+                onClick={() => navigate('/journey?userType=student')}
+                className="relative w-full sm:w-auto rounded-xl bg-[#C44E28] px-8 py-4 text-base font-bold text-white shadow-lg shadow-[#C44E28]/30 transition-all duration-300 hover:-translate-y-2 hover:bg-[#D9531E] hover:shadow-xl sm:px-10 sm:py-5 sm:text-lg animate-float animation-delay-300"
+              >
+                <span className="relative z-10">Start Your Journey - Student</span>
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#C44E28] to-[#D9531E] opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
               </button>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* STUDY ABROAD INFO SECTION */}
+      </section>      {/* STUDY ABROAD INFO SECTION */}
       < section className="relative overflow-hidden bg-white py-16 sm:py-24" >
         {/* Decorative background */}
         < div className="absolute top-0 right-0 -mt-20 -mr-20 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-[#2E6C2E]/5 to-transparent blur-3xl" ></div >

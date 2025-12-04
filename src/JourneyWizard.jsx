@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-
-const totalSteps = 8
+import { useNavigate, useLocation } from 'react-router-dom'
 
 const degreeOptions = [
   'Bachelors',
@@ -18,7 +16,7 @@ const degreeOptions = [
 ]
 
 const destinationOptions = [
-  { value: 'UK', label: 'UK',image: 'https://flagcdn.com/w80/gb.png' },
+  { value: 'UK', label: 'UK', image: 'https://flagcdn.com/w80/gb.png' },
   { value: 'Ireland', label: 'Ireland', image: 'https://flagcdn.com/w80/ie.png' },
   { value: 'Dubai', label: 'Dubai', image: 'https://flagcdn.com/w80/ae.png' },
   { value: 'Germany', label: 'Germany', image: 'https://flagcdn.com/w80/de.png' },
@@ -63,6 +61,14 @@ const budgetOptions = [
   '20 – 30 Lakhs',
   '30 – 50 Lakhs',
   '50 Lakhs +',
+]
+
+const employmentOptions = [
+  'Employed',
+  'Unemployed',
+  'Self-Employed',
+  'Student',
+  'Fresher',
 ]
 
 const stateOptions = [
@@ -116,6 +122,13 @@ const cityOptions = [
 
 const JourneyWizard = () => {
   const navigate = useNavigate()
+  const location = useLocation()
+  const urlParams = new URLSearchParams(location.search)
+  const userType = urlParams.get('userType') || 'student' // default to student if not specified
+  const isEmployee = userType === 'employee'
+
+  const totalSteps = isEmployee ? 3 : 9
+
   const [step, setStep] = useState(1)
   const [answers, setAnswers] = useState({
     degree: null,
@@ -125,6 +138,7 @@ const JourneyWizard = () => {
     englishExam: null,
     passportStatus: null,
     budgetRange: null,
+    employmentStatus: null,
     fullName: '',
     email: '',
     phone: '',
@@ -159,6 +173,17 @@ const JourneyWizard = () => {
 
   const progress = (step / totalSteps) * 100
 
+  // Conditional rendering logic
+  const showDegree = !isEmployee && step === 1
+  const showDestination = (isEmployee && step === 2) || (!isEmployee && step === 2)
+  const showIntake = !isEmployee && step === 3
+  const showEducation = !isEmployee && step === 4
+  const showEnglish = !isEmployee && step === 5
+  const showPassport = !isEmployee && step === 6
+  const showBudget = !isEmployee && step === 7
+  const showEmployment = (isEmployee && step === 1) || (!isEmployee && step === 8)
+  const showPersonal = (isEmployee && step === 3) || (!isEmployee && step === 9)
+
   return (
     <main className="min-h-screen overflow-x-hidden bg-slate-50">
       {/* Top header with logo and progress bar */}
@@ -180,10 +205,7 @@ const JourneyWizard = () => {
           </div>
 
           <h1 className="mt-3 text-center text-xl font-extrabold text-slate-900 sm:mt-4 sm:text-2xl md:text-3xl">
-            Take the First Step to{' '}
-            <span className="bg-gradient-to-r from-[#2E6C2E] to-[#C44E28] bg-clip-text text-transparent">
-              Study Abroad
-            </span>
+            {isEmployee ? 'Start Your Journey - Employee' : 'Take the First Step to Study Abroad'}
           </h1>
 
           <p className="mt-2 text-center text-sm font-medium text-slate-700 sm:mt-3 sm:text-base">
@@ -212,7 +234,7 @@ const JourneyWizard = () => {
           <span>Back</span>
         </button>
 
-        {step === 1 && (
+        {showDegree && (
           <div className="text-center">
             <h2 className="text-xl font-bold text-slate-900 sm:text-2xl md:text-3xl">
               Which degree do you wish to pursue?
@@ -229,17 +251,15 @@ const JourneyWizard = () => {
                   className="relative rounded-2xl border-2 border-slate-100 bg-white px-4 py-5 text-sm font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-5 sm:py-6 sm:text-base"
                 >
                   <div className="flex items-center justify-center">
-
                     <span>{option}</span>
                   </div>
-
                 </button>
               ))}
             </div>
           </div>
         )}
 
-        {step === 2 && (
+        {showDestination && (
           <div className="text-center">
             <h2 className="text-xl font-bold text-slate-900 sm:text-2xl md:text-3xl">
               Which destination do you wish to pursue your education in?
@@ -276,7 +296,7 @@ const JourneyWizard = () => {
           </div>
         )}
 
-        {step === 3 && (
+        {showIntake && (
           <div className="text-center">
             <h2 className="text-xl font-bold text-slate-900 sm:text-2xl md:text-3xl">
               What's your preferred intake?
@@ -298,17 +318,15 @@ const JourneyWizard = () => {
                     </span>
                   )}
                   <div className="flex items-center justify-center">
-
                     <span>{opt.label}</span>
                   </div>
-
                 </button>
               ))}
             </div>
           </div>
         )}
 
-        {step === 4 && (
+        {showEducation && (
           <div className="text-center">
             <h2 className="text-xl font-bold text-slate-900 sm:text-2xl md:text-3xl">
               What is your highest education level?
@@ -325,17 +343,15 @@ const JourneyWizard = () => {
                   className="relative rounded-2xl border-2 border-slate-100 bg-white px-4 py-5 text-base font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-5 sm:py-6"
                 >
                   <div className="flex items-center justify-center">
-
                     <span>{option}</span>
                   </div>
-
                 </button>
               ))}
             </div>
           </div>
         )}
 
-        {step === 5 && (
+        {showEnglish && (
           <div className="text-center">
             <h2 className="text-xl font-bold text-slate-900 sm:text-2xl md:text-3xl">
               What is your English language exam status?
@@ -352,17 +368,15 @@ const JourneyWizard = () => {
                   className="relative rounded-2xl border-2 border-slate-100 bg-white px-4 py-5 text-base font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-5 sm:py-6"
                 >
                   <div className="flex items-center justify-center">
-
                     <span>{option}</span>
                   </div>
-
                 </button>
               ))}
             </div>
           </div>
         )}
 
-        {step === 6 && (
+        {showPassport && (
           <div className="text-center">
             <h2 className="text-xl font-bold text-slate-900 sm:text-2xl md:text-3xl">
               Do you have a valid Passport?
@@ -379,17 +393,15 @@ const JourneyWizard = () => {
                   className="relative w-full rounded-2xl border-2 border-slate-100 bg-white px-6 py-5 text-base font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:w-auto sm:px-8 sm:py-6"
                 >
                   <div className="flex items-center justify-center">
-
                     <span>{option}</span>
                   </div>
-
                 </button>
               ))}
             </div>
           </div>
         )}
 
-        {step === 7 && (
+        {showBudget && (
           <div className="text-center">
             <h2 className="text-xl font-bold text-slate-900 sm:text-2xl md:text-3xl">
               What is your estimated total budget for studying abroad?
@@ -406,17 +418,40 @@ const JourneyWizard = () => {
                   className="relative rounded-2xl border-2 border-slate-100 bg-white px-4 py-5 text-base font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-5 sm:py-6"
                 >
                   <div className="flex items-center justify-center">
-
                     <span>{option}</span>
                   </div>
-
                 </button>
               ))}
             </div>
           </div>
         )}
 
-        {step === 8 && (
+        {showEmployment && (
+          <div className="text-center">
+            <h2 className="text-xl font-bold text-slate-900 sm:text-2xl md:text-3xl">
+              What is your current employment status?
+            </h2>
+            <p className="mt-2 text-sm text-slate-600 sm:text-base">
+              Select your current employment situation
+            </p>
+            <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5 md:grid-cols-3">
+              {employmentOptions.map((option) => (
+                <button
+                  key={option}
+                  type="button"
+                  onClick={() => handleSelect('employmentStatus', option)}
+                  className="relative rounded-2xl border-2 border-slate-100 bg-white px-4 py-5 text-base font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-5 sm:py-6"
+                >
+                  <div className="flex items-center justify-center">
+                    <span>{option}</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {showPersonal && (
           <div className="mx-auto max-w-md">
             <h2 className="text-center text-xl font-bold text-slate-900 sm:text-2xl md:text-3xl">
               Personal Details
