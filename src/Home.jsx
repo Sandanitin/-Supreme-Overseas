@@ -504,7 +504,7 @@ const Home = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img
-              src="/SO%20-%20Replace.png"
+              src="/LOGO%20NAVABAR%20FOOTER/SO%20-%20Replace%202%20(1).png"
               alt="Supreme Overseas Logo"
               className="h- w-auto sm:h-9"
               onError={(e) => {
@@ -569,20 +569,18 @@ const Home = () => {
                   <button
                     type="button"
                     onClick={() => navigate(`/journey?userType=${buttonRole}`)}
-                    className={`relative w-full sm:w-auto rounded-2xl px-6 py-5 text-xl font-bold text-white shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl sm:rounded-lg sm:px-8 sm:py-4 sm:text-base sm:font-semibold animate-float ${
-                      buttonRole === 'employee' 
-                        ? 'bg-[#2E6C2E] shadow-[#2E6C2E]/30 hover:bg-[#38662B]' 
+                    className={`relative w-full sm:w-auto rounded-2xl px-6 py-5 text-xl font-bold text-white shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl sm:rounded-lg sm:px-8 sm:py-4 sm:text-base sm:font-semibold animate-float ${buttonRole === 'employee'
+                        ? 'bg-[#2E6C2E] shadow-[#2E6C2E]/30 hover:bg-[#38662B]'
                         : 'bg-[#C44E28] shadow-[#C44E28]/30 hover:bg-[#D9531E]'
-                    }`}
+                      }`}
                   >
                     <span className="relative z-10">
                       Start Your Journey - {buttonRole === 'employee' ? 'Employee' : 'Student'}
                     </span>
-                    <div className={`absolute inset-0 rounded-2xl opacity-0 hover:opacity-20 transition-opacity duration-300 ${
-                      buttonRole === 'employee' 
-                        ? 'bg-gradient-to-r from-[#2E6C2E] to-[#38662B]' 
+                    <div className={`absolute inset-0 rounded-2xl opacity-0 hover:opacity-20 transition-opacity duration-300 ${buttonRole === 'employee'
+                        ? 'bg-gradient-to-r from-[#2E6C2E] to-[#38662B]'
                         : 'bg-gradient-to-r from-[#C44E28] to-[#D9531E]'
-                    }`}></div>
+                      }`}></div>
                   </button>
                 </div>
               </div>
@@ -1179,7 +1177,7 @@ const Home = () => {
                     <div className="mt-6 space-y-2.5">
                       <div className="grid grid-cols-1 gap-2.5">
                         <div className="rounded-lg bg-gradient-to-r from-[#2E6C2E]/10 to-[#38662B]/10 px-4 py-2.5 border border-[#2E6C2E]/20">
-                          
+
                           <p className="text-[10px] font-medium text-slate-600 uppercase tracking-wide">Program</p>
                           <p className="text-sm font-bold text-[#2E6C2E] mt-0.5">{story.field}</p>
                         </div>
@@ -1205,20 +1203,18 @@ const Home = () => {
               <button
                 type="button"
                 onClick={() => navigate(`/journey?userType=${buttonRole}`)}
-                className={`relative w-full sm:w-auto rounded-xl px-8 py-4 text-base font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:px-10 sm:py-5 sm:text-lg animate-float ${
-                  buttonRole === 'employee' 
-                    ? 'bg-[#2E6C2E] shadow-[#2E6C2E]/30 hover:bg-[#38662B]' 
+                className={`relative w-full sm:w-auto rounded-xl px-8 py-4 text-base font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:px-10 sm:py-5 sm:text-lg animate-float ${buttonRole === 'employee'
+                    ? 'bg-[#2E6C2E] shadow-[#2E6C2E]/30 hover:bg-[#38662B]'
                     : 'bg-[#C44E28] shadow-[#C44E28]/30 hover:bg-[#D9531E]'
-                }`}
+                  }`}
               >
                 <span className="relative z-10">
                   Start Your Journey - {buttonRole === 'employee' ? 'Employee' : 'Student'}
                 </span>
-                <div className={`absolute inset-0 rounded-xl opacity-0 hover:opacity-20 transition-opacity duration-300 ${
-                  buttonRole === 'employee' 
-                    ? 'bg-gradient-to-r from-[#2E6C2E] to-[#38662B]' 
+                <div className={`absolute inset-0 rounded-xl opacity-0 hover:opacity-20 transition-opacity duration-300 ${buttonRole === 'employee'
+                    ? 'bg-gradient-to-r from-[#2E6C2E] to-[#38662B]'
                     : 'bg-gradient-to-r from-[#C44E28] to-[#D9531E]'
-                }`}></div>
+                  }`}></div>
               </button>
             </div>
           </div>
@@ -1316,7 +1312,7 @@ const Home = () => {
             <div className="sm:col-span-2 lg:col-span-2">
               <div className="mb-6 flex items-center">
                 <img
-                  src="/SO%20-%20Replace.png"
+                  src="/LOGO%20NAVABAR%20FOOTER/SO%20-%20Replace%202%20(1).png"
                   alt="Supreme Overseas Logo"
                   className="h-12 w-auto sm:h-14"
                   onError={(e) => {

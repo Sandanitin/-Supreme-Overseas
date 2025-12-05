@@ -193,7 +193,7 @@ const JourneyWizard = () => {
             {/* Logo image */}
             <div className="flex items-center">
               <img
-                src="/SO%20-%20Replace.png"
+                src="/LOGO%20NAVABAR%20FOOTER/SO%20-%20Replace%202%20(1).png"
                 alt="Supreme Overseas Logo"
                 className="h-12 w-auto sm:h-14 md:h-16"
                 onError={(e) => {
