@@ -16,19 +16,8 @@ const degreeOptions = [
 ]
 
 const destinationOptions = [
-  { value: 'UK', label: 'UK', image: 'https://flagcdn.com/w80/gb.png' },
-  { value: 'Ireland', label: 'Ireland', image: 'https://flagcdn.com/w80/ie.png' },
-  { value: 'Dubai', label: 'Dubai', image: 'https://flagcdn.com/w80/ae.png' },
-  { value: 'Germany', label: 'Germany', image: 'https://flagcdn.com/w80/de.png' },
-  { value: 'Italy', label: 'Italy', image: 'https://flagcdn.com/w80/it.png' },
-  { value: 'France', label: 'France', image: 'https://flagcdn.com/w80/fr.png' },
-  { value: 'US', label: 'US', image: 'https://flagcdn.com/w80/us.png' },
-  { value: 'Canada', label: 'Canada', image: 'https://flagcdn.com/w80/ca.png' },
-  { value: 'Australia', label: 'Australia', image: 'https://flagcdn.com/w80/au.png' },
-  { value: 'New Zealand', label: 'New Zealand', image: 'https://flagcdn.com/w80/nz.png' },
-  { value: 'Malaysia', label: 'Malaysia', image: 'https://flagcdn.com/w80/my.png' },
-  { value: 'Singapore', label: 'Singapore', image: 'https://flagcdn.com/w80/sg.png' },
-  { value: 'Other', label: 'Other', image: 'https://flagcdn.com/w80/un.png' },
+  { value: 'Europe Countries', label: 'Europe Countries', image: 'https://flagcdn.com/w80/eu.png' },
+  { value: 'Others', label: 'Others', image: 'https://flagcdn.com/w80/un.png' },
 ]
 
 const intakeOptions = [
