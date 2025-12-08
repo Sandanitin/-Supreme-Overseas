@@ -971,7 +971,7 @@ const Home = () => {
             </div>
 
             <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl">
-              <span className="bg-gradient-to-r from-[#C44E28] via-[#D9531E] to-[#C44E28] bg-clip-text text-transparent">5,000+</span>
+              <span className="bg-gradient-to-r from-[#C44E28] via-[#D9531E] to-[#C44E28] bg-clip-text text-transparent">2,000+</span>
               {' '}Dreamers to Achievers
             </h2>
             <p className="mt-3 text-sm text-slate-600 sm:text-base max-w-2xl mx-auto">
