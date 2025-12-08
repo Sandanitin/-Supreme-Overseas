@@ -1,14 +1,16 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Home from './Home'
-import JourneyWizard from './JourneyWizard'
+import StudentJourneyWizard from './StudentJourneyWizard'
+import EmployeeJourneyWizard from './EmployeeJourneyWizard'
 
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/journey" element={<JourneyWizard />} />
+        <Route path="/journey/student" element={<StudentJourneyWizard />} />
+        <Route path="/journey/employee" element={<EmployeeJourneyWizard />} />
       </Routes>
     </div>
   )
