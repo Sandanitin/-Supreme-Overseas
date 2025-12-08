@@ -568,7 +568,7 @@ const Home = () => {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <button
                     type="button"
-                    onClick={() => navigate(`/journey?userType=${buttonRole}`)}
+                    onClick={() => navigate(buttonRole === 'employee' ? '/journey/employee' : '/journey/student')}
                     className={`relative w-full sm:w-auto rounded-2xl px-6 py-5 text-xl font-bold text-white shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl sm:rounded-lg sm:px-8 sm:py-4 sm:text-base sm:font-semibold animate-float ${buttonRole === 'employee'
                       ? 'bg-[#2E6C2E] shadow-[#2E6C2E]/30 hover:bg-[#38662B]'
                       : 'bg-[#C44E28] shadow-[#C44E28]/30 hover:bg-[#D9531E]'
@@ -1170,7 +1170,7 @@ const Home = () => {
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center sm:mt-12">
               <button
                 type="button"
-                onClick={() => navigate(`/journey?userType=${buttonRole}`)}
+                onClick={() => navigate(buttonRole === 'employee' ? '/journey/employee' : '/journey/student')}
                 className={`relative w-full sm:w-auto rounded-xl px-8 py-4 text-base font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:px-10 sm:py-5 sm:text-lg animate-float ${buttonRole === 'employee'
                   ? 'bg-[#2E6C2E] shadow-[#2E6C2E]/30 hover:bg-[#38662B]'
                   : 'bg-[#C44E28] shadow-[#C44E28]/30 hover:bg-[#D9531E]'
