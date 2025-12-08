@@ -123,9 +123,9 @@ const Home = () => {
   const whyItems = [
     {
       icon: UserGroupIcon,
-      label: '2000 Dreamers',
-      value: '2000',
-      color: 'text-blue-600',
+      label: '2000+ Students',
+      value: '2K+',
+      color: 'text-green-600',
     },
     {
       icon: BuildingLibraryIcon,
