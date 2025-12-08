@@ -122,20 +122,20 @@ const Home = () => {
 
   const whyItems = [
     {
-      icon: BookOpenIcon,
-      label: '100+ Courses',
-      value: '100+',
+      icon: UserGroupIcon,
+      label: '2000 Dreamers',
+      value: '2000',
       color: 'text-blue-600',
     },
     {
-      icon: UserGroupIcon,
-      label: '2000+ Students',
-      value: '2K+',
+      icon: BuildingLibraryIcon,
+      label: '1000+ university partnerships',
+      value: '1000+',
       color: 'text-green-600',
     },
     {
       icon: CurrencyDollarIcon,
-      label: '₹10 Lakhs Scholarships',
+      label: 'Upto ₹10 Lakhs Scholarships',
       value: '₹10L',
       color: 'text-amber-600',
     },
@@ -516,7 +516,7 @@ const Home = () => {
 
           {/* Call button */}
           <a
-            href="tel:8069361480"
+            href="tel:9988245789"
             className="inline-flex items-center gap-1.5 rounded-full border border-slate-300 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 shadow-sm transition hover:bg-slate-50 sm:gap-2 sm:px-5 sm:py-2.5 sm:text-base sm:rounded-full sm:border-[#C44E28] sm:bg-[#C44E28] sm:text-white sm:shadow-lg sm:shadow-[#C44E28]/30 sm:hover:bg-[#D9531E]"
           >
             <svg
@@ -530,7 +530,7 @@ const Home = () => {
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
             </svg>
             <span className="hidden sm:inline">Call us</span>
-            <span className="font-semibold sm:font-bold">8069361480</span>
+            <span className="font-semibold sm:font-bold">9988245789</span>
           </a>
         </div>
       </nav>
@@ -570,16 +570,16 @@ const Home = () => {
                     type="button"
                     onClick={() => navigate(`/journey?userType=${buttonRole}`)}
                     className={`relative w-full sm:w-auto rounded-2xl px-6 py-5 text-xl font-bold text-white shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl sm:rounded-lg sm:px-8 sm:py-4 sm:text-base sm:font-semibold animate-float ${buttonRole === 'employee'
-                        ? 'bg-[#2E6C2E] shadow-[#2E6C2E]/30 hover:bg-[#38662B]'
-                        : 'bg-[#C44E28] shadow-[#C44E28]/30 hover:bg-[#D9531E]'
+                      ? 'bg-[#2E6C2E] shadow-[#2E6C2E]/30 hover:bg-[#38662B]'
+                      : 'bg-[#C44E28] shadow-[#C44E28]/30 hover:bg-[#D9531E]'
                       }`}
                   >
                     <span className="relative z-10">
                       Start Your Journey - {buttonRole === 'employee' ? 'Employee' : 'Student'}
                     </span>
                     <div className={`absolute inset-0 rounded-2xl opacity-0 hover:opacity-20 transition-opacity duration-300 ${buttonRole === 'employee'
-                        ? 'bg-gradient-to-r from-[#2E6C2E] to-[#38662B]'
-                        : 'bg-gradient-to-r from-[#C44E28] to-[#D9531E]'
+                      ? 'bg-gradient-to-r from-[#2E6C2E] to-[#38662B]'
+                      : 'bg-gradient-to-r from-[#C44E28] to-[#D9531E]'
                       }`}></div>
                   </button>
                 </div>
@@ -662,218 +662,186 @@ const Home = () => {
           </div>
 
           {/* Services Grid with Rich Content */}
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {/* Application Assistance */}
-            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg ring-1 ring-slate-100 transition-all hover:-translate-y-2 hover:shadow-2xl sm:p-8">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {/* University Shortlisting */}
+            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg ring-1 ring-slate-100 transition-all hover:-translate-y-2 hover:shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
               <div className="relative">
-                <div className="mb-5">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg shadow-blue-500/30">
-                    {React.createElement(DocumentTextIcon, { className: 'h-7 w-7 text-white', strokeWidth: 1.5 })}
+                <div className="mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg shadow-blue-500/30">
+                    {React.createElement(BuildingLibraryIcon, { className: 'h-6 w-6 text-white', strokeWidth: 1.5 })}
                   </div>
-                  <h3 className="mt-4 text-xl font-bold text-slate-900">Application Assistance</h3>
+                  <h3 className="mt-3 text-lg font-bold text-slate-900">University Shortlisting</h3>
                 </div>
-
-                <p className="mb-4 text-sm leading-relaxed text-slate-600">
-                  Complete support throughout your application journey
-                </p>
-
-                <ul className="space-y-2.5 text-sm text-slate-600">
+                <ul className="space-y-2 text-sm text-slate-600">
                   <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-blue-50 text-xs font-bold text-blue-600">✓</span>
-                    <span>Document preparation & review</span>
+                    <span className="mt-1 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-blue-50 text-xs font-bold text-blue-600">✓</span>
+                    <span>1000+ university partnerships</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-blue-50 text-xs font-bold text-blue-600">✓</span>
-                    <span>SOP & LOR writing assistance</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-blue-50 text-xs font-bold text-blue-600">✓</span>
-                    <span>Application tracking & follow-up</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-blue-50 text-xs font-bold text-blue-600">✓</span>
-                    <span>Offer letter within 48 hours</span>
+                    <span className="mt-1 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-blue-50 text-xs font-bold text-blue-600">✓</span>
+                    <span>Personalized recommendations</span>
                   </li>
                 </ul>
               </div>
             </div>
 
-            {/* Visa Guidance */}
-            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg ring-1 ring-slate-100 transition-all hover:-translate-y-2 hover:shadow-2xl sm:p-8">
+            {/* Course Shortlisting */}
+            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg ring-1 ring-slate-100 transition-all hover:-translate-y-2 hover:shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
               <div className="relative">
-                <div className="mb-5">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-green-500 to-green-600 shadow-lg shadow-green-500/30">
-                    {React.createElement(ChatBubbleLeftRightIcon, { className: 'h-7 w-7 text-white', strokeWidth: 1.5 })}
+                <div className="mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-green-500 to-green-600 shadow-lg shadow-green-500/30">
+                    {React.createElement(BookOpenIcon, { className: 'h-6 w-6 text-white', strokeWidth: 1.5 })}
                   </div>
-                  <h3 className="mt-4 text-xl font-bold text-slate-900">Visa Guidance</h3>
+                  <h3 className="mt-3 text-lg font-bold text-slate-900">Course Shortlisting</h3>
                 </div>
-
-                <p className="mb-4 text-sm leading-relaxed text-slate-600">
-                  Expert visa assistance with 98% success rate
-                </p>
-
-                <ul className="space-y-2.5 text-sm text-slate-600">
+                <ul className="space-y-2 text-sm text-slate-600">
                   <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-green-50 text-xs font-bold text-green-600">✓</span>
-                    <span>Complete documentation support</span>
+                    <span className="mt-1 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-green-50 text-xs font-bold text-green-600">✓</span>
+                    <span>Expert course guidance</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-green-50 text-xs font-bold text-green-600">✓</span>
-                    <span>Mock interview preparation</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-green-50 text-xs font-bold text-green-600">✓</span>
-                    <span>Visa filing & appointment booking</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-green-50 text-xs font-bold text-green-600">✓</span>
-                    <span>Post-visa rejection assistance</span>
+                    <span className="mt-1 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-green-50 text-xs font-bold text-green-600">✓</span>
+                    <span>Career-aligned selection</span>
                   </li>
                 </ul>
               </div>
             </div>
 
-            {/* Education Loan */}
-            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg ring-1 ring-slate-100 transition-all hover:-translate-y-2 hover:shadow-2xl sm:p-8">
+            {/* SOP Proofreading */}
+            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg ring-1 ring-slate-100 transition-all hover:-translate-y-2 hover:shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+              <div className="relative">
+                <div className="mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 shadow-lg shadow-purple-500/30">
+                    {React.createElement(DocumentTextIcon, { className: 'h-6 w-6 text-white', strokeWidth: 1.5 })}
+                  </div>
+                  <h3 className="mt-3 text-lg font-bold text-slate-900">SOP Proofreading</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-slate-600">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-purple-50 text-xs font-bold text-purple-600">✓</span>
+                    <span>Professional review & editing</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-purple-50 text-xs font-bold text-purple-600">✓</span>
+                    <span>Grammar & structure optimization</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Scholarship Assistance */}
+            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg ring-1 ring-slate-100 transition-all hover:-translate-y-2 hover:shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
               <div className="relative">
-                <div className="mb-5">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 shadow-lg shadow-amber-500/30">
-                    {React.createElement(CurrencyDollarIcon, { className: 'h-7 w-7 text-white', strokeWidth: 1.5 })}
+                <div className="mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 shadow-lg shadow-amber-500/30">
+                    {React.createElement(AcademicCapIcon, { className: 'h-6 w-6 text-white', strokeWidth: 1.5 })}
                   </div>
-                  <h3 className="mt-4 text-xl font-bold text-slate-900">Education Loan</h3>
+                  <h3 className="mt-3 text-lg font-bold text-slate-900">Scholarship Assistance</h3>
                 </div>
+                <ul className="space-y-2 text-sm text-slate-600">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-amber-50 text-xs font-bold text-amber-600">✓</span>
+                    <span>Scholarship search & application</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-amber-50 text-xs font-bold text-amber-600">✓</span>
+                    <span>Up to ₹10L scholarships</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
 
-                <p className="mb-4 text-sm leading-relaxed text-slate-600">
-                  Financial support to make your dreams affordable
-                </p>
-
-                <ul className="space-y-2.5 text-sm text-slate-600">
+            {/* Education Loan Assistance */}
+            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg ring-1 ring-slate-100 transition-all hover:-translate-y-2 hover:shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+              <div className="relative">
+                <div className="mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-red-500 to-red-600 shadow-lg shadow-red-500/30">
+                    {React.createElement(CurrencyDollarIcon, { className: 'h-6 w-6 text-white', strokeWidth: 1.5 })}
+                  </div>
+                  <h3 className="mt-3 text-lg font-bold text-slate-900">Education Loan Assistance</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-slate-600">
                   <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-amber-50 text-xs font-bold text-amber-600">✓</span>
-                    <span>Best bank & NBFC connections</span>
+                    <span className="mt-1 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-red-50 text-xs font-bold text-red-600">✓</span>
+                    <span>Best loan rates & connections</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-amber-50 text-xs font-bold text-amber-600">✓</span>
-                    <span>Competitive interest rates</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-amber-50 text-xs font-bold text-amber-600">✓</span>
-                    <span>Loan sanction assistance</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-amber-50 text-xs font-bold text-amber-600">✓</span>
+                    <span className="mt-1 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-red-50 text-xs font-bold text-red-600">✓</span>
                     <span>Collateral & non-collateral options</span>
                   </li>
                 </ul>
               </div>
             </div>
 
-            {/* University Selection */}
-            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg ring-1 ring-slate-100 transition-all hover:-translate-y-2 hover:shadow-2xl sm:p-8">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
-              <div className="relative">
-                <div className="mb-5">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 shadow-lg shadow-purple-500/30">
-                    {React.createElement(BuildingLibraryIcon, { className: 'h-7 w-7 text-white', strokeWidth: 1.5 })}
-                  </div>
-                  <h3 className="mt-4 text-xl font-bold text-slate-900">University Selection</h3>
-                </div>
-
-                <p className="mb-4 text-sm leading-relaxed text-slate-600">
-                  Find your perfect academic match globally
-                </p>
-
-                <ul className="space-y-2.5 text-sm text-slate-600">
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-purple-50 text-xs font-bold text-purple-600">✓</span>
-                    <span>1000+ partner universities</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-purple-50 text-xs font-bold text-purple-600">✓</span>
-                    <span>Course & specialization guidance</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-purple-50 text-xs font-bold text-purple-600">✓</span>
-                    <span>Budget-based recommendations</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-purple-50 text-xs font-bold text-purple-600">✓</span>
-                    <span>Career outcome analysis</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Pre-Departure Briefing */}
-            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg ring-1 ring-slate-100 transition-all hover:-translate-y-2 hover:shadow-2xl sm:p-8">
-              <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
-              <div className="relative">
-                <div className="mb-5">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-red-500 to-red-600 shadow-lg shadow-red-500/30">
-                    {React.createElement(GlobeAltIcon, { className: 'h-7 w-7 text-white', strokeWidth: 1.5 })}
-                  </div>
-                  <h3 className="mt-4 text-xl font-bold text-slate-900">Pre-Departure Briefing</h3>
-                </div>
-
-                <p className="mb-4 text-sm leading-relaxed text-slate-600">
-                  Prepare for a smooth transition to your new life
-                </p>
-
-                <ul className="space-y-2.5 text-sm text-slate-600">
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-red-50 text-xs font-bold text-red-600">✓</span>
-                    <span>Accommodation arrangements</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-red-50 text-xs font-bold text-red-600">✓</span>
-                    <span>Airport pickup & drop support</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-red-50 text-xs font-bold text-red-600">✓</span>
-                    <span>Cultural orientation sessions</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-red-50 text-xs font-bold text-red-600">✓</span>
-                    <span>Banking & SIM card assistance</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Career Counseling */}
-            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg ring-1 ring-slate-100 transition-all hover:-translate-y-2 hover:shadow-2xl sm:p-8">
+            {/* Students Visa Training */}
+            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg ring-1 ring-slate-100 transition-all hover:-translate-y-2 hover:shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
               <div className="relative">
-                <div className="mb-5">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 shadow-lg shadow-indigo-500/30">
-                    {React.createElement(UserGroupIcon, { className: 'h-7 w-7 text-white', strokeWidth: 1.5 })}
+                <div className="mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 shadow-lg shadow-indigo-500/30">
+                    {React.createElement(ChatBubbleLeftRightIcon, { className: 'h-6 w-6 text-white', strokeWidth: 1.5 })}
                   </div>
-                  <h3 className="mt-4 text-xl font-bold text-slate-900">Career Counseling</h3>
+                  <h3 className="mt-3 text-lg font-bold text-slate-900">Students Visa Training</h3>
                 </div>
+                <ul className="space-y-2 text-sm text-slate-600">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-indigo-50 text-xs font-bold text-indigo-600">✓</span>
+                    <span>Mock interview preparation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-indigo-50 text-xs font-bold text-indigo-600">✓</span>
+                    <span>Documentation & filing support</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
 
-                <p className="mb-4 text-sm leading-relaxed text-slate-600">
-                  Strategic planning for your future success
-                </p>
+            {/* Airport Pickup & Drop Guidance */}
+            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg ring-1 ring-slate-100 transition-all hover:-translate-y-2 hover:shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+              <div className="relative">
+                <div className="mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-pink-500 to-pink-600 shadow-lg shadow-pink-500/30">
+                    {React.createElement(GlobeAltIcon, { className: 'h-6 w-6 text-white', strokeWidth: 1.5 })}
+                  </div>
+                  <h3 className="mt-3 text-lg font-bold text-slate-900">Airport Pickup & Drop Guidance</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-slate-600">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-pink-50 text-xs font-bold text-pink-600">✓</span>
+                    <span>Arrival & departure coordination</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-pink-50 text-xs font-bold text-pink-600">✓</span>
+                    <span>Safe transport arrangements</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
 
-                <ul className="space-y-2.5 text-sm text-slate-600">
+            {/* Accommodation Guidance */}
+            <div className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg ring-1 ring-slate-100 transition-all hover:-translate-y-2 hover:shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+              <div className="relative">
+                <div className="mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 shadow-lg shadow-teal-500/30">
+                    {React.createElement(UserGroupIcon, { className: 'h-6 w-6 text-white', strokeWidth: 1.5 })}
+                  </div>
+                  <h3 className="mt-3 text-lg font-bold text-slate-900">Accommodation Guidance</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-slate-600">
                   <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-indigo-50 text-xs font-bold text-indigo-600">✓</span>
-                    <span>Personalized career roadmap</span>
+                    <span className="mt-1 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-teal-50 text-xs font-bold text-teal-600">✓</span>
+                    <span>Housing search assistance</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-indigo-50 text-xs font-bold text-indigo-600">✓</span>
-                    <span>Industry-specific guidance</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-indigo-50 text-xs font-bold text-indigo-600">✓</span>
-                    <span>Resume & LinkedIn optimization</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-indigo-50 text-xs font-bold text-indigo-600">✓</span>
-                    <span>Job placement assistance</span>
+                    <span className="mt-1 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-teal-50 text-xs font-bold text-teal-600">✓</span>
+                    <span>Near university placements</span>
                   </li>
                 </ul>
               </div>
@@ -1204,16 +1172,16 @@ const Home = () => {
                 type="button"
                 onClick={() => navigate(`/journey?userType=${buttonRole}`)}
                 className={`relative w-full sm:w-auto rounded-xl px-8 py-4 text-base font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:px-10 sm:py-5 sm:text-lg animate-float ${buttonRole === 'employee'
-                    ? 'bg-[#2E6C2E] shadow-[#2E6C2E]/30 hover:bg-[#38662B]'
-                    : 'bg-[#C44E28] shadow-[#C44E28]/30 hover:bg-[#D9531E]'
+                  ? 'bg-[#2E6C2E] shadow-[#2E6C2E]/30 hover:bg-[#38662B]'
+                  : 'bg-[#C44E28] shadow-[#C44E28]/30 hover:bg-[#D9531E]'
                   }`}
               >
                 <span className="relative z-10">
                   Start Your Journey - {buttonRole === 'employee' ? 'Employee' : 'Student'}
                 </span>
                 <div className={`absolute inset-0 rounded-xl opacity-0 hover:opacity-20 transition-opacity duration-300 ${buttonRole === 'employee'
-                    ? 'bg-gradient-to-r from-[#2E6C2E] to-[#38662B]'
-                    : 'bg-gradient-to-r from-[#C44E28] to-[#D9531E]'
+                  ? 'bg-gradient-to-r from-[#2E6C2E] to-[#38662B]'
+                  : 'bg-gradient-to-r from-[#C44E28] to-[#D9531E]'
                   }`}></div>
               </button>
             </div>
@@ -1325,9 +1293,9 @@ const Home = () => {
                 Your trusted partner for studying abroad. We help students achieve their dreams of international education with personalized guidance and comprehensive support.
               </p>
               <div className="flex gap-4">
-                <a href="tel:8069361480" className="inline-flex items-center gap-2 text-sm font-medium text-slate-300 transition hover:text-[#C44E28]">
+                <a href="tel:9988245789" className="inline-flex items-center gap-2 text-sm font-medium text-slate-300 transition hover:text-[#C44E28]">
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-800 text-[#C44E28]">📞</span>
-                  8069361480
+                  9988245789
                 </a>
               </div>
             </div>
