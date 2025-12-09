@@ -17,7 +17,7 @@ const Home = () => {
   const [currentStory, setCurrentStory] = useState(0)
   const [expandedStory, setExpandedStory] = useState(null)
   const [isHoveringCarousel, setIsHoveringCarousel] = useState(false)
-  const [buttonRole, setButtonRole] = useState('employee') // 'employee' or 'student'
+  const [showJourneyModal, setShowJourneyModal] = useState(false)
 
   const successStories = [
     {
@@ -482,14 +482,7 @@ const Home = () => {
     return () => clearInterval(interval)
   }, [successStories.length, isHoveringCarousel])
 
-  // Toggle button text between Employee and Student every 2.5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setButtonRole(prev => prev === 'employee' ? 'student' : 'employee')
-    }, 2500)
-
-    return () => clearInterval(interval)
-  }, [])
+  // Removed auto-toggle - using modal for user selection
 
   // Handle manual dot click
   const handleDotClick = (index) => {
@@ -568,19 +561,12 @@ const Home = () => {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <button
                     type="button"
-                    onClick={() => navigate(buttonRole === 'employee' ? '/journey/employee' : '/journey/student')}
-                    className={`relative w-full sm:w-auto rounded-2xl px-6 py-5 text-xl font-bold text-white shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl sm:rounded-lg sm:px-8 sm:py-4 sm:text-base sm:font-semibold animate-float ${buttonRole === 'employee'
-                      ? 'bg-[#2E6C2E] shadow-[#2E6C2E]/30 hover:bg-[#38662B]'
-                      : 'bg-[#C44E28] shadow-[#C44E28]/30 hover:bg-[#D9531E]'
-                      }`}
+                    onClick={() => setShowJourneyModal(true)}
+                    className="relative w-full sm:w-auto rounded-2xl px-6 py-5 text-xl font-bold text-white shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl sm:rounded-lg sm:px-8 sm:py-4 sm:text-base sm:font-semibold animate-float bg-gradient-to-r from-[#2E6C2E] to-[#C44E28] shadow-[#2E6C2E]/30 hover:from-[#38662B] hover:to-[#D9531E]"
                   >
                     <span className="relative z-10">
-                      Start Your Journey - {buttonRole === 'employee' ? 'Employee' : 'Student'}
+                      Start Your Journey
                     </span>
-                    <div className={`absolute inset-0 rounded-2xl opacity-0 hover:opacity-20 transition-opacity duration-300 ${buttonRole === 'employee'
-                      ? 'bg-gradient-to-r from-[#2E6C2E] to-[#38662B]'
-                      : 'bg-gradient-to-r from-[#C44E28] to-[#D9531E]'
-                      }`}></div>
                   </button>
                 </div>
               </div>
@@ -1170,21 +1156,29 @@ const Home = () => {
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center sm:mt-12">
               <button
                 type="button"
-                onClick={() => navigate(buttonRole === 'employee' ? '/journey/employee' : '/journey/student')}
-                className={`relative w-full sm:w-auto rounded-xl px-8 py-4 text-base font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:px-10 sm:py-5 sm:text-lg animate-float ${buttonRole === 'employee'
-                  ? 'bg-[#2E6C2E] shadow-[#2E6C2E]/30 hover:bg-[#38662B]'
-                  : 'bg-[#C44E28] shadow-[#C44E28]/30 hover:bg-[#D9531E]'
-                  }`}
+                onClick={() => setShowJourneyModal(true)}
+                className="relative w-full sm:w-auto rounded-xl px-8 py-4 text-base font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl sm:px-10 sm:py-5 sm:text-lg animate-float bg-gradient-to-r from-[#2E6C2E] to-[#C44E28] shadow-[#2E6C2E]/30 hover:from-[#38662B] hover:to-[#D9531E]"
               >
                 <span className="relative z-10">
-                  Start Your Journey - {buttonRole === 'employee' ? 'Employee' : 'Student'}
+                  Start Your Journey
                 </span>
-                <div className={`absolute inset-0 rounded-xl opacity-0 hover:opacity-20 transition-opacity duration-300 ${buttonRole === 'employee'
-                  ? 'bg-gradient-to-r from-[#2E6C2E] to-[#38662B]'
-                  : 'bg-gradient-to-r from-[#C44E28] to-[#D9531E]'
-                  }`}></div>
               </button>
             </div>
+          </div>
+
+          {/* View More Button */}
+          <div className="mt-12 text-center">
+            <a
+              href="https://www.instagram.com/supreme_overseas_guntur/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#C44E28] to-[#D9531E] px-8 py-4 text-base font-bold text-white shadow-lg shadow-[#C44E28]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#C44E28]/40"
+            >
+              <span>View More Success Stories</span>
+              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
@@ -1350,6 +1344,107 @@ const Home = () => {
           </div>
         </div>
       </footer>
+
+      {/* Journey Type Selection Modal */}
+      {showJourneyModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+          <div className="relative w-full max-w-2xl rounded-3xl bg-white p-6 shadow-2xl sm:p-8 md:p-10">
+            {/* Close button */}
+            <button
+              type="button"
+              onClick={() => setShowJourneyModal(false)}
+              className="absolute top-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition-colors hover:bg-slate-200 hover:text-slate-900"
+            >
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Modal Header */}
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
+                Choose Your Journey
+              </h2>
+              <p className="mt-2 text-sm text-slate-600 sm:text-base">
+                Select the path that best describes you
+              </p>
+            </div>
+
+            {/* Journey Options */}
+            <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
+              {/* Student Journey */}
+              <button
+                type="button"
+                onClick={() => {
+                  setShowJourneyModal(false)
+                  navigate('/journey/student')
+                }}
+                className="group relative overflow-hidden rounded-2xl border-2 border-slate-200 bg-white p-6 text-left transition-all duration-300 hover:-translate-y-2 hover:border-[#C44E28] hover:shadow-2xl sm:p-8"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-[#C44E28]/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+
+                <div className="relative">
+                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#C44E28] to-[#D9531E] shadow-lg shadow-[#C44E28]/30">
+                    <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  </div>
+
+                  <h3 className="text-xl font-bold text-slate-900 sm:text-2xl">
+                    Start Your Journey - Student
+                  </h3>
+
+                  <p className="mt-2 text-sm text-slate-600">
+                    Explore international education opportunities and pursue your dream degree abroad
+                  </p>
+
+                  <div className="mt-4 flex items-center text-[#C44E28] font-semibold">
+                    <span className="text-sm">Begin your academic journey</span>
+                    <svg className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
+                </div>
+              </button>
+
+              {/* Employee Journey */}
+              <button
+                type="button"
+                onClick={() => {
+                  setShowJourneyModal(false)
+                  navigate('/journey/employee')
+                }}
+                className="group relative overflow-hidden rounded-2xl border-2 border-slate-200 bg-white p-6 text-left transition-all duration-300 hover:-translate-y-2 hover:border-[#2E6C2E] hover:shadow-2xl sm:p-8"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-[#2E6C2E]/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+
+                <div className="relative">
+                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#2E6C2E] to-[#38662B] shadow-lg shadow-[#2E6C2E]/30">
+                    <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+
+                  <h3 className="text-xl font-bold text-slate-900 sm:text-2xl">
+                    Start Your Journey - Employee
+                  </h3>
+
+                  <p className="mt-2 text-sm text-slate-600">
+                    Discover career opportunities and professional growth paths in international markets
+                  </p>
+
+                  <div className="mt-4 flex items-center text-[#2E6C2E] font-semibold">
+                    <span className="text-sm">Begin your career journey</span>
+                    <svg className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   )
 }
