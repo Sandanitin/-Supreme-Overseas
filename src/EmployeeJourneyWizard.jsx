@@ -126,7 +126,7 @@ const EmployeeJourneyWizard = () => {
                     </div>
 
                     <h1 className="mt-3 text-center text-xl font-extrabold text-slate-900 sm:mt-4 sm:text-2xl md:text-3xl">
-                        Start Your Journey - Employee
+                        Take the first step to Work Abroad
                     </h1>
 
                     <p className="mt-2 text-center text-sm font-medium text-slate-700 sm:mt-3 sm:text-base">

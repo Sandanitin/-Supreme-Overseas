@@ -537,7 +537,7 @@ const Home = () => {
             <div className="text-center">
               <h1 className="text-4xl font-extrabold leading-tight text-[#2E6C2E] sm:text-3xl md:text-4xl lg:text-5xl">
                 Take the First Step{' '}
-                <span className="mt-2 block text-5xl text-[#C44E28] sm:mt-0 sm:inline sm:text-3xl md:text-4xl lg:text-5xl">go to ABROAD</span>
+                <span className="mt-2 block text-5xl text-[#C44E28] sm:mt-0 sm:inline sm:text-3xl md:text-4xl lg:text-5xl">Go to ABROAD</span>
               </h1>
 
               {/* Benefits - Mobile: vertical list, Desktop: horizontal */}
@@ -1183,7 +1183,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* STUDY ABROAD INFO SECTION */}
+      {/* STUDY INFO SECTION */}
       <section className="relative overflow-hidden bg-white py-16 sm:py-24">
         {/* Decorative background */}
         <div className="absolute top-0 right-0 -mt-20 -mr-20 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-[#2E6C2E]/5 to-transparent blur-3xl"></div>
