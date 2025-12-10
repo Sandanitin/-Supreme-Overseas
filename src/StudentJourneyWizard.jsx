@@ -25,7 +25,7 @@ const destinationOptions = [
     { value: 'US', label: 'US', image: 'https://flagcdn.com/w80/us.png' },
     { value: 'Canada', label: 'Canada', image: 'https://flagcdn.com/w80/ca.png' },
     { value: 'Australia', label: 'Australia', image: 'https://flagcdn.com/w80/au.png' },
-    { value: 'New Zealand', label: 'New Zealand', image: 'https://flagcdn.com/w80/nz.png' },
+
     { value: 'Malaysia', label: 'Malaysia', image: 'https://flagcdn.com/w80/my.png' },
     { value: 'Singapore', label: 'Singapore', image: 'https://flagcdn.com/w80/sg.png' },
     { value: 'Other', label: 'Other', image: 'https://flagcdn.com/w80/un.png' },
@@ -253,16 +253,16 @@ const StudentJourneyWizard = () => {
                         <p className="mt-2 text-sm text-slate-600 sm:text-base">
                             Choose your preferred country for international education
                         </p>
-                        <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5 md:grid-cols-3">
+                        <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4 md:grid-cols-4 lg:grid-cols-5">
                             {destinationOptions.map((opt) => (
                                 <button
                                     key={opt.value}
                                     type="button"
                                     onClick={() => handleSelect('destination', opt.value)}
-                                    className="relative rounded-2xl border-2 border-slate-100 bg-white px-4 py-6 text-base font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-5 sm:py-7"
+                                    className="relative rounded-xl border-2 border-slate-100 bg-white px-2 py-3 text-sm font-bold text-slate-800 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-lg sm:px-3 sm:py-4"
                                 >
-                                    <div className="flex flex-col items-center gap-3">
-                                        <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border border-slate-100 bg-slate-50 shadow-sm">
+                                    <div className="flex flex-col items-center gap-2">
+                                        <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-slate-100 bg-slate-50 shadow-sm sm:h-12 sm:w-12">
                                             <img
                                                 src={opt.image}
                                                 alt={`${opt.label} flag`}
@@ -273,7 +273,7 @@ const StudentJourneyWizard = () => {
                                                 }}
                                             />
                                         </div>
-                                        <span>{opt.label}</span>
+                                        <span className="text-xs sm:text-sm">{opt.label}</span>
                                     </div>
                                 </button>
                             ))}
