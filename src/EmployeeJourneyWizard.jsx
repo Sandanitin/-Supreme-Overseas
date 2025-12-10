@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const destinationOptions = [
-    { value: 'UK', label: 'UK', image: 'https://flagcdn.com/w80/gb.png' },
+    { value: 'Europe', label: 'Europe', image: 'https://flagcdn.com/w80/eu.png' },
     { value: 'Other', label: 'Other', image: 'https://flagcdn.com/w80/un.png' },
 ]
 
@@ -190,13 +190,13 @@ const EmployeeJourneyWizard = () => {
                         <p className="mt-2 text-sm text-slate-600 sm:text-base">
                             Choose your preferred country for international opportunities
                         </p>
-                        <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5 md:grid-cols-3">
+                        <div className="mt-8 flex flex-wrap justify-center gap-4 sm:mt-10 sm:gap-5">
                             {destinationOptions.map((opt) => (
                                 <button
                                     key={opt.value}
                                     type="button"
                                     onClick={() => handleSelect('destination', opt.value)}
-                                    className="relative rounded-2xl border-2 border-slate-100 bg-white px-4 py-6 text-base font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-5 sm:py-7"
+                                    className="relative w-full sm:w-64 rounded-2xl border-2 border-slate-100 bg-white px-4 py-6 text-base font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-5 sm:py-7"
                                 >
                                     <div className="flex flex-col items-center gap-3">
                                         <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border border-slate-100 bg-slate-50 shadow-sm">
