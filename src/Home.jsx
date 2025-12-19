@@ -1378,7 +1378,7 @@ const Home = () => {
           {/* Bottom Footer */}
           <div className="mt-12 border-t border-slate-800 pt-8 text-center">
             <p className="text-xs text-slate-500 sm:text-sm">
-              © 2024 Supreme Overseas. All rights reserved. | Designed and Developed by <a href="https://www.vikrin.com/" target="_blank" rel="noopener noreferrer" className="font-medium text-slate-400 hover:text-[#C44E28] transition-colors">Vikrin</a> | Privacy Policy | Terms of Service
+              © 2024 Supreme Overseas. All rights reserved. | Privacy Policy | Terms of Service
             </p>
           </div>
         </div>
