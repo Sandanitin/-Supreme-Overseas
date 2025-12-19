@@ -169,9 +169,24 @@ const StudentJourneyWizard = () => {
     const progress = (step / totalSteps) * 100
 
     return (
-        <main className="min-h-screen overflow-x-hidden bg-slate-50">
+        <main className="relative min-h-screen overflow-x-hidden">
+            {/* Background Image */}
+            <div className="fixed inset-0 -z-10 h-full w-full">
+                <img
+                    src="/journey-background.png"
+                    alt="World landmarks"
+                    className="h-full w-full object-cover"
+                    onError={(e) => {
+                        console.error('Error loading background image:', e.target.src);
+                        e.target.style.display = 'none';
+                    }}
+                />
+                {/* Subtle overlay for readability */}
+                <div className="absolute inset-0 bg-white/85"></div>
+            </div>
+
             {/* Top header with logo and progress bar */}
-            <header className="border-b border-slate-200 bg-gradient-to-r from-white to-orange-50">
+            <header className="border-b border-slate-200 bg-gradient-to-r from-white/90 to-orange-50/90 backdrop-blur-sm">
                 <div className="mx-auto max-w-5xl px-3 py-4 sm:px-4 sm:py-5 md:px-6">
                     <div className="flex items-center justify-center">
                         {/* Logo image */}
@@ -208,7 +223,7 @@ const StudentJourneyWizard = () => {
                 </div>
             </header>
 
-            <section className="mx-auto max-w-3xl px-3 pb-16 pt-8 sm:px-4 sm:pb-20 sm:pt-10 md:px-6">
+            <section className="relative mx-auto max-w-3xl px-3 pb-16 pt-8 sm:px-4 sm:pb-20 sm:pt-10 md:px-6">
                 <button
                     type="button"
                     onClick={handleBack}
