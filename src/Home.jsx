@@ -896,61 +896,76 @@ const Home = () => {
             {universitiesByCountry[activeCountry].map((uni) => (
               <div
                 key={uni.name}
-                className="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 transition-all hover:-translate-y-1 hover:shadow-xl hover:ring-[#C44E28]/20"
+                className="group relative overflow-hidden rounded-xl bg-white shadow-md ring-1 ring-slate-200/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:ring-slate-300"
               >
-                <div className="flex items-start justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-slate-50 ring-1 ring-slate-100 group-hover:ring-[#C44E28]/30 transition-all">
+                {/* Card Header with Logo and Badge */}
+                <div className="flex items-start justify-between p-5 pb-4 border-b border-slate-100">
+                  <div className="flex items-center gap-3.5">
+                    {/* University Logo - Larger and Square */}
+                    <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200 group-hover:ring-[#C44E28]/40 transition-all">
                       <img
                         src={uni.logo}
                         alt={`${uni.name} logo`}
-                        className="h-full w-full object-contain p-1.5"
+                        className="h-full w-full object-contain p-2"
                         loading="lazy"
                         onError={(e) => {
                           e.target.style.display = 'none';
                           const fallback = document.createElement('span');
                           fallback.textContent = uni.short;
-                          fallback.className = 'text-xs font-semibold uppercase tracking-wide text-slate-600 group-hover:text-[#C44E28]';
+                          fallback.className = 'text-sm font-bold uppercase tracking-wide text-slate-700';
                           e.target.parentElement?.appendChild(fallback);
                         }}
                       />
                     </div>
-                    <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                      {uni.short}
-                    </span>
+                    {/* University Short Name */}
+                    <div>
+                      <span className="inline-block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
+                        {uni.short}
+                      </span>
+                      <div className="flex items-center gap-1.5">
+                        <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-0.5 text-xs font-semibold text-green-700 ring-1 ring-inset ring-green-600/20">
+                          Top Ranked
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <span className="inline-flex items-center rounded-full bg-green-50 px-2.5 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
-                    Top Ranked
-                  </span>
                 </div>
 
-                <div className="mt-6">
-                  <h3 className="text-lg font-bold leading-tight text-slate-900 group-hover:text-[#C44E28] transition-colors">
+                {/* Card Body */}
+                <div className="p-5 pt-4">
+                  {/* University Name */}
+                  <h3 className="text-base font-bold leading-snug text-slate-900 group-hover:text-[#C44E28] transition-colors mb-2.5">
                     {uni.name}
                   </h3>
-                  <p className="mt-2 flex items-center text-sm text-slate-500">
+
+                  {/* Location */}
+                  <p className="flex items-center text-sm text-slate-600 mb-4">
                     <svg className="mr-1.5 h-4 w-4 flex-shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                     </svg>
                     {uni.location}
                   </p>
-                </div>
 
-                <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-4">
-                  <div className="flex items-center gap-2">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-50 text-[#C44E28]">
-                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                  {/* Course Count Badge */}
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-amber-50 to-yellow-50 px-3 py-2 ring-1 ring-amber-200/50">
+                      <svg className="h-4 w-4 text-amber-600" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                       </svg>
-                    </span>
-                    <span className="text-sm font-semibold text-slate-700">{uni.courses}</span>
+                      <span className="text-sm font-bold text-amber-900">{uni.courses}</span>
+                    </div>
                   </div>
+
+                  {/* View Details Link */}
                   <button
                     onClick={() => navigate('/journey')}
-                    className="text-sm font-medium text-[#C44E28] hover:text-[#D9531E] transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C44E28] hover:text-[#D9531E] transition-all group-hover:gap-2.5"
                   >
-                    View Details →
+                    <span>View Details</span>
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
                   </button>
                 </div>
               </div>
