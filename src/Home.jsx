@@ -118,6 +118,20 @@ const Home = () => {
       loan: '₹42 Lakhs',
       image: '/students/Singamsetty Naveen.png'
     },
+    {
+      name: 'Devabhatuni Phanindra',
+      initials: 'DP',
+      from: 'Andhra Pradesh',
+      to: 'USA',
+      quote:
+        'I am grateful to Supreme Overseas for their professional guidance and dedicated support. Their mock interview sessions and attention to detail played a key role in securing my U.S. student visa for my MS in Computer Science at the University of Massachusetts Lowell.',
+      shortQuote:
+        'I am grateful to Supreme Overseas for their professional guidance and dedicated support.',
+      field: 'MS in Computer Science',
+      university: 'University of Massachusetts Lowell',
+      loan: '',
+      image: '/images/phanindra.png'
+    },
   ]
 
   const whyItems = [
