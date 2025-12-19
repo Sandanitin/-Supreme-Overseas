@@ -229,7 +229,7 @@ const Home = () => {
         location: 'London, UK',
         courses: '78+ Courses',
         short: 'QMUL',
-        logo: '/universities/queen-mary-london.png',
+        logo: '/universities/queen-mary-london-new.png',
       },
       {
         name: 'University of Leeds',
@@ -303,6 +303,13 @@ const Home = () => {
         short: 'SHU',
         logo: '/universities/sacred-heart.png',
       },
+      {
+        name: 'Rivier University',
+        location: 'Nashua, USA',
+        courses: '35+ Courses',
+        short: 'Rivier',
+        logo: '/universities/rivier-university.png',
+      },
     ],
     germany: [
       {
@@ -313,11 +320,11 @@ const Home = () => {
         logo: '/universities/bsbi-berlin.png',
       },
       {
-        name: 'GISMA Business School',
-        location: 'Hannover, Germany',
-        courses: '8+ Courses',
+        name: 'GISMA University of Applied Sciences',
+        location: 'Berlin, Germany',
+        courses: '25+ Courses',
         short: 'GISMA',
-        logo: '/universities/gisma-business.png',
+        logo: '/universities/gisma-university.jpg',
       },
       {
         name: 'EU Business School',
@@ -375,7 +382,7 @@ const Home = () => {
         location: 'Toronto, Canada',
         courses: '76+ Courses',
         short: 'Centennial',
-        logo: '/universities/centennial-college.png',
+        logo: '/universities/centennial-college-new.png',
       },
       {
         name: 'George Brown College',
@@ -389,7 +396,7 @@ const Home = () => {
         location: 'Toronto, Canada',
         courses: '54+ Courses',
         short: 'Seneca',
-        logo: '/universities/seneca-college.png',
+        logo: '/universities/seneca-college-new.png',
       },
     ],
     dubai: [
