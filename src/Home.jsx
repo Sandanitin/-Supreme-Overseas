@@ -868,108 +868,111 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Tabs */}
-          <div className="mb-10 flex justify-center">
-            <div className="inline-flex w-full overflow-x-auto sm:w-auto sm:flex-wrap sm:justify-center gap-2 rounded-2xl bg-white p-2 shadow-sm ring-1 ring-slate-200 sm:gap-3 scrollbar-hide">
-              {universityTabs.map((tab) => {
-                const active = tab.id === activeCountry
-                return (
-                  <button
-                    key={tab.id}
-                    type="button"
-                    onClick={() => setActiveCountry(tab.id)}
-                    className={`flex items-center gap-1.5 whitespace-nowrap rounded-xl px-3 py-2 text-xs font-semibold transition-all sm:gap-2 sm:px-6 sm:py-3 sm:text-base ${active
-                      ? 'bg-[#C44E28] text-white shadow-md shadow-orange-500/20'
-                      : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
-                      }`}
-                  >
-                    <span className="text-base sm:text-xl">{tab.flag}</span>
-                    <span>{tab.name}</span>
-                  </button>
-                )
-              })}
+          {/* Container box around tabs and cards */}
+          <div className="rounded-3xl bg-white p-6 shadow-xl ring-1 ring-slate-200 sm:p-8 md:p-10">
+            {/* Tabs */}
+            <div className="mb-10 flex justify-center">
+              <div className="inline-flex w-full overflow-x-auto sm:w-auto sm:flex-wrap sm:justify-center gap-2 rounded-2xl bg-slate-50 p-2 shadow-sm ring-1 ring-slate-200 sm:gap-3 scrollbar-hide">
+                {universityTabs.map((tab) => {
+                  const active = tab.id === activeCountry
+                  return (
+                    <button
+                      key={tab.id}
+                      type="button"
+                      onClick={() => setActiveCountry(tab.id)}
+                      className={`flex items-center gap-1.5 whitespace-nowrap rounded-xl px-3 py-2 text-xs font-semibold transition-all sm:gap-2 sm:px-6 sm:py-3 sm:text-base ${active
+                        ? 'bg-[#C44E28] text-white shadow-md shadow-orange-500/20'
+                        : 'text-slate-600 hover:bg-white hover:text-slate-900'
+                        }`}
+                    >
+                      <span className="text-base sm:text-xl">{tab.flag}</span>
+                      <span>{tab.name}</span>
+                    </button>
+                  )
+                })}
+              </div>
             </div>
-          </div>
 
-          {/* University cards */}
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {universitiesByCountry[activeCountry].map((uni) => (
-              <div
-                key={uni.name}
-                className="group relative overflow-hidden rounded-xl bg-white shadow-md ring-1 ring-slate-200/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:ring-slate-300"
-              >
-                {/* Card Header with Logo and Badge */}
-                <div className="flex items-start justify-between p-5 pb-4 border-b border-slate-100">
-                  <div className="flex items-center gap-3.5">
-                    {/* University Logo - Larger and Square */}
-                    <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200 group-hover:ring-[#C44E28]/40 transition-all">
-                      <img
-                        src={uni.logo}
-                        alt={`${uni.name} logo`}
-                        className="h-full w-full object-contain p-2"
-                        loading="lazy"
-                        onError={(e) => {
-                          e.target.style.display = 'none';
-                          const fallback = document.createElement('span');
-                          fallback.textContent = uni.short;
-                          fallback.className = 'text-sm font-bold uppercase tracking-wide text-slate-700';
-                          e.target.parentElement?.appendChild(fallback);
-                        }}
-                      />
-                    </div>
-                    {/* University Short Name */}
-                    <div>
-                      <span className="inline-block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
-                        {uni.short}
-                      </span>
-                      <div className="flex items-center gap-1.5">
-                        <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-0.5 text-xs font-semibold text-green-700 ring-1 ring-inset ring-green-600/20">
-                          Top Ranked
+            {/* University cards */}
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {universitiesByCountry[activeCountry].map((uni) => (
+                <div
+                  key={uni.name}
+                  className="group relative overflow-hidden rounded-xl bg-white shadow-md ring-1 ring-slate-200/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:ring-slate-300"
+                >
+                  {/* Card Header with Logo and Badge */}
+                  <div className="flex items-start justify-between p-5 pb-4 border-b border-slate-100">
+                    <div className="flex items-center gap-3.5">
+                      {/* University Logo - Larger and Square */}
+                      <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200 group-hover:ring-[#C44E28]/40 transition-all">
+                        <img
+                          src={uni.logo}
+                          alt={`${uni.name} logo`}
+                          className="h-full w-full object-contain p-2"
+                          loading="lazy"
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                            const fallback = document.createElement('span');
+                            fallback.textContent = uni.short;
+                            fallback.className = 'text-sm font-bold uppercase tracking-wide text-slate-700';
+                            e.target.parentElement?.appendChild(fallback);
+                          }}
+                        />
+                      </div>
+                      {/* University Short Name */}
+                      <div>
+                        <span className="inline-block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
+                          {uni.short}
                         </span>
+                        <div className="flex items-center gap-1.5">
+                          <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-0.5 text-xs font-semibold text-green-700 ring-1 ring-inset ring-green-600/20">
+                            Top Ranked
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Card Body */}
-                <div className="p-5 pt-4">
-                  {/* University Name */}
-                  <h3 className="text-base font-bold leading-snug text-slate-900 group-hover:text-[#C44E28] transition-colors mb-2.5">
-                    {uni.name}
-                  </h3>
+                  {/* Card Body */}
+                  <div className="p-5 pt-4">
+                    {/* University Name */}
+                    <h3 className="text-base font-bold leading-snug text-slate-900 group-hover:text-[#C44E28] transition-colors mb-2.5">
+                      {uni.name}
+                    </h3>
 
-                  {/* Location */}
-                  <p className="flex items-center text-sm text-slate-600 mb-4">
-                    <svg className="mr-1.5 h-4 w-4 flex-shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                    </svg>
-                    {uni.location}
-                  </p>
-
-                  {/* Course Count Badge */}
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-amber-50 to-yellow-50 px-3 py-2 ring-1 ring-amber-200/50">
-                      <svg className="h-4 w-4 text-amber-600" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                    {/* Location */}
+                    <p className="flex items-center text-sm text-slate-600 mb-4">
+                      <svg className="mr-1.5 h-4 w-4 flex-shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                       </svg>
-                      <span className="text-sm font-bold text-amber-900">{uni.courses}</span>
-                    </div>
-                  </div>
+                      {uni.location}
+                    </p>
 
-                  {/* View Details Link */}
-                  <button
-                    onClick={() => navigate('/journey/student')}
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C44E28] hover:text-[#D9531E] transition-all group-hover:gap-2.5"
-                  >
-                    <span>View Details</span>
-                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                    </svg>
-                  </button>
+                    {/* Course Count Badge */}
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-amber-50 to-yellow-50 px-3 py-2 ring-1 ring-amber-200/50">
+                        <svg className="h-4 w-4 text-amber-600" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                        </svg>
+                        <span className="text-sm font-bold text-amber-900">{uni.courses}</span>
+                      </div>
+                    </div>
+
+                    {/* View Details Link */}
+                    <button
+                      onClick={() => navigate('/journey/student')}
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C44E28] hover:text-[#D9531E] transition-all group-hover:gap-2.5"
+                    >
+                      <span>View Details</span>
+                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                      </svg>
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
