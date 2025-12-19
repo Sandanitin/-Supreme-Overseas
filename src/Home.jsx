@@ -550,40 +550,40 @@ const Home = () => {
       </nav>
 
       {/* HERO SECTION - with padding top to account for fixed navbar */}
-      <section className="relative overflow-hidden bg-white pt-20 sm:pt-32 md:pt-40">
+      <section className="relative overflow-hidden bg-white pt-16 sm:pt-32 md:pt-40">
         {/* Hero content */}
         <div className="relative z-20">
           {/* Text content - Mobile optimized */}
-          <div className="mx-auto max-w-6xl px-5 pt-8 pb-10 sm:px-4 sm:py-8 md:px-6 md:py-12">
+          <div className="mx-auto max-w-6xl px-5 pt-4 pb-6 sm:px-4 sm:py-8 md:px-6 md:py-12">
             <div className="text-center">
-              <h1 className="text-4xl font-extrabold leading-tight text-[#2E6C2E] sm:text-3xl md:text-4xl lg:text-5xl">
-                Take the First Step{' '}
-                <span className="mt-2 block text-5xl text-[#C44E28] sm:mt-0 sm:inline sm:text-3xl md:text-4xl lg:text-5xl">Go to ABROAD</span>
+              <h1 className="leading-tight sm:text-3xl md:text-4xl lg:text-5xl">
+                <span className="block text-3xl font-bold text-[#2E6C2E] sm:inline sm:text-3xl md:text-4xl lg:text-5xl">Take the First Step</span>{' '}
+                <span className="block text-3xl font-bold text-[#C44E28] sm:inline sm:text-3xl md:text-4xl lg:text-5xl">Go to ABROAD</span>
               </h1>
 
-              {/* Benefits - Mobile: vertical list, Desktop: horizontal */}
-              <div className="mt-8 space-y-4 sm:mt-6 sm:flex sm:flex-row sm:items-center sm:justify-center sm:gap-6 sm:space-y-0 md:gap-8">
-                <div className="flex items-start gap-3.5 text-lg font-medium text-[#38662B] sm:items-center sm:gap-2 sm:text-sm md:text-base">
-                  {React.createElement(CheckCircleIcon, { className: 'mt-1 h-7 w-7 flex-shrink-0 text-[#2E6C2E] sm:mt-0 sm:h-5 sm:w-5', strokeWidth: 2 })}
-                  <span className="leading-snug sm:leading-normal">Courses starting from ₹8 Lakhs*</span>
+              {/* Benefits - Mobile: vertical list with single lines, Desktop: horizontal */}
+              <div className="mt-6 space-y-3 sm:mt-6 sm:flex sm:flex-row sm:items-center sm:justify-center sm:gap-6 sm:space-y-0 md:gap-8">
+                <div className="flex items-center gap-2 text-sm font-medium text-[#38662B] sm:gap-2 sm:text-sm md:text-base">
+                  {React.createElement(CheckCircleIcon, { className: 'h-5 w-5 flex-shrink-0 text-[#2E6C2E] sm:h-5 sm:w-5', strokeWidth: 2 })}
+                  <span className="whitespace-nowrap leading-tight sm:leading-normal">Courses starting from ₹8 Lakhs*</span>
                 </div>
-                <div className="flex items-start gap-3.5 text-lg font-medium text-[#38662B] sm:items-center sm:gap-2 sm:text-sm md:text-base">
-                  {React.createElement(CheckCircleIcon, { className: 'mt-1 h-7 w-7 flex-shrink-0 text-[#2E6C2E] sm:mt-0 sm:h-5 sm:w-5', strokeWidth: 2 })}
-                  <span className="leading-snug sm:leading-normal">Scholarship worth ₹10,00,000*</span>
+                <div className="flex items-center gap-2 text-sm font-medium text-[#38662B] sm:gap-2 sm:text-sm md:text-base">
+                  {React.createElement(CheckCircleIcon, { className: 'h-5 w-5 flex-shrink-0 text-[#2E6C2E] sm:h-5 sm:w-5', strokeWidth: 2 })}
+                  <span className="whitespace-nowrap leading-tight sm:leading-normal">Scholarship worth ₹10,00,000*</span>
                 </div>
-                <div className="flex items-start gap-3.5 text-lg font-medium text-[#38662B] sm:items-center sm:gap-2 sm:text-sm md:text-base">
-                  {React.createElement(CheckCircleIcon, { className: 'mt-1 h-7 w-7 flex-shrink-0 text-[#2E6C2E] sm:mt-0 sm:h-5 sm:w-5', strokeWidth: 2 })}
-                  <span className="leading-snug sm:leading-normal">Offer letter in less than 48 hours*</span>
+                <div className="flex items-center gap-2 text-sm font-medium text-[#38662B] sm:gap-2 sm:text-sm md:text-base">
+                  {React.createElement(CheckCircleIcon, { className: 'h-5 w-5 flex-shrink-0 text-[#2E6C2E] sm:h-5 sm:w-5', strokeWidth: 2 })}
+                  <span className="whitespace-nowrap leading-tight sm:leading-normal">Offer letter in less than 48 hours*</span>
                 </div>
               </div>
 
               {/* CTA button */}
-              <div className="mt-10 sm:mt-8">
+              <div className="mt-8 sm:mt-8">
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <button
                     type="button"
                     onClick={() => setShowJourneyModal(true)}
-                    className="relative w-full sm:w-auto rounded-2xl px-6 py-5 text-xl font-bold text-white shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl sm:rounded-lg sm:px-8 sm:py-4 sm:text-base sm:font-semibold animate-float bg-gradient-to-r from-[#2E6C2E] to-[#C44E28] shadow-[#2E6C2E]/30 hover:from-[#38662B] hover:to-[#D9531E]"
+                    className="relative w-full sm:w-auto rounded-xl px-8 py-4 text-lg font-bold text-white shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl sm:rounded-lg sm:px-8 sm:py-4 sm:text-base sm:font-semibold animate-float bg-gradient-to-r from-[#2E6C2E] to-[#C44E28] shadow-[#2E6C2E]/30 hover:from-[#38662B] hover:to-[#D9531E]"
                   >
                     <span className="relative z-10">
                       Start Your Journey
