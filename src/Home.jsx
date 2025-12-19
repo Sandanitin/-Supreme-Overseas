@@ -959,7 +959,7 @@ const Home = () => {
 
                   {/* View Details Link */}
                   <button
-                    onClick={() => navigate('/journey')}
+                    onClick={() => navigate('/journey/student')}
                     className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C44E28] hover:text-[#D9531E] transition-all group-hover:gap-2.5"
                   >
                     <span>View Details</span>
