@@ -870,7 +870,7 @@ const Home = () => {
 
           {/* Tabs */}
           <div className="mb-10 flex justify-center">
-            <div className="inline-flex flex-wrap justify-center gap-2 rounded-2xl bg-white p-2 shadow-sm ring-1 ring-slate-200 sm:gap-3">
+            <div className="inline-flex w-full overflow-x-auto sm:w-auto sm:flex-wrap sm:justify-center gap-2 rounded-2xl bg-white p-2 shadow-sm ring-1 ring-slate-200 sm:gap-3 scrollbar-hide">
               {universityTabs.map((tab) => {
                 const active = tab.id === activeCountry
                 return (
@@ -878,12 +878,12 @@ const Home = () => {
                     key={tab.id}
                     type="button"
                     onClick={() => setActiveCountry(tab.id)}
-                    className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all sm:px-6 sm:py-3 sm:text-base ${active
+                    className={`flex items-center gap-1.5 whitespace-nowrap rounded-xl px-3 py-2 text-xs font-semibold transition-all sm:gap-2 sm:px-6 sm:py-3 sm:text-base ${active
                       ? 'bg-[#C44E28] text-white shadow-md shadow-orange-500/20'
                       : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
                       }`}
                   >
-                    <span className="text-lg sm:text-xl">{tab.flag}</span>
+                    <span className="text-base sm:text-xl">{tab.flag}</span>
                     <span>{tab.name}</span>
                   </button>
                 )
