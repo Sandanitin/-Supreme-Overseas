@@ -525,8 +525,8 @@ const Home = () => {
                 <span className="block text-3xl font-bold text-[#C44E28] sm:inline sm:text-3xl md:text-4xl lg:text-5xl">Go to ABROAD</span>
               </h1>
 
-              {/* Benefits - Mobile: vertical list centered, Desktop: horizontal */}
-              <div className="mt-6 flex flex-col items-center gap-2 sm:mt-6 sm:flex-row sm:justify-center sm:gap-6 md:gap-8">
+              {/* Benefits - Mobile: vertical list left-aligned in center, Desktop: horizontal */}
+              <div className="mt-6 flex flex-col items-start gap-2 mx-auto w-fit sm:mt-6 sm:flex-row sm:items-center sm:justify-center sm:gap-6 md:gap-8">
                 <div className="flex items-center gap-2 text-sm font-medium text-[#38662B] sm:text-sm md:text-base">
                   {React.createElement(CheckCircleIcon, { className: 'h-5 w-5 flex-shrink-0 text-[#2E6C2E]', strokeWidth: 2 })}
                   <span className="leading-tight">Courses starting from ₹8 Lakhs*</span>
