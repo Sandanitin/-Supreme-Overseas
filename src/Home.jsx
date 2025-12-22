@@ -221,42 +221,37 @@ const Home = () => {
         name: 'University of Birmingham',
         location: 'Birmingham, UK',
         courses: '95+ Courses',
-        short: 'UoB',
+
         logo: '/universities/university-of-birmingham.png',
       },
       {
         name: 'Queen Mary University of London',
         location: 'London, UK',
         courses: '78+ Courses',
-        short: 'QMUL',
         logo: '/universities/queen-mary-london-new.png',
       },
       {
         name: 'University of Leeds',
         location: 'Leeds, UK',
         courses: '64+ Courses',
-        short: 'UoL',
         logo: '/universities/university-of-leeds.png',
       },
       {
         name: 'University of Southampton',
         location: 'Southampton, UK',
         courses: '52+ Courses',
-        short: 'UoS',
         logo: '/universities/university-of-southampton.png',
       },
       {
         name: 'University of Strathclyde',
         location: 'Glasgow, UK',
         courses: '48+ Courses',
-        short: 'UoS',
         logo: '/universities/university-of-strathclyde.png',
       },
       {
         name: 'Coventry University',
         location: 'Coventry, UK',
         courses: '36+ Courses',
-        short: 'CU',
         logo: '/universities/coventry-university.png',
       },
     ],
@@ -265,49 +260,42 @@ const Home = () => {
         name: 'University of Illinois',
         location: 'Urbana-Champaign, USA',
         courses: '89+ Courses',
-        short: 'UIUC',
         logo: '/universities/university-of-illinois.png',
       },
       {
         name: 'Central Michigan University',
         location: 'Mount Pleasant, USA',
         courses: '42+ Courses',
-        short: 'CMU',
         logo: '/universities/central-michigan.png',
       },
       {
         name: 'University of New Haven',
         location: 'West Haven, USA',
         courses: '38+ Courses',
-        short: 'UNH',
         logo: '/universities/university-of-new-haven.png',
       },
       {
         name: 'Wichita State University',
         location: 'Wichita, USA',
         courses: '29+ Courses',
-        short: 'WSU',
         logo: '/universities/wichita-state.png',
       },
       {
         name: 'Bradley University',
         location: 'Peoria, USA',
         courses: '22+ Courses',
-        short: 'BU',
         logo: '/universities/bradley-university.png',
       },
       {
         name: 'Sacred Heart University',
         location: 'Fairfield, USA',
         courses: '18+ Courses',
-        short: 'SHU',
         logo: '/universities/sacred-heart.png',
       },
       {
         name: 'Rivier University',
         location: 'Nashua, USA',
         courses: '35+ Courses',
-        short: 'Rivier',
         logo: '/universities/rivier-university.png',
       },
     ],
@@ -316,42 +304,36 @@ const Home = () => {
         name: 'Berlin School of Business and Innovation',
         location: 'Berlin, Germany',
         courses: '12+ Courses',
-        short: 'BSBI',
         logo: '/universities/bsbi-berlin.png',
       },
       {
         name: 'GISMA University of Applied Sciences',
         location: 'Berlin, Germany',
         courses: '25+ Courses',
-        short: 'GISMA',
         logo: '/universities/gisma-university.jpg',
       },
       {
         name: 'EU Business School',
         location: 'Munich, Germany',
         courses: '15+ Courses',
-        short: 'EUBS',
         logo: '/universities/eu-business.png',
       },
       {
         name: 'SRH Berlin University',
         location: 'Berlin, Germany',
         courses: '9+ Courses',
-        short: 'SRH',
         logo: '/universities/srh-berlin.png',
       },
       {
         name: 'Munich Business School',
         location: 'Munich, Germany',
         courses: '7+ Courses',
-        short: 'MBS',
         logo: '/universities/munich-business.png',
       },
       {
         name: 'EBS Universität',
         location: 'Wiesbaden, Germany',
         courses: '11+ Courses',
-        short: 'EBS',
         logo: '/universities/ebs-universitat.png',
       },
     ],
@@ -360,42 +342,36 @@ const Home = () => {
         name: 'University of Niagara Falls',
         location: 'Niagara Falls, Canada',
         courses: '22+ Courses',
-        short: 'UNF',
         logo: '/universities/niagara-falls.png',
       },
       {
         name: 'Lakeshore College',
         location: 'Lakeshore, Canada',
         courses: '167+ Courses',
-        short: 'LC',
         logo: '/universities/lakeshore-college.png',
       },
       {
         name: 'Humber College',
         location: 'Toronto, Canada',
         courses: '98+ Courses',
-        short: 'Humber',
         logo: '/universities/humber-college.png',
       },
       {
         name: 'Centennial College',
         location: 'Toronto, Canada',
         courses: '76+ Courses',
-        short: 'Centennial',
         logo: '/universities/centennial-college-new.png',
       },
       {
         name: 'George Brown College',
         location: 'Toronto, Canada',
         courses: '65+ Courses',
-        short: 'GBC',
         logo: '/universities/george-brown.png',
       },
       {
         name: 'Seneca College',
         location: 'Toronto, Canada',
         courses: '54+ Courses',
-        short: 'Seneca',
         logo: '/universities/seneca-college-new.png',
       },
     ],
@@ -404,42 +380,36 @@ const Home = () => {
         name: 'University of Birmingham',
         location: 'Dubai',
         courses: '95+ Courses',
-        short: 'UoB Dubai',
         logo: '/universities/university-of-birmingham.png',
       },
       {
         name: 'Middlesex University',
         location: 'Dubai',
         courses: '64+ Courses',
-        short: 'MU',
         logo: '/universities/middlesex-university.png',
       },
       {
         name: 'Heriot-Watt University',
         location: 'Dubai',
         courses: '56+ Courses',
-        short: 'HWU',
         logo: '/universities/heriot-watt.png',
       },
       {
         name: 'Manipal University',
         location: 'Dubai',
         courses: '42+ Courses',
-        short: 'Manipal',
         logo: '/universities/manipal-university.png',
       },
       {
         name: 'De Montfort University',
         location: 'Dubai',
         courses: '22+ Courses',
-        short: 'DMU',
         logo: '/universities/de-montfort.png',
       },
       {
         name: 'Amity University',
         location: 'Dubai',
         courses: '11+ Courses',
-        short: 'Amity',
         logo: '/universities/amity-university.png',
       },
     ],
@@ -448,42 +418,36 @@ const Home = () => {
         name: 'Dublin Business School',
         location: 'Dublin, Ireland',
         courses: '45+ Courses',
-        short: 'DBS',
         logo: '/universities/dublin-business-school.png',
       },
       {
         name: 'National College of Ireland',
         location: 'Dublin, Ireland',
         courses: '38+ Courses',
-        short: 'NCI',
         logo: '/universities/national-college-of-ireland.png',
       },
       {
         name: 'Dublin City University',
         location: 'Dublin, Ireland',
         courses: '120+ Courses',
-        short: 'DCU',
         logo: '/universities/dublin-city-university.png',
       },
       {
         name: 'University of Limerick',
         location: 'Limerick, Ireland',
         courses: '95+ Courses',
-        short: 'UL',
         logo: '/universities/university-of-limerick.png',
       },
       {
         name: 'Technological University Dublin',
         location: 'Dublin, Ireland',
         courses: '110+ Courses',
-        short: 'TU Dublin',
         logo: '/universities/technological-university-dublin.png',
       },
       {
         name: 'University College Dublin',
         location: 'Dublin, Ireland',
         courses: '150+ Courses',
-        short: 'UCD',
         logo: '/universities/university-college-dublin.png',
       },
     ],
@@ -550,7 +514,7 @@ const Home = () => {
       </nav>
 
       {/* HERO SECTION - with padding top to account for fixed navbar */}
-      <section className="relative overflow-hidden bg-white pt-16 sm:pt-32 md:pt-40">
+      <section className="relative overflow-hidden bg-white pt-20 sm:pt-32 md:pt-40">
         {/* Hero content */}
         <div className="relative z-20">
           {/* Text content - Mobile optimized */}
@@ -561,19 +525,19 @@ const Home = () => {
                 <span className="block text-3xl font-bold text-[#C44E28] sm:inline sm:text-3xl md:text-4xl lg:text-5xl">Go to ABROAD</span>
               </h1>
 
-              {/* Benefits - Mobile: vertical list with single lines, Desktop: horizontal */}
-              <div className="mt-6 space-y-3 sm:mt-6 sm:flex sm:flex-row sm:items-center sm:justify-center sm:gap-6 sm:space-y-0 md:gap-8">
-                <div className="flex items-center gap-2 text-sm font-medium text-[#38662B] sm:gap-2 sm:text-sm md:text-base">
-                  {React.createElement(CheckCircleIcon, { className: 'h-5 w-5 flex-shrink-0 text-[#2E6C2E] sm:h-5 sm:w-5', strokeWidth: 2 })}
-                  <span className="whitespace-nowrap leading-tight sm:leading-normal">Courses starting from ₹8 Lakhs*</span>
+              {/* Benefits - Mobile: vertical list centered, Desktop: horizontal */}
+              <div className="mt-6 flex flex-col items-center gap-2 sm:mt-6 sm:flex-row sm:justify-center sm:gap-6 md:gap-8">
+                <div className="flex items-center gap-2 text-sm font-medium text-[#38662B] sm:text-sm md:text-base">
+                  {React.createElement(CheckCircleIcon, { className: 'h-5 w-5 flex-shrink-0 text-[#2E6C2E]', strokeWidth: 2 })}
+                  <span className="leading-tight">Courses starting from ₹8 Lakhs*</span>
                 </div>
-                <div className="flex items-center gap-2 text-sm font-medium text-[#38662B] sm:gap-2 sm:text-sm md:text-base">
-                  {React.createElement(CheckCircleIcon, { className: 'h-5 w-5 flex-shrink-0 text-[#2E6C2E] sm:h-5 sm:w-5', strokeWidth: 2 })}
-                  <span className="whitespace-nowrap leading-tight sm:leading-normal">Scholarship worth ₹10,00,000*</span>
+                <div className="flex items-center gap-2 text-sm font-medium text-[#38662B] sm:text-sm md:text-base">
+                  {React.createElement(CheckCircleIcon, { className: 'h-5 w-5 flex-shrink-0 text-[#2E6C2E]', strokeWidth: 2 })}
+                  <span className="leading-tight">Scholarship worth ₹10,00,000*</span>
                 </div>
-                <div className="flex items-center gap-2 text-sm font-medium text-[#38662B] sm:gap-2 sm:text-sm md:text-base">
-                  {React.createElement(CheckCircleIcon, { className: 'h-5 w-5 flex-shrink-0 text-[#2E6C2E] sm:h-5 sm:w-5', strokeWidth: 2 })}
-                  <span className="whitespace-nowrap leading-tight sm:leading-normal">Offer letter in less than 48 hours*</span>
+                <div className="flex items-center gap-2 text-sm font-medium text-[#38662B] sm:text-sm md:text-base">
+                  {React.createElement(CheckCircleIcon, { className: 'h-5 w-5 flex-shrink-0 text-[#2E6C2E]', strokeWidth: 2 })}
+                  <span className="leading-tight">Offer letter in less than 48 hours*</span>
                 </div>
               </div>
 
@@ -925,9 +889,9 @@ const Home = () => {
                           {uni.short}
                         </span>
                         <div className="flex items-center gap-1.5">
-                          <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-0.5 text-xs font-semibold text-green-700 ring-1 ring-inset ring-green-600/20">
+                          {/* <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-0.5 text-xs font-semibold text-green-700 ring-1 ring-inset ring-green-600/20">
                             Top Ranked
-                          </span>
+                          </span> */}
                         </div>
                       </div>
                     </div>
@@ -958,17 +922,6 @@ const Home = () => {
                         <span className="text-sm font-bold text-amber-900">{uni.courses}</span>
                       </div>
                     </div>
-
-                    {/* View Details Link */}
-                    <button
-                      onClick={() => navigate('/journey/student')}
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C44E28] hover:text-[#D9531E] transition-all group-hover:gap-2.5"
-                    >
-                      <span>View Details</span>
-                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                      </svg>
-                    </button>
                   </div>
                 </div>
               ))}
