@@ -207,12 +207,12 @@ const Home = () => {
   ]
 
   const universityTabs = [
-    { id: 'uk', name: 'United Kingdom' },
-    { id: 'usa', name: 'USA' },
-    { id: 'germany', name: 'Germany' },
-    { id: 'canada', name: 'Canada' },
-    { id: 'dubai', name: 'Dubai' },
-    { id: 'ireland', name: 'Ireland' },
+    { id: 'uk', name: 'United Kingdom', flag: 'https://flagcdn.com/w40/gb.png' },
+    { id: 'usa', name: 'USA', flag: 'https://flagcdn.com/w40/us.png' },
+    { id: 'germany', name: 'Germany', flag: 'https://flagcdn.com/w40/de.png' },
+    { id: 'canada', name: 'Canada', flag: 'https://flagcdn.com/w40/ca.png' },
+    { id: 'dubai', name: 'Dubai', flag: 'https://flagcdn.com/w40/ae.png' },
+    { id: 'ireland', name: 'Ireland', flag: 'https://flagcdn.com/w40/ie.png' },
   ]
 
   const universitiesByCountry = {
@@ -849,7 +849,7 @@ const Home = () => {
                         : 'text-slate-600 hover:bg-white hover:text-slate-900'
                         }`}
                     >
-                      <span className="text-base sm:text-xl">{tab.flag}</span>
+                      <img src={tab.flag} alt={tab.name} className="h-4 w-5 object-cover rounded-sm sm:h-5 sm:w-6" />
                       <span>{tab.name}</span>
                     </button>
                   )
@@ -857,70 +857,48 @@ const Home = () => {
               </div>
             </div>
 
-            {/* University cards */}
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {/* University cards - Horizontal layout */}
+            <div className="flex flex-col gap-4">
               {universitiesByCountry[activeCountry].map((uni) => (
                 <div
                   key={uni.name}
-                  className="group relative overflow-hidden rounded-xl bg-white shadow-md ring-1 ring-slate-200/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:ring-slate-300"
+                  className="group flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm ring-1 ring-slate-200/60 transition-all duration-300 hover:shadow-lg hover:ring-[#C44E28]/30 sm:gap-5 sm:p-5"
                 >
-                  {/* Card Header with Logo and Badge */}
-                  <div className="flex items-start justify-between p-5 pb-4 border-b border-slate-100">
-                    <div className="flex items-center gap-3.5">
-                      {/* University Logo - Larger and Square */}
-                      <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200 group-hover:ring-[#C44E28]/40 transition-all">
-                        <img
-                          src={uni.logo}
-                          alt={`${uni.name} logo`}
-                          className="h-full w-full object-contain p-2"
-                          loading="lazy"
-                          onError={(e) => {
-                            e.target.style.display = 'none';
-                            const fallback = document.createElement('span');
-                            fallback.textContent = uni.short;
-                            fallback.className = 'text-sm font-bold uppercase tracking-wide text-slate-700';
-                            e.target.parentElement?.appendChild(fallback);
-                          }}
-                        />
-                      </div>
-                      {/* University Short Name */}
-                      <div>
-                        <span className="inline-block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
-                          {uni.short}
-                        </span>
-                        <div className="flex items-center gap-1.5">
-                          {/* <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-0.5 text-xs font-semibold text-green-700 ring-1 ring-inset ring-green-600/20">
-                            Top Ranked
-                          </span> */}
-                        </div>
-                      </div>
-                    </div>
+                  {/* University Logo - Left */}
+                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200 group-hover:ring-[#C44E28]/40 transition-all sm:h-16 sm:w-16">
+                    <img
+                      src={uni.logo}
+                      alt={`${uni.name} logo`}
+                      className="h-full w-full object-contain p-1.5 sm:p-2"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        const fallback = document.createElement('span');
+                        fallback.textContent = uni.name.split(' ').map(w => w[0]).join('').slice(0, 3);
+                        fallback.className = 'text-xs font-bold uppercase tracking-wide text-slate-700';
+                        e.target.parentElement?.appendChild(fallback);
+                      }}
+                    />
                   </div>
 
-                  {/* Card Body */}
-                  <div className="p-5 pt-4">
-                    {/* University Name */}
-                    <h3 className="text-base font-bold leading-snug text-slate-900 group-hover:text-[#C44E28] transition-colors mb-2.5">
+                  {/* University Info - Middle */}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-sm font-bold leading-snug text-slate-900 group-hover:text-[#C44E28] transition-colors sm:text-base truncate">
                       {uni.name}
                     </h3>
-
-                    {/* Location */}
-                    <p className="flex items-center text-sm text-slate-600 mb-4">
-                      <svg className="mr-1.5 h-4 w-4 flex-shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                    <p className="flex items-center text-xs text-slate-500 mt-1 sm:text-sm">
+                      <svg className="mr-1 h-3.5 w-3.5 flex-shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                       </svg>
-                      {uni.location}
+                      <span className="truncate">{uni.location}</span>
                     </p>
+                  </div>
 
-                    {/* Course Count Badge */}
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-amber-50 to-yellow-50 px-3 py-2 ring-1 ring-amber-200/50">
-                        <svg className="h-4 w-4 text-amber-600" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                        </svg>
-                        <span className="text-sm font-bold text-amber-900">{uni.courses}</span>
-                      </div>
+                  {/* Course Count Badge - Right */}
+                  <div className="flex-shrink-0">
+                    <div className="rounded-full bg-gradient-to-r from-blue-50 to-blue-100 px-3 py-1.5 ring-1 ring-blue-200/50 sm:px-4 sm:py-2">
+                      <span className="text-xs font-bold text-blue-700 whitespace-nowrap sm:text-sm">{uni.courses}</span>
                     </div>
                   </div>
                 </div>
