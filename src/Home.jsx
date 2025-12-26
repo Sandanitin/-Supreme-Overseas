@@ -836,7 +836,7 @@ const Home = () => {
           <div className="rounded-3xl bg-white p-6 shadow-xl ring-1 ring-slate-200 sm:p-8 md:p-10">
             {/* Tabs */}
             <div className="mb-10 flex justify-center">
-              <div className="inline-flex w-full overflow-x-auto sm:w-auto sm:flex-wrap sm:justify-center gap-2 rounded-2xl bg-slate-50 p-2 shadow-sm ring-1 ring-slate-200 sm:gap-3 scrollbar-hide">
+              <div className="grid grid-cols-3 gap-2 w-full sm:inline-flex sm:w-auto sm:flex-wrap sm:justify-center rounded-2xl bg-slate-50 p-2 shadow-sm ring-1 ring-slate-200 sm:gap-3">
                 {universityTabs.map((tab) => {
                   const active = tab.id === activeCountry
                   return (
@@ -844,12 +844,12 @@ const Home = () => {
                       key={tab.id}
                       type="button"
                       onClick={() => setActiveCountry(tab.id)}
-                      className={`flex items-center gap-1.5 whitespace-nowrap rounded-xl px-3 py-2 text-xs font-semibold transition-all sm:gap-2 sm:px-6 sm:py-3 sm:text-base ${active
+                      className={`flex items-center justify-center gap-1 whitespace-nowrap rounded-xl px-2 py-2 text-[10px] font-semibold transition-all sm:gap-2 sm:px-6 sm:py-3 sm:text-base ${active
                         ? 'bg-[#C44E28] text-white shadow-md shadow-orange-500/20'
                         : 'text-slate-600 hover:bg-white hover:text-slate-900'
                         }`}
                     >
-                      <img src={tab.flag} alt={tab.name} className="h-4 w-5 object-cover rounded-sm sm:h-5 sm:w-6" />
+                      <img src={tab.flag} alt={tab.name} className="h-4 w-4 object-cover rounded-full sm:h-6 sm:w-6" />
                       <span>{tab.name}</span>
                     </button>
                   )
@@ -862,7 +862,8 @@ const Home = () => {
               {universitiesByCountry[activeCountry].map((uni) => (
                 <div
                   key={uni.name}
-                  className="group flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm ring-1 ring-slate-200/60 transition-all duration-300 hover:shadow-lg hover:ring-[#C44E28]/30 sm:gap-5 sm:p-5"
+                  onClick={() => navigate('/journey/student')}
+                  className="group flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm ring-1 ring-slate-200/60 transition-all duration-300 hover:shadow-lg hover:ring-[#C44E28]/30 sm:gap-5 sm:p-5 cursor-pointer"
                 >
                   {/* University Logo - Left */}
                   <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-200 group-hover:ring-[#C44E28]/40 transition-all sm:h-16 sm:w-16">

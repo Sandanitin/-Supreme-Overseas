@@ -180,12 +180,27 @@ const EmployeeJourneyWizard = () => {
                             Select your current employment situation
                         </p>
                         <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5 md:grid-cols-3">
-                            {employmentOptions.map((option) => (
+                            {employmentOptions.slice(0, 3).map((option) => (
                                 <button
                                     key={option}
                                     type="button"
                                     onClick={() => handleSelect('employmentStatus', option)}
                                     className="relative rounded-2xl border-2 border-slate-100 bg-white px-4 py-5 text-base font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-5 sm:py-6"
+                                >
+                                    <div className="flex items-center justify-center">
+                                        <span>{option}</span>
+                                    </div>
+                                </button>
+                            ))}
+                        </div>
+                        {/* Last 2 options (Student, Fresher) centered */}
+                        <div className="mt-4 flex flex-wrap justify-center gap-4 sm:mt-5 sm:gap-5">
+                            {employmentOptions.slice(3).map((option) => (
+                                <button
+                                    key={option}
+                                    type="button"
+                                    onClick={() => handleSelect('employmentStatus', option)}
+                                    className="relative w-full sm:w-auto rounded-2xl border-2 border-slate-100 bg-white px-4 py-5 text-base font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-8 sm:py-6"
                                 >
                                     <div className="flex items-center justify-center">
                                         <span>{option}</span>

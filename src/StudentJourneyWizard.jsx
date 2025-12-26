@@ -243,12 +243,27 @@ const StudentJourneyWizard = () => {
                             Select the academic program that aligns with your career goals
                         </p>
                         <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5 md:grid-cols-3">
-                            {degreeOptions.map((option) => (
+                            {degreeOptions.slice(0, 9).map((option) => (
                                 <button
                                     key={option}
                                     type="button"
                                     onClick={() => handleSelect('degree', option)}
                                     className="relative rounded-2xl border-2 border-slate-100 bg-white px-4 py-5 text-sm font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-5 sm:py-6 sm:text-base"
+                                >
+                                    <div className="flex items-center justify-center">
+                                        <span>{option}</span>
+                                    </div>
+                                </button>
+                            ))}
+                        </div>
+                        {/* Last 2 options centered */}
+                        <div className="mt-4 flex flex-wrap justify-center gap-4 sm:mt-5 sm:gap-5">
+                            {degreeOptions.slice(9).map((option) => (
+                                <button
+                                    key={option}
+                                    type="button"
+                                    onClick={() => handleSelect('degree', option)}
+                                    className="relative w-full sm:w-auto rounded-2xl border-2 border-slate-100 bg-white px-4 py-5 text-sm font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-8 sm:py-6 sm:text-base"
                                 >
                                     <div className="flex items-center justify-center">
                                         <span>{option}</span>
@@ -269,12 +284,38 @@ const StudentJourneyWizard = () => {
                             Choose your preferred country for international education
                         </p>
                         <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4 md:grid-cols-4 lg:grid-cols-5">
-                            {destinationOptions.map((opt) => (
+                            {destinationOptions.slice(0, 10).map((opt) => (
                                 <button
                                     key={opt.value}
                                     type="button"
                                     onClick={() => handleSelect('destination', opt.value)}
                                     className="relative rounded-xl border-2 border-slate-100 bg-white px-2 py-3 text-sm font-bold text-slate-800 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-lg sm:px-3 sm:py-4"
+                                >
+                                    <div className="flex flex-col items-center gap-2">
+                                        <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-slate-100 bg-slate-50 shadow-sm sm:h-12 sm:w-12">
+                                            <img
+                                                src={opt.image}
+                                                alt={`${opt.label} flag`}
+                                                className="h-full w-full object-cover"
+                                                loading="lazy"
+                                                onError={(e) => {
+                                                    e.currentTarget.style.display = 'none'
+                                                }}
+                                            />
+                                        </div>
+                                        <span className="text-xs sm:text-sm">{opt.label}</span>
+                                    </div>
+                                </button>
+                            ))}
+                        </div>
+                        {/* Last 2 options (Singapore, Other) centered */}
+                        <div className="mt-3 flex flex-wrap justify-center gap-3 sm:mt-4 sm:gap-4">
+                            {destinationOptions.slice(10).map((opt) => (
+                                <button
+                                    key={opt.value}
+                                    type="button"
+                                    onClick={() => handleSelect('destination', opt.value)}
+                                    className="relative w-[calc(50%-0.375rem)] sm:w-auto rounded-xl border-2 border-slate-100 bg-white px-2 py-3 text-sm font-bold text-slate-800 shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-lg sm:px-6 sm:py-4"
                                 >
                                     <div className="flex flex-col items-center gap-2">
                                         <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-slate-100 bg-slate-50 shadow-sm sm:h-12 sm:w-12">
@@ -306,7 +347,7 @@ const StudentJourneyWizard = () => {
                             Select the semester you'd like to begin your studies
                         </p>
                         <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5 md:grid-cols-3">
-                            {intakeOptions.map((opt) => (
+                            {intakeOptions.slice(0, 3).map((opt) => (
                                 <button
                                     key={opt.value}
                                     type="button"
@@ -318,6 +359,21 @@ const StudentJourneyWizard = () => {
                                             {opt.tag}
                                         </span>
                                     )}
+                                    <div className="flex items-center justify-center">
+                                        <span>{opt.label}</span>
+                                    </div>
+                                </button>
+                            ))}
+                        </div>
+                        {/* Last 2 options centered */}
+                        <div className="mt-4 flex flex-wrap justify-center gap-4 sm:mt-5 sm:gap-5">
+                            {intakeOptions.slice(3).map((opt) => (
+                                <button
+                                    key={opt.value}
+                                    type="button"
+                                    onClick={() => handleSelect('intake', opt.value)}
+                                    className="relative w-full sm:w-auto rounded-2xl border-2 border-slate-100 bg-white px-4 py-5 text-base font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-8 sm:py-6"
+                                >
                                     <div className="flex items-center justify-center">
                                         <span>{opt.label}</span>
                                     </div>
@@ -337,12 +393,27 @@ const StudentJourneyWizard = () => {
                             Select your current or most recent academic qualification
                         </p>
                         <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5 md:grid-cols-3">
-                            {educationOptions.map((option) => (
+                            {educationOptions.slice(0, 6).map((option) => (
                                 <button
                                     key={option}
                                     type="button"
                                     onClick={() => handleSelect('educationLevel', option)}
                                     className="relative rounded-2xl border-2 border-slate-100 bg-white px-4 py-5 text-base font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-5 sm:py-6"
+                                >
+                                    <div className="flex items-center justify-center">
+                                        <span>{option}</span>
+                                    </div>
+                                </button>
+                            ))}
+                        </div>
+                        {/* Last 2 options centered */}
+                        <div className="mt-4 flex flex-wrap justify-center gap-4 sm:mt-5 sm:gap-5">
+                            {educationOptions.slice(6).map((option) => (
+                                <button
+                                    key={option}
+                                    type="button"
+                                    onClick={() => handleSelect('educationLevel', option)}
+                                    className="relative w-full sm:w-auto rounded-2xl border-2 border-slate-100 bg-white px-4 py-5 text-base font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-8 sm:py-6"
                                 >
                                     <div className="flex items-center justify-center">
                                         <span>{option}</span>
@@ -441,12 +512,27 @@ const StudentJourneyWizard = () => {
                             Select your current employment situation
                         </p>
                         <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-5 md:grid-cols-3">
-                            {employmentOptions.map((option) => (
+                            {employmentOptions.slice(0, 3).map((option) => (
                                 <button
                                     key={option}
                                     type="button"
                                     onClick={() => handleSelect('employmentStatus', option)}
                                     className="relative rounded-2xl border-2 border-slate-100 bg-white px-4 py-5 text-base font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-5 sm:py-6"
+                                >
+                                    <div className="flex items-center justify-center">
+                                        <span>{option}</span>
+                                    </div>
+                                </button>
+                            ))}
+                        </div>
+                        {/* Last 2 options centered */}
+                        <div className="mt-4 flex flex-wrap justify-center gap-4 sm:mt-5 sm:gap-5">
+                            {employmentOptions.slice(3).map((option) => (
+                                <button
+                                    key={option}
+                                    type="button"
+                                    onClick={() => handleSelect('employmentStatus', option)}
+                                    className="relative w-full sm:w-auto rounded-2xl border-2 border-slate-100 bg-white px-4 py-5 text-base font-bold text-slate-800 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#C44E28] hover:shadow-xl sm:px-8 sm:py-6"
                                 >
                                     <div className="flex items-center justify-center">
                                         <span>{option}</span>
