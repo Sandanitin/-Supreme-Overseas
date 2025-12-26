@@ -143,8 +143,8 @@ const Home = () => {
     },
     {
       icon: BuildingLibraryIcon,
-      label: '1000+ university partnerships',
-      value: '1000+',
+      label: '900+ Partnership Universities',
+      value: '900+',
       color: 'text-green-600',
     },
     {
@@ -518,7 +518,7 @@ const Home = () => {
         {/* Hero content */}
         <div className="relative z-20">
           {/* Text content - Mobile optimized */}
-          <div className="mx-auto max-w-6xl px-5 pt-4 pb-6 sm:px-4 sm:py-8 md:px-6 md:py-12">
+          <div className="mx-auto max-w-6xl px-5 pt-8 pb-6 sm:px-4 sm:py-8 md:px-6 md:py-12">
             <div className="text-center">
               <h1 className="leading-tight sm:text-3xl md:text-4xl lg:text-5xl">
                 <span className="block text-3xl font-bold text-[#2E6C2E] sm:inline sm:text-3xl md:text-4xl lg:text-5xl">Take the First Step</span>{' '}
@@ -647,7 +647,7 @@ const Home = () => {
                 <ul className="space-y-2 text-sm text-slate-600">
                   <li className="flex items-start gap-2">
                     <span className="mt-1 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-blue-50 text-xs font-bold text-blue-600">✓</span>
-                    <span>1000+ university partnerships</span>
+                    <span>900+ Partnership Universities</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-blue-50 text-xs font-bold text-blue-600">✓</span>
