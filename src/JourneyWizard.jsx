@@ -185,7 +185,19 @@ const JourneyWizard = () => {
   const showPersonal = (isEmployee && step === 3) || (!isEmployee && step === 9)
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-slate-50">
+    <main className="relative min-h-screen overflow-x-hidden">
+      {/* Background Image */}
+      <div className="fixed inset-0 -z-10 h-full w-full">
+        <img
+          src="/journey-background.png"
+          alt="World landmarks"
+          className="h-full w-full object-cover opacity-30"
+          onError={(e) => {
+            console.error('Error loading background image:', e.target.src);
+            e.target.style.display = 'none';
+          }}
+        />
+      </div>
       {/* Top header with logo and progress bar */}
       <header className="border-b border-slate-200 bg-gradient-to-r from-white to-orange-50">
         <div className="mx-auto max-w-5xl px-3 py-4 sm:px-4 sm:py-5 md:px-6">

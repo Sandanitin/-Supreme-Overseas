@@ -835,8 +835,8 @@ const Home = () => {
           {/* Container box around tabs and cards */}
           <div className="rounded-3xl bg-white p-6 shadow-xl ring-1 ring-slate-200 sm:p-8 md:p-10">
             {/* Tabs */}
-            <div className="mb-10 flex justify-center">
-              <div className="grid grid-cols-3 gap-2 w-full sm:inline-flex sm:w-auto sm:flex-wrap sm:justify-center rounded-2xl bg-slate-50 p-2 shadow-sm ring-1 ring-slate-200 sm:gap-3">
+            <div className="mb-8 sm:mb-10">
+              <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide sm:flex-wrap sm:justify-center sm:gap-3 sm:overflow-visible sm:pb-0">
                 {universityTabs.map((tab) => {
                   const active = tab.id === activeCountry
                   return (
@@ -844,13 +844,13 @@ const Home = () => {
                       key={tab.id}
                       type="button"
                       onClick={() => setActiveCountry(tab.id)}
-                      className={`flex items-center justify-center gap-1 whitespace-nowrap rounded-xl px-2 py-2 text-[10px] font-semibold transition-all sm:gap-2 sm:px-6 sm:py-3 sm:text-base ${active
-                        ? 'bg-[#C44E28] text-white shadow-md shadow-orange-500/20'
-                        : 'text-slate-600 hover:bg-white hover:text-slate-900'
+                      className={`flex flex-shrink-0 flex-row items-center justify-center gap-1.5 sm:gap-2 rounded-xl px-3 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${active
+                        ? 'bg-[#C44E28] text-white shadow-lg shadow-orange-500/25 scale-[1.02]'
+                        : 'bg-white text-slate-700 shadow-sm ring-1 ring-slate-200 hover:bg-slate-50 hover:shadow-md'
                         }`}
                     >
-                      <img src={tab.flag} alt={tab.name} className="h-4 w-4 object-cover rounded-full sm:h-6 sm:w-6" />
-                      <span>{tab.name}</span>
+                      <img src={tab.flag} alt={tab.name} className="h-5 w-5 sm:h-5 sm:w-5 object-cover rounded-full shadow-sm" />
+                      <span className="leading-tight">{tab.name}</span>
                     </button>
                   )
                 })}
