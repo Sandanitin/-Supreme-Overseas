@@ -186,12 +186,12 @@ const JourneyWizard = () => {
 
   return (
     <main className="relative min-h-screen overflow-x-hidden">
-      {/* Background Image */}
-      <div className="fixed inset-0 -z-10 h-full w-full">
+      {/* Background Image - positioned at bottom */}
+      <div className="fixed bottom-0 left-0 right-0 -z-10 w-full pointer-events-none">
         <img
           src="/journey-background.png"
           alt="World landmarks"
-          className="h-full w-full object-cover opacity-30"
+          className="w-full h-auto object-contain opacity-40"
           onError={(e) => {
             console.error('Error loading background image:', e.target.src);
             e.target.style.display = 'none';
