@@ -32,7 +32,6 @@ const destinationOptions = [
 ]
 
 const intakeOptions = [
-  { value: 'Jan-2026', label: 'January 2026', tag: 'Recommended' },
   { value: 'May-2026', label: 'May 2026' },
   { value: 'Sep-2026', label: 'September 2026' },
   { value: 'Jan-2027', label: 'January 2027' },
@@ -117,6 +116,7 @@ const cityOptions = [
   'Pune',
   'Ahmedabad',
   'Jaipur',
+  'Vijayawada',
   'Other',
 ]
 

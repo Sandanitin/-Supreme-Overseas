@@ -1126,7 +1126,7 @@ const Home = () => {
             {/* View More Button - Smaller, Left Aligned */}
             <div className="mt-10 text-left sm:mt-12">
               <a
-                href="https://www.instagram.com/supreme_overseas_guntur/"
+                href="https://www.instagram.com/supreme_overseas_india?igsh=OGQ4NGFlY285OGNy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#C44E28] to-[#D9531E] px-4 py-2 text-xs font-medium text-white shadow-sm shadow-[#C44E28]/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:shadow-[#C44E28]/40"
@@ -1149,89 +1149,6 @@ const Home = () => {
                   Start Your Journey
                 </span>
               </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* STUDY INFO SECTION */}
-      <section className="relative overflow-hidden bg-white py-16 sm:py-24">
-        {/* Decorative background */}
-        <div className="absolute top-0 right-0 -mt-20 -mr-20 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-[#2E6C2E]/5 to-transparent blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 -mb-20 -ml-20 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-[#C44E28]/5 to-transparent blur-3xl"></div>
-
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-            {/* Content */}
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full bg-orange-50 px-3 py-1 text-xs font-semibold text-[#C44E28] ring-1 ring-inset ring-orange-500/10">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange-400 opacity-75"></span>
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-orange-500"></span>
-                </span>
-                Market Insights
-              </div>
-
-              <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-                The Rising Wave of <br />
-                <span className="text-[#2E6C2E]">Global Education</span>
-              </h2>
-
-              <div className="mt-6 space-y-6 text-base leading-relaxed text-slate-600">
-                <p>
-                  The landscape of international education is evolving rapidly. As per government estimates, over <span className="font-bold text-slate-900">9,00,000 Indians</span> were studying abroad in 2022. This number surged to <span className="font-bold text-slate-900">1.33 million</span> in 2024, reflecting the growing aspirations of Indian students.
-                </p>
-                <p>
-                  Projections indicate that by 2025, around <span className="font-bold text-[#C44E28]">1.5 to 2 million</span> Indians will be pursuing education overseas. India now holds the distinction of having the second-largest number of students studying abroad, surpassed only by China.
-                </p>
-                <p>
-                  The economic impact is equally significant. In 2019, Indian students spent USD 37 billion on higher education overseas. By 2025, this spending is expected to cross a staggering <span className="font-bold text-[#2E6C2E]">USD 70 billion</span>.
-                </p>
-              </div>
-            </div>
-
-            {/* Stats Visuals */}
-            <div className="relative">
-              <div className="grid gap-6 sm:grid-cols-2">
-                {/* Stat Card 1 */}
-                <div className="relative overflow-hidden rounded-2xl bg-white p-6 shadow-xl ring-1 ring-slate-900/5 transition hover:-translate-y-1 hover:shadow-2xl">
-                  <div className="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-gradient-to-br from-[#2E6C2E]/10 to-transparent blur-xl"></div>
-                  <dt className="text-sm font-medium text-slate-500">Students Abroad (2024)</dt>
-                  <dd className="mt-2 text-3xl font-bold tracking-tight text-[#2E6C2E]">1.33 M+</dd>
-                  <div className="mt-4 flex items-center text-xs font-medium text-green-600">
-                    <svg className="mr-1 h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
-                    </svg>
-                    Rapid Growth
-                  </div>
-                </div>
-
-                {/* Stat Card 2 */}
-                <div className="relative overflow-hidden rounded-2xl bg-white p-6 shadow-xl ring-1 ring-slate-900/5 transition hover:-translate-y-1 hover:shadow-2xl sm:translate-y-8">
-                  <div className="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-gradient-to-br from-[#C44E28]/10 to-transparent blur-xl"></div>
-                  <dt className="text-sm font-medium text-slate-500">Projected Spending (2025)</dt>
-                  <dd className="mt-2 text-3xl font-bold tracking-tight text-[#C44E28]">$70 B+</dd>
-                  <div className="mt-4 flex items-center text-xs font-medium text-orange-600">
-                    <svg className="mr-1 h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Economic Impact
-                  </div>
-                </div>
-
-                {/* Stat Card 3 */}
-                <div className="relative overflow-hidden rounded-2xl bg-white p-6 shadow-xl ring-1 ring-slate-900/5 transition hover:-translate-y-1 hover:shadow-2xl">
-                  <div className="absolute top-0 right-0 -mt-4 -mr-4 h-24 w-24 rounded-full bg-gradient-to-br from-blue-500/10 to-transparent blur-xl"></div>
-                  <dt className="text-sm font-medium text-slate-500">Global Rank</dt>
-                  <dd className="mt-2 text-3xl font-bold tracking-tight text-slate-900">#2</dd>
-                  <div className="mt-4 flex items-center text-xs font-medium text-blue-600">
-                    <svg className="mr-1 h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                    </svg>
-                    After China
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
