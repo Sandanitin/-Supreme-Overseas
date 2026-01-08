@@ -32,8 +32,7 @@ const destinationOptions = [
 ]
 
 const intakeOptions = [
-
-    { value: 'May-2026', label: 'May 2026' },
+    { value: 'May-2026', label: 'May 2026', tag: 'Recommended' },
     { value: 'Sep-2026', label: 'September 2026' },
     { value: 'Jan-2027', label: 'January 2027' },
     { value: 'Not-decided', label: "I haven't decided yet" },

@@ -1172,7 +1172,7 @@ const Home = () => {
                 />
               </div>
               <p className="mb-6 max-w-md text-sm leading-relaxed text-slate-400">
-                Your trusted partner for studying abroad. We help students achieve their dreams of international education with personalized guidance and comprehensive support.
+                Your trusted partner for study and work abroad. We help students and employees achieve their dreams of international education and job opportunities with personalized guidance and comprehensive support.
               </p>
               <div className="flex gap-4">
                 <a href="tel:9988245789" className="inline-flex items-center gap-2 text-sm font-medium text-slate-300 transition hover:text-[#C44E28]">
@@ -1227,7 +1227,7 @@ const Home = () => {
           {/* Bottom Footer */}
           <div className="mt-12 border-t border-slate-800 pt-8 text-center">
             <p className="text-xs text-slate-500 sm:text-sm">
-              © 2024 Supreme Overseas. All rights reserved. | Privacy Policy | Terms of Service
+              © 2026 Supreme Overseas. All rights reserved. | Privacy Policy | Terms of Service
             </p>
           </div>
         </div>
